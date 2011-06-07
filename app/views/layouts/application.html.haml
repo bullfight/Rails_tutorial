@@ -3,9 +3,11 @@
 
   %head
     %title
-      = "Ruby on Rails Tutorial Sample App | " + "#{@title}" || "Untitled"
+      = titled
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+    = stylesheet_link_tag 'blueprint/print',  :media => 'print'
     = javascript_include_tag :defaults
     = csrf_meta_tag
     = yield(:head)
