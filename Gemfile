@@ -7,6 +7,7 @@ gem 'haml-rails', '0.3.4'
 gem 'sass', '3.1.1'
 
 group :development do
+  gem 'rspec-core', '2.5.2'
   gem 'rspec-rails', '2.5.0'
   gem 'nifty-generators'
 end
