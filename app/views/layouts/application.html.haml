@@ -11,7 +11,7 @@
 
   %body
     #container
-      = render :partial => 'layouts/top_nav'
+      = render :partial => 'layouts/header'
     
       %section.round
         - flash.each do |name, msg|
@@ -21,3 +21,4 @@
           %h1= yield(:title)
 
         = yield
+      = render :partial => 'layouts/footer'
