@@ -32,7 +32,7 @@ describe UsersController do
     
     it "should have a profile image" do
       get :show, :id => @user
-      response.should have_selector("h1>img", :alt => "Gravatar")
+      response.should have_selector("h1>img", :class => "gravatar")
     end
       
   end
