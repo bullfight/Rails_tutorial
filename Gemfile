@@ -7,6 +7,7 @@ gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'haml', '3.1.1'
 gem 'haml-rails', '0.3.4'
 gem 'sass', '3.1.1'
+gem 'gravatar_image_tag', '1.0.0.pre2'
 
 group :development do
   gem 'pry'
@@ -20,4 +21,5 @@ group :test do
   gem 'rspec', '2.6.0'
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc5'
+  gem 'factory_girl_rails', '1.0'
 end
