@@ -92,6 +92,16 @@ describe UsersController do
         post :create, :user => @attr
         response.should render_template('new')
       end
+      
+      it "should reset the user password param" do
+        post :create, :user => @attr
+        assigns(:user).password.should be_nil
+      end
+      
+      it "should reset the user password_confirmation param" do
+        post :create, :user => @attr
+        assigns(:user).password_confirmation.should be_nil
+      end
     end
   
     describe "success" do
