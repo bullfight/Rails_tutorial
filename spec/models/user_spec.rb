@@ -81,7 +81,11 @@ describe User do
     end
     
     it "should have an encrypted password attribute" do
-      @user.should respond_to(:encypted_password)
+      @user.should respond_to(:encrypted_password)
+    end
+    
+    it "shoud set the encrypted password" do
+      @user.encrypted_password.should_no be_blank
     end
   end
   
