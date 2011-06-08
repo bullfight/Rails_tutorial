@@ -85,7 +85,7 @@ describe User do
     end
     
     it "shoud set the encrypted password" do
-      @user.encrypted_password.should_no be_blank
+      @user.encrypted_password.should_not be_blank
     end
     
     describe "has_password? method" do
