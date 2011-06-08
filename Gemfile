@@ -6,6 +6,7 @@ gem 'haml', '3.1.1'
 gem 'haml-rails', '0.3.4'
 gem 'sass', '3.1.1'
 gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'formtastic', '1.2.4'
 
 group :development do
   gem 'pry'

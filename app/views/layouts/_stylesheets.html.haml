@@ -6,3 +6,9 @@
   = stylesheet_link_tag 'blueprint/ie'    
 = javascript_include_tag :defaults
 = stylesheet_link_tag "application", :media => 'screen'
+
+= stylesheet_link_tag 'formtastic', 'my_formtastic_changes', :media => 'screen'
+/[if IE 6]
+  = stylesheet_link_tag 'formtastic_ie6'
+/[if IE 7]
+  = stylesheet_link_tag 'formtastic_ie7'
