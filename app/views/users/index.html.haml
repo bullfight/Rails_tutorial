@@ -1,5 +1,8 @@
 - title @title
 
+%div      
+  = paginate @users
+
 %ul.users
   - @users.each do |user|
     %li 
