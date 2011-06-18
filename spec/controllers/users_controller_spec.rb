@@ -114,6 +114,18 @@ describe UsersController do
       get :new
       response.should have_selector("input[name='user[password_confirmation]'][type='password']")
     end
+    
+    describe "signed-in user" do
+      before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+      end
+      
+      it "should redirect to root" do
+       get :new
+       response.should redirect_to(root_path)      
+      end      
+    end
   end
   
   describe "POST 'create'" do
@@ -179,7 +191,20 @@ describe UsersController do
         post :create, :user => @attr
         controller.should be_signed_in
       end
+    end # Success
+    
+    describe "signed-in user" do
+      before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+      end
+      
+      it "should redirect to root" do
+       post :create
+       response.should redirect_to(root_path)      
+      end      
     end
+    
   end # end POST 'create'
   
   describe "GET 'edit'" do
