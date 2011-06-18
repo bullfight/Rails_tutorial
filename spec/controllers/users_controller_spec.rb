@@ -13,14 +13,12 @@ describe UsersController do
       end
     end 
     
-    describe "for signed-in users" do
+    describe "for non-admin signed-in users" do
       
       before(:each) do
         @user = test_sign_in(Factory(:user))
-        second = Factory(:user, :name => "Bob", :email => "another@example.com")
-        third  = Factory(:user, :name => "Ben", :email => "another@example.net")
 
-        @users = [@user, second, third]
+        @users = [@user]
         30.times do 
           @users << Factory(:user, :email => Factory.next(:email))
         end
@@ -41,7 +39,16 @@ describe UsersController do
         @users[0..2].each do |user|
           response.should have_selector("li", :content => user.name)
         end
-      end 
+      end
+      
+      it "should not have delete link on any users" do
+        get :index
+        @users[0..2].each do |user|
+          response.should_not have_selector "a",
+            :href => user_path(user),
+            :"data-method" => "delete"
+        end      
+      end
       
       it "should paginate users" do
         get :index
@@ -49,7 +56,29 @@ describe UsersController do
         response.should have_selector("span.disabled", :content => "Previous")
         response.should have_selector("a", :href => "/users?page=2", :content => "Next")      
       end
-    end #signed in users    
+    end #signed in users 
+    
+    describe "as an admin user" do
+      before(:each) do
+        admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        test_sign_in(admin)
+        
+        @users = [admin]
+        30.times do 
+          @users << Factory(:user, :email => Factory.next(:email))
+        end
+      end
+      
+      it "should have delete link for each user" do
+        get :index
+        @users[0..2].each do |user|
+          response.should have_selector "a",
+          :href => user_path(user), 
+          :"data-method" => "delete"
+        end
+      end
+    end
+       
   end # get index
   
   describe "GET 'show'" do
@@ -352,7 +381,7 @@ describe UsersController do
        it "should rediret to the users page" do
         delete :destroy, :id => @user
         response.should redirect_to(users_path)
-       end    
+       end       
     end #as admin  
   end # Delete 'destroy'
 
