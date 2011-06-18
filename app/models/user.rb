@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   validates :password, :presence => true,
                        :confirmation => true,
                        :length => { :within => 6..40 }
+  validates :password_confirmation, :presence => true
   
   before_save :encrypt_password
   
@@ -33,10 +34,16 @@ class User < ActiveRecord::Base
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
-  
+    
   def self.authenticate(email, submitted_password)
-    user = find_by_email(email)
-    user && user.has_password?(submitted_password) ? user : nil
+   user = find_by_email(email)
+   return nil  if user.nil?
+   return user if user.has_password?(submitted_password)
+  end
+
+  def self.authenticate_with_salt(id, cookie_salt)
+   user = find_by_id(id)
+   (user && user.salt == cookie_salt) ? user : nil
   end
   
   private
