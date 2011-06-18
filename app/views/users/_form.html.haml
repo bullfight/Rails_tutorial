@@ -5,4 +5,5 @@
     = form.input :email
     = form.input :password
     = form.input :password_confirmation, :label => "Confirmation"
-  = form.buttons
+  = form.buttons do
+    = form.commit_button @title
