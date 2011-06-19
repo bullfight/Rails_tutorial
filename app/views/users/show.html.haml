@@ -7,8 +7,8 @@
         
       - unless @user.microposts.empty?
         %table{ :class => "microposts", :summary => "User microposts"}
-        = render @microposts
-        = paginate @microposts
+          = render @microposts
+          = paginate @microposts
         
     %td{:class => "sidebar round"}
       %strong Name
