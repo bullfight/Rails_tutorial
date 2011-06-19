@@ -1,2 +1,10 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+
+  $("textarea#micropost_content").keydown(function() {
+    $("span.count").text( "[" + (140 - this.value.length) + "] characters" );
+  });
+  $("textarea#micropost_content").keyup(function() {
+    $("span.count").text( "[" + (140 - this.value.length) + "] characters" );
+  });
+  
+});
