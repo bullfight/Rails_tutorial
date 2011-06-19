@@ -259,10 +259,11 @@ div.user_info a {
 }
 
 div.user_info span.user_name {
-  position: absolute;
+  position: relative;
 }
 
 div.user_info span.microposts {
+  position: relative;
   font-size: 80%;
 }
 
