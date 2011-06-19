@@ -6,8 +6,9 @@
       %td.main
         %h1.micropost What's up?
         = render 'shared/micropost_form'
+        = render 'shared/feed'
       %td{ :class => "sidebar round"}
-        = render 'shared/user_info'
+        = render 'shared/user_info'        
 - else
   %p 
     This is the home page for the 
