@@ -42,7 +42,7 @@ describe Relationship do
     end
     
     it "should require a followed_id" do
-      @relationship.followed_id -= nil
+      @relationship.followed_id = nil
       @relationship.should_not be_valid
     end
   end # validations
