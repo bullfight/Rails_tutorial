@@ -190,6 +190,10 @@ describe User do
     it "should have a relationships method" do
       @user.should respond_to(:relationships)
     end
+    
+    it "should have a following method" do
+      @user.should respond_to(:following)
+    end
   
   end #relationship
   
