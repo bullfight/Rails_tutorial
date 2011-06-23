@@ -358,6 +358,17 @@ body.one-col #content {
   overflow-x: hidden;
 }
 
+/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body {
+  font-size: 100%;
+  line-height: 1.438em;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html > body {
+  font-size: 16px;
+}
+
 /* line 51, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
@@ -624,7 +635,7 @@ p.incr,
   font-weight: normal;
 }
 
-/* line 4, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 6, ../../app/stylesheets/partials/_application_refactor.scss */
 a {
   color: inherit;
   text-decoration: inherit;
@@ -635,14 +646,14 @@ a:active, a:focus {
   outline: none;
 }
 
-/* line 14, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 16, ../../app/stylesheets/partials/_application_refactor.scss */
 .fancy-button-base, #content_header nav button, #content_footer nav button, #micropost_form input#micropost_submit, #microposts .pagination .next, #microposts .pagination .prev {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
   font-size: 14px;
   line-height: 1.2em;
   padding: 0.3em 1em;
@@ -769,14 +780,14 @@ a:active, a:focus {
   color: #222222;
 }
 
-/* line 23, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 25, ../../app/stylesheets/partials/_application_refactor.scss */
 .base-style, #content_header nav, #content_footer nav, #micropost_form, #microposts {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
   background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
@@ -789,7 +800,7 @@ a:active, a:focus {
   *zoom: 1;
 }
 
-/* line 37, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 39, ../../app/stylesheets/partials/_application_refactor.scss */
 #header nav {
   margin: 0;
   padding: 0;
@@ -818,8 +829,10 @@ a:active, a:focus {
   background-image: linear-gradient(top, #eeeeee, #dddddd);
   border: 1px solid #ccc;
 }
-/* line 43, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 45, ../../app/stylesheets/partials/_application_refactor.scss */
 #header nav ul li {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
   list-style-image: none;
   list-style-type: none;
   margin-left: 0px;
@@ -842,11 +855,11 @@ a:active, a:focus {
   padding-right: 0;
 }
 
-/* line 50, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 53, ../../app/stylesheets/partials/_application_refactor.scss */
 #content_header nav, #content_footer nav {
   padding: .5em;
 }
-/* line 59, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 62, ../../app/stylesheets/partials/_application_refactor.scss */
 #content_header nav a, #content_footer nav a {
   color: inherit;
   text-decoration: inherit;
@@ -857,7 +870,7 @@ a:active, a:focus {
   outline: none;
 }
 
-/* line 67, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 70, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .field {
   display: inline;
   float: left;
@@ -865,7 +878,7 @@ a:active, a:focus {
   margin: 0 -25.417px 1.5em 25.417px;
   display: inline;
   float: left;
-  margin-right: 10px;
+  margin-right: 0;
   width: 498.333px;
   margin-bottom: -0.5em;
 }
@@ -892,8 +905,10 @@ a:active, a:focus {
   border-width: 1px;
   border-style: solid;
 }
-/* line 72, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 75, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .field textarea#micropost_content {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
   border-width: 4px;
   background-color: #fff;
   font-size: 22px;
@@ -910,7 +925,7 @@ a:active, a:focus {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 86, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 90, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .actions {
   display: inline;
   float: left;
@@ -918,29 +933,31 @@ a:active, a:focus {
   margin: 0 -25.417px 1.5em 25.417px;
   display: inline;
   float: left;
-  margin-right: 10px;
+  margin-right: 0;
   width: 498.333px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #micropost_form .actions {
   overflow-x: hidden;
 }
-/* line 90, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 94, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .actions .count {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
   padding-left: 5px;
   font-size: 18px;
 }
-/* line 95, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 100, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .actions .count.lengtherror {
   color: darkred;
 }
-/* line 99, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 104, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form input#micropost_submit {
   display: inline;
   float: right;
 }
 
-/* line 108, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 113, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .pagination {
   padding-top: 20px;
   display: inline;
@@ -949,99 +966,115 @@ a:active, a:focus {
   margin: 0 -25.417px 1.5em 25.417px;
   display: inline;
   float: left;
-  margin-right: 10px;
+  margin-right: 0;
   width: 498.333px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #microposts .pagination {
   overflow-x: hidden;
 }
-/* line 113, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 118, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .pagination .next {
+  overflow: hidden;
+  *zoom: 1;
   display: inline;
   float: right;
+}
+/* line 124, ../../app/stylesheets/partials/_application_refactor.scss */
+#microposts .pagination .prev {
   overflow: hidden;
   *zoom: 1;
-}
-/* line 119, ../../app/stylesheets/partials/_application_refactor.scss */
-#microposts .pagination .prev {
   display: inline;
   float: left;
-  overflow: hidden;
-  *zoom: 1;
 }
-/* line 125, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 130, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .pagination span.disabled {
   display: none;
 }
-/* line 129, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 134, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .feed-item {
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
-  background-image: -webkit-linear-gradient(left top, #eeeeee, #dddddd);
-  background-image: -moz-linear-gradient(left top, #eeeeee, #dddddd);
-  background-image: -o-linear-gradient(left top, #eeeeee, #dddddd);
-  background-image: -ms-linear-gradient(left top, #eeeeee, #dddddd);
-  background-image: linear-gradient(left top, #eeeeee, #dddddd);
   display: inline;
   float: left;
   position: relative;
   margin: 0 -25.417px 1.5em 25.417px;
   display: inline;
   float: left;
-  margin-right: 10px;
+  margin-right: 0;
   width: 498.333px;
-  -moz-border-radius-topright: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -o-border-top-right-radius: 5px;
-  -ms-border-top-right-radius: 5px;
-  -khtml-border-top-right-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -o-border-bottom-right-radius: 5px;
-  -ms-border-bottom-right-radius: 5px;
-  -khtml-border-bottom-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-color: #eee;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(left top, #eeeeee, #dddddd);
+  background-image: -moz-linear-gradient(left top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(left top, #eeeeee, #dddddd);
+  background-image: -ms-linear-gradient(left top, #eeeeee, #dddddd);
+  background-image: linear-gradient(left top, #eeeeee, #dddddd);
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
+  -ms-border-top-right-radius: 3px;
+  -khtml-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -o-border-bottom-right-radius: 3px;
+  -ms-border-bottom-right-radius: 3px;
+  -khtml-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #microposts .feed-item {
   overflow-x: hidden;
 }
-/* line 136, ../../app/stylesheets/partials/_application_refactor.scss */
-#microposts .left {
+/* line 140, ../../app/stylesheets/partials/_application_refactor.scss */
+#microposts .feed-item .left {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 91.667px;
-  height: 80px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #microposts .left {
+* html #microposts .feed-item .left {
   overflow-x: hidden;
 }
-/* line 141, ../../app/stylesheets/partials/_application_refactor.scss */
-#microposts .right {
+/* line 144, ../../app/stylesheets/partials/_application_refactor.scss */
+#microposts .feed-item .right {
   overflow: hidden;
   *zoom: 1;
-  height: 80px;
+  margin-top: 5px;
   display: inline;
   float: left;
   margin-right: 0;
   width: 396.667px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #microposts .right {
+* html #microposts .feed-item .right {
   overflow-x: hidden;
 }
+/* line 152, ../../app/stylesheets/partials/_application_refactor.scss */
+#microposts .feed-item .right .item-row .item-user {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-weight: bold;
+}
+/* line 157, ../../app/stylesheets/partials/_application_refactor.scss */
+#microposts .feed-item .right .item-row .item-content {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+}
+/* line 161, ../../app/stylesheets/partials/_application_refactor.scss */
+#microposts .feed-item .right .item-row .details {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  color: #666666;
+  font-size: 14px;
+}
 
-/* line 156, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 177, ../../app/stylesheets/partials/_application_refactor.scss */
 #flash_notice {
   background-color: #ccffcc;
   border: solid 1px #66cc66;
 }
 
-/* line 161, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 182, ../../app/stylesheets/partials/_application_refactor.scss */
 #flash_error,
 #flash_alert {
   padding: 0.8em;
@@ -1057,7 +1090,7 @@ a:active, a:focus {
   color: #8a1f11;
 }
 
-/* line 167, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 188, ../../app/stylesheets/partials/_application_refactor.scss */
 #user_info {
   margin: 0;
   padding: 0;
@@ -1065,7 +1098,7 @@ a:active, a:focus {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 170, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 191, ../../app/stylesheets/partials/_application_refactor.scss */
 #user_info ul {
   margin: 0;
   padding: 0;
@@ -1097,7 +1130,7 @@ a:active, a:focus {
 #user_info ul li.last {
   padding-right: 0;
 }
-/* line 175, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 196, ../../app/stylesheets/partials/_application_refactor.scss */
 #user_info li {
   list-style-image: none;
   list-style-type: none;

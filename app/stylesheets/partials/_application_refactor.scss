@@ -1,3 +1,5 @@
+@include establish-baseline;
+
 @include blueprint-typography-defaults;
 @include fancy-type;
 
@@ -13,7 +15,7 @@ a{@include unstyled-link;}
 
 .fancy-button-base{
   $fb-font-size: 14px;
-  $fb-radius: 5px;
+  $fb-radius: 3px;
   @include fancy-button;
   vertical-align: middle;
   margin: 0 2px;
@@ -21,7 +23,7 @@ a{@include unstyled-link;}
 }
 
 .base-style{
-  @include border-radius(5px);    
+  @include border-radius(3px);    
   @include background-image(linear-gradient(top, #eee, #dddddd));
   border: 1px solid #ccc;
   @include prepend-top(20px);
@@ -30,7 +32,7 @@ a{@include unstyled-link;}
 
 @mixin content-position{
   @include push(1);
-  @include column(20);
+  @include column(20, true);
 }
 
 #header{
@@ -41,6 +43,7 @@ a{@include unstyled-link;}
     @include background-image(linear-gradient(top, #eee, #dddddd));
     border: 1px solid #ccc;
     ul li {
+      @include normal-text;
       @include horizontal-list-item;
     }  
   }
@@ -70,6 +73,7 @@ a{@include unstyled-link;}
     @include blueprint-form-borders(#ddd, #fff, #eee);
   }
   .field textarea#micropost_content{
+    @include normal-text;
     border-width:4px;
     background-color:#fff;
     font-size:22px;
@@ -88,6 +92,7 @@ a{@include unstyled-link;}
   }
   
   .actions .count{
+    @include normal-text;
     padding-left: 5px;
     font-size: 18px;
   }
@@ -112,14 +117,14 @@ a{@include unstyled-link;}
   
   .pagination .next{
     @extend .fancy-button-base;
-    @include float-right;
     @include clearfix;
+    @include float-right;    
   }
   
   .pagination .prev{
     @extend .fancy-button-base;
-    @include float-left;
     @include clearfix;
+    @include float-left;    
   }
   
   .pagination span.disabled{
@@ -127,21 +132,37 @@ a{@include unstyled-link;}
   }
   
   .feed-item {
-    @include background-image(linear-gradient(left top, #eee, #dddddd));
     @include content-position;
-    @include border-right-radius(5px);
-    background-color:#eee;
+    @include background-image(linear-gradient(left top, #eee, #dddddd));    
+    @include border-right-radius(3px);
   }
   
-  .left {
+  .feed-item .left {
     @include column(4);
-    height:80px;
   }
   
-  .right {
+  .feed-item .right {
     @include clearfix;
-    height: 80px;
+    @include prepend-top(5px);
+    
     @include column(16, true);   
+  }
+  
+  .feed-item .right .item-row {
+    .item-user {
+      @include normal-text;
+      font-weight:bold;
+    }
+      
+    .item-content {
+      @include normal-text;
+    }
+    
+    .details {
+      @include normal-text;
+      @include quiet;
+      font-size:14px;
+    }
   }
 }
 

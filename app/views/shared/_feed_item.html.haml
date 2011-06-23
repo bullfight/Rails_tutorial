@@ -6,12 +6,13 @@
       .item-user
         = link_to feed_item.user.name, feed_item.user
     .item-row
-      .feed-content
+      .item-content
         = wrap(feed_item.content)
     .item-row
-      %span.item-timestamp
-        = "Posted #{time_ago_in_words(feed_item.created_at)} ago."
-      |
-      %span.item-delete
-        -if current_user?(feed_item.user)
-          = link_to "delete", feed_item, :method => :delete, :confirm => "You sure?", :title => feed_item.content
+      .details
+        %span.item-timestamp
+          = "Posted #{time_ago_in_words(feed_item.created_at)} ago."
+        |
+        %span.item-delete
+          -if current_user?(feed_item.user)
+            = link_to "delete", feed_item, :method => :delete, :confirm => "You sure?", :title => feed_item.content
