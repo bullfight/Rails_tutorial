@@ -1,11 +1,17 @@
-%tr
-  %td.micropost
-    %span.user
-      = link_to feed_item.user.name, feed_item.user
-    %span.content= wrap(feed_item.content)
-    %span.timestamp
-      Posted
-      = time_ago_in_words(feed_item.created_at)
-      ago.
-  -if current_user?(feed_item.user)
-    %td= link_to "delete", feed_item, :method => :delete, :confirm => "You sure?", :title => feed_item.content
+.feed-item
+  .left
+    = gravatar_for feed_item.user, :size => 80
+  .right  
+    .item-row    
+      .item-user
+        = link_to feed_item.user.name, feed_item.user
+    .item-row
+      .feed-content
+        = wrap(feed_item.content)
+    .item-row
+      %span.item-timestamp
+        = "Posted #{time_ago_in_words(feed_item.created_at)} ago."
+      |
+      %span.item-delete
+        -if current_user?(feed_item.user)
+          = link_to "delete", feed_item, :method => :delete, :confirm => "You sure?", :title => feed_item.content

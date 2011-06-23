@@ -6,10 +6,15 @@
 
 // Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
+@import "compass";
+@import "blueprint/fancy-type";
+@import "fancy-buttons";
 
 // Combine the partials into a single screen stylesheet.
 @import "partials/page";
 @import "partials/form";
-@import "partials/two_col";
-//@import "partials/application"; 
+@import "partials/one_col";
 @import "partials/application_refactor"; 
+//@import "partials/application"; 
+
+

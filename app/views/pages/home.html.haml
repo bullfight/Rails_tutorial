@@ -1,13 +1,9 @@
-- title @title
-
 - if signed_in?
-  #content
-    %h1.micropost What's up?
-    = render 'shared/micropost_form'
+  #micropost_form
+    = render 'shared/micropost_form'    
+  #microposts
     = render 'shared/feed'
-  #sidebar
-    = render 'shared/user_info'
-    = render 'shared/stats'
+    
 - else
   %p 
     This is the home page for the 

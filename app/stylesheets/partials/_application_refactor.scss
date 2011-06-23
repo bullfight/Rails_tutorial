@@ -1,3 +1,179 @@
+@include blueprint-typography-defaults;
+@include fancy-type;
+
+a{@include unstyled-link;}
+
 #container {
-  @include showgrid;
+  //@include showgrid;  
+}
+
+#content {
+  //background-color: #fff;
+}
+
+.fancy-button-base{
+  $fb-font-size: 14px;
+  $fb-radius: 5px;
+  @include fancy-button;
+  vertical-align: middle;
+  margin: 0 2px;
+  @include fancy-button-colors-matte(#ddd);
+}
+
+.base-style{
+  @include border-radius(5px);    
+  @include background-image(linear-gradient(top, #eee, #dddddd));
+  border: 1px solid #ccc;
+  @include prepend-top(20px);
+  @include clearfix;
+}
+
+@mixin content-position{
+  @include push(1);
+  @include column(20);
+}
+
+#header{
+  nav {
+    @include horizontal-list-container;    
+    @include float-right;    
+    @include border-bottom-radius(5px);    
+    @include background-image(linear-gradient(top, #eee, #dddddd));
+    border: 1px solid #ccc;
+    ul li {
+      @include horizontal-list-item;
+    }  
+  }
+}
+
+#content_header, #content_footer {  
+  nav {
+    @extend .base-style;
+    padding:.5em;
+  }
+  
+  nav button {
+    @extend .fancy-button-base;
+  }
+  
+  nav a {
+    @include unstyled-link;
+  }
+}
+
+#micropost_form {
+  @extend .base-style;  
+      
+  .field{
+    @include content-position;
+    @include append-bottom(-.5em);
+    @include blueprint-form-borders(#ddd, #fff, #eee);
+  }
+  .field textarea#micropost_content{
+    border-width:4px;
+    background-color:#fff;
+    font-size:22px;
+    height: 110px;
+    width: 481px;
+    
+    $default-box-shadow-blur: 10px;
+    $default-box-shadow-inset: true;
+    $default-box-shadow-color: #505050;
+    @include box-shadow;
+    @include border-radius;
+  }
+  
+  .actions {
+    @include content-position;
+  }
+  
+  .actions .count{
+    padding-left: 5px;
+    font-size: 18px;
+  }
+  
+  .actions .count.lengtherror{
+    color: darkred;
+  }
+  
+  input#micropost_submit{
+    @extend .fancy-button-base;
+    @include float-right;
+  }
+}
+    
+#microposts {
+  @extend .base-style;
+  
+  .pagination{  
+    padding-top:20px;
+    @include content-position;
+  }
+  
+  .pagination .next{
+    @extend .fancy-button-base;
+    @include float-right;
+    @include clearfix;
+  }
+  
+  .pagination .prev{
+    @extend .fancy-button-base;
+    @include float-left;
+    @include clearfix;
+  }
+  
+  .pagination span.disabled{
+    display:none;
+  }
+  
+  .feed-item {
+    @include background-image(linear-gradient(left top, #eee, #dddddd));
+    @include content-position;
+    @include border-right-radius(5px);
+    background-color:#eee;
+  }
+  
+  .left {
+    @include column(4);
+    height:80px;
+  }
+  
+  .right {
+    @include clearfix;
+    height: 80px;
+    @include column(16, true);   
+  }
+}
+
+
+#error_explanation,
+#flash_notice,
+#flash_error,
+#flash_alert {
+  @extend .position-content;
+}
+
+#flash_notice {
+  background-color: #ccffcc;
+  border: solid 1px #66cc66; }
+
+#flash_error,
+#flash_alert {
+  @include error
+}
+
+
+
+#user_info {
+  @include horizontal-list-container;  
+  
+  ul {
+    @include horizontal-list;
+    padding: 1em;
+  }
+
+  li {
+    @include horizontal-list-item;
+  }
+  
 }

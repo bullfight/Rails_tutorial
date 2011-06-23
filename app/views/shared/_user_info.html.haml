@@ -1,4 +1,19 @@
-%div.user_info
-  %a{:href => user_path(current_user)}
-    %span.user_name= current_user.name
-    %span.microposts= pluralize(current_user.microposts.count, "micropost")
+- @user ||= current_user
+%ul
+  %li
+    %a{:href => user_path(current_user)}
+      %span
+        .user_name
+          = current_user.name
+          &#8212;
+          = pluralize(current_user.microposts.count, "micropost")
+  |      
+  %li
+    %a{:href => following_user_path(@user)}
+      %span#following.stat
+        = "#{@user.following.count} following"
+  |
+  %li
+    %a{:href => followers_user_path(@user)}
+      %span#followers.stat
+        = pluralize(@user.followers.count, "follower")
