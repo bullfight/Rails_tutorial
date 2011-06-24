@@ -1,3 +1,49 @@
+@mixin base-style{
+  @include border-radius(3px);
+  @include background-image(linear-gradient(top, #eee, #dddddd));
+  border: 1px solid #ccc;
+  @include prepend-top(20px);
+  @include clearfix;
+  
+  hr{
+     @include colruler(#fff);
+     margin:0px;
+   }
+   
+  hr.last{
+    display:none;
+  }
+}
+
+@mixin content-position{
+  @include column(22, true);
+}
+
+@mixin pagination{
+  .pagination{  
+    padding-top:20px;
+    @include content-position;
+    @include push(1);
+    @include column(20);
+  }
+  
+  .pagination .next{
+    @extend .fancy-button-base;
+    @include clearfix;
+    @include float-right;    
+  }
+
+  .pagination .prev{
+    @extend .fancy-button-base;
+    @include clearfix;
+    @include float-left;    
+  }
+  
+  .pagination span.disabled{
+    display:none;
+  }
+}
+
 @include establish-baseline;
 
 @include blueprint-typography-defaults;
@@ -10,7 +56,7 @@ a{@include unstyled-link;}
 }
 
 #content {
-  //background-color: #fff;
+
 }
 
 .fancy-button-base{
@@ -22,23 +68,59 @@ a{@include unstyled-link;}
   @include fancy-button-colors-matte(#ddd);
 }
 
-.base-style{
-  @include border-radius(3px);    
-  @include background-image(linear-gradient(top, #eee, #dddddd));
-  border: 1px solid #ccc;
-  @include prepend-top(20px);
-  @include clearfix;
+.item {  
+  @include content-position;
+  //@include background-image(linear-gradient(left top, #eee, #dddddd));
+  @include border-right-radius(3px);
+  @include normal-text;
+  padding-top:10px;
+  padding-bottom:10px;
+    
+  .full {
+    @include push(1);
+    @include column(20, true);
+  }
+
+  .left {
+    @include push(1);
+    @include column(4);
+  }
+
+  .right {
+    @include clearfix;
+    @include column(16, true);   
+  }
+
+  .item-user {
+    font-weight:bold;
+  }
+  
+  .item-content {
+  }
+
+  .details {
+    @include quiet;
+    font-size:14px;
+  }
+  
+  h2 {
+    @include prepend-top(5px);
+  }
+  
 }
 
-@mixin content-position{
-  @include push(1);
-  @include column(20, true);
-}
+#header{  
 
-#header{
+  #logo {
+    @include normal-text;
+    @include clearfix;
+    margin-bottom:-70px;
+  }
+  
   nav {
-    @include horizontal-list-container;    
-    @include float-right;    
+    @include float-right;
+    @include clearfix;
+    @include horizontal-list-container;        
     @include border-bottom-radius(5px);    
     @include background-image(linear-gradient(top, #eee, #dddddd));
     border: 1px solid #ccc;
@@ -49,10 +131,11 @@ a{@include unstyled-link;}
   }
 }
 
-#content_header, #content_footer {  
+#content_header, #footer { 
   nav {
-    @extend .base-style;
+    @include base-style;
     padding:.5em;
+    @include clearfix;
   }
   
   nav button {
@@ -65,33 +148,33 @@ a{@include unstyled-link;}
 }
 
 #micropost_form {
-  @extend .base-style;  
-      
+  @include base-style;  
+  
   .field{
-    @include content-position;
+    @include push(1);
+    @include content-position;    
     @include append-bottom(-.5em);
     @include blueprint-form-borders(#ddd, #fff, #eee);
   }
   .field textarea#micropost_content{
+    @include box-shadow;
+    @include border-radius;
     @include normal-text;
+    
     border-width:4px;
     background-color:#fff;
     font-size:22px;
     height: 110px;
-    width: 481px;
-    
-    $default-box-shadow-blur: 10px;
-    $default-box-shadow-inset: true;
-    $default-box-shadow-color: #505050;
-    @include box-shadow;
-    @include border-radius;
+    width: 481px;    
   }
   
   .actions {
-    @include content-position;
+    @include push(1);
+    @include column(20);
+
   }
   
-  .actions .count{
+  .actions .count{    
     @include normal-text;
     padding-left: 5px;
     font-size: 18px;
@@ -106,95 +189,139 @@ a{@include unstyled-link;}
     @include float-right;
   }
 }
-    
+
+#paginate {
+  @include base-style;
+  @include pagination;  
+}
+
 #microposts {
-  @extend .base-style;
+  @include base-style;
   
-  .pagination{  
-    padding-top:20px;
-    @include content-position;
+  .feed-item {    
+    @extend .item;
+    margin-bottom:0px;
   }
   
-  .pagination .next{
-    @extend .fancy-button-base;
-    @include clearfix;
-    @include float-right;    
-  }
-  
-  .pagination .prev{
-    @extend .fancy-button-base;
-    @include clearfix;
-    @include float-left;    
-  }
-  
-  .pagination span.disabled{
-    display:none;
-  }
-  
-  .feed-item {
-    @include content-position;
-    @include background-image(linear-gradient(left top, #eee, #dddddd));    
-    @include border-right-radius(3px);
-  }
-  
-  .feed-item .left {
-    @include column(4);
-  }
-  
-  .feed-item .right {
-    @include clearfix;
-    @include prepend-top(5px);
+  .first{
     
-    @include column(16, true);   
   }
-  
-  .feed-item .right .item-row {
-    .item-user {
-      @include normal-text;
-      font-weight:bold;
-    }
-      
-    .item-content {
-      @include normal-text;
-    }
+  .left{
+    height:80px;
     
-    .details {
-      @include normal-text;
-      @include quiet;
-      font-size:14px;
-    }
+  }
+  .highlight{
+    $highlight-color: #ccc;
+    @include highlight;
   }
 }
 
-
-#error_explanation,
-#flash_notice,
-#flash_error,
-#flash_alert {
-  @extend .position-content;
-}
-
-#flash_notice {
-  background-color: #ccffcc;
-  border: solid 1px #66cc66; }
-
-#flash_error,
-#flash_alert {
-  @include error
-}
-
-
-
-#user_info {
-  @include horizontal-list-container;  
+#users {
+  @include base-style;
+  @include pagination;
   
-  ul {
-    @include horizontal-list;
-    padding: 1em;
+  .user-item {
+    @extend .item;
+    
+    height: 50px;  
   }
-
-  li {
-    @include horizontal-list-item;
+  .left{
+    height: 50px;
   }
   
+  .highlight{
+    $highlight-color: #ccc;
+    @include highlight;
+  }
+  
+}
+
+#profile {
+  @include base-style;
+    
+  .user-item{
+   
+    @extend .item;
+    @include background-image(none);
+    @include prepend-top(10px);
+    @include append-bottom(10px);
+  }
+  
+    
+  .user-item .left{
+    height: 80px;
+  }
+  
+  .user-item .right{
+
+  }
+  
+  .actions.follow{
+    margin:-1px;
+  }
+  
+  .actions.unfollow{
+    margin-left:-9px;
+  }
+  input#relationship_submit {
+    @extend .fancy-button-base;
+  }
+  
+}
+
+#main{
+  @include base-style;
+}
+
+#signin, #settings {
+
+  @include column(22);
+  @include base-style;
+  
+  form {
+    @include push(1);
+    @include column(20,true);
+    @include prepend-top(30px);
+  }
+  
+  .field{
+    @include push(0);
+    @include column(20);
+    @include prepend-top(-15px);
+    @include normal-text;
+  }
+
+  .field label, .field input{
+    width: 489px;
+    font-size: 22px;
+     @include blueprint-form-borders(#ddd, #fff, #eee);
+    
+  }
+  
+  .field input{    
+    $default-box-shadow-blur: 7px;
+    @include blueprint-form-borders(#ddd, #fff, #eee);
+    @include box-shadow;
+    @include border-radius;
+    @include normal-text;
+    border-width:4px;
+    background-color:#fff;
+  }
+  
+  input#session_submit, input#user_submit{
+    margin-top: -15px;
+    margin-right: 0px;
+    @extend .fancy-button-base;
+    @include float-right;
+  }
+}
+
+#flash{  
+  @include normal-text;
+  @include prepend-top(20px);
+  @include blueprint-interaction;
+  
+  .success, .notice, .error {
+    @include border-radius(3px);
+  }
 }

@@ -1,3 +1,5 @@
 -unless @feed_items.empty?
-  = render :partial => 'shared/feed_item', :collection => @feed_items
-  
+  #microposts
+    = render :partial => 'shared/feed_item', :collection => @feed_items
+  #paginate
+    = paginate @feed_items

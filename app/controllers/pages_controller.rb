@@ -4,7 +4,12 @@ class PagesController < ApplicationController
     @title = "Home"
     if signed_in?
       @micropost = Micropost.new if signed_in?
-      @feed_items = current_user.feed.page(params[:page]).per(1)
+      @feed_items = current_user.feed.page(params[:page]).per(5)
+    end
+    
+    respond_to do |format|  
+      format.html
+      format.js   { render :nothing => true }  
     end
   end
   

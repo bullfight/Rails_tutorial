@@ -10,6 +10,11 @@ $content-columns: ceil($blueprint-grid-columns - 2);
 // Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
 $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
 
-
+// Vertical Rhythm
 $base-font-size: 16px;
 $base-line-height: 23px;
+
+// Forms
+$default-box-shadow-blur: 10px;
+$default-box-shadow-inset: true;
+$default-box-shadow-color: #505050;

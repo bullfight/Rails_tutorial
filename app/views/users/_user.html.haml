@@ -1,6 +1,12 @@
-- @users.each do |user|
-  %li
-    = link_to user.name, user
-    |
-    - if current_user.admin?
-      = link_to "delete", user, :method => :delete, :confirm => "Are you sure?", :title => "Delete #{user.name}"
+.user-item
+  .left
+    = gravatar_for user, :size => 50
+  .right
+    .item-row
+      .item-user
+        = link_to user.name, user
+    .item-row
+      .item-details
+        - if current_user.admin?
+          = link_to "delete", user, :method => :delete, :confirm => "Are you sure?", :title => "Delete #{user.name}"
+%hr          

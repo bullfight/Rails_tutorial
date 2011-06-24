@@ -1,0 +1,48 @@
+@import "blueprint";
+@import "compass";
+@import "blueprint/fancy-type";
+@import "fancy-buttons";
+
+form.formtastic {
+  padding-top: 20px;
+  @include normal-text;
+  @include push(1);
+  @include column(10);
+  
+  fieldset.inputs > ol > li > label {
+    text-align:right;
+    
+  }
+  fieldset.inputs > ol > li > input {
+    @include push(1);
+    @include blueprint-form-borders(#ddd, #fff, #eee);
+
+    @include normal-text;
+    
+    height: 24px;
+  }
+}
+
+
+@mixin content-position{
+  @include column(22, true);
+}
+
+
+.field{
+  @include push(1);
+  @include content-position;    
+  @include append-bottom(-.5em);
+  @include blueprint-form-borders(#ddd, #fff, #eee);
+}
+.field textarea#micropost_content{
+  @include box-shadow;
+  @include border-radius;
+  @include normal-text;
+  
+  border-width:4px;
+  background-color:#fff;
+  font-size:22px;
+  height: 110px;
+  width: 481px;    
+}
