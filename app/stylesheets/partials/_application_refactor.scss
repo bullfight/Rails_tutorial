@@ -49,7 +49,12 @@
 @include blueprint-typography-defaults;
 @include fancy-type;
 
-a{@include unstyled-link;}
+a{
+  @include hover-link;
+  $normal: #06c;
+  $visited: #06c;
+  @include link-colors(#06c, #06c, #06c);
+  }
 
 #container {
   //@include showgrid;  
