@@ -2,10 +2,11 @@
   = form_for(@user) do |f|
     = render 'shared/error_messages', :object => f.object
     
-    .gravatar
+    .field
+      
       - if signed_in?
-        = gravatar_for @user
-        %a{ :href => "http://gravatar.com/emails"} change
+        .label= gravatar_for @user, :size => 80
+        %button{ :href => "http://gravatar.com/emails"} change
       
     .field
       = f.label :name

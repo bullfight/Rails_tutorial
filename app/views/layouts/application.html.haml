@@ -17,14 +17,13 @@
         #logo
           %h1=link_to "Feed Me", root_path
       
-      #content
-        - if signed_in?
-          #content_header
-            = render :partial => 'layouts/content_header'
+      #content        
+        #content_header
+          = render :partial => 'layouts/content_header'
       
-          #flash
-            - flash.each do |name, msg|
-              = content_tag :div, msg, :class => "#{name}"
+        #flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :class => "#{name}"
 
         = yield
         

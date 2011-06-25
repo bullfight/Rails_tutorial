@@ -1,4 +1,5 @@
 - title @title
 
 #users= render @users
-#paginate= paginate @users
+-unless @users.last_page? and @users.first_page?
+  #paginate= paginate @users

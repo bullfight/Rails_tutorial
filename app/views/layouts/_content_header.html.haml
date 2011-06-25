@@ -1,5 +1,5 @@
 %nav
-  %button= link_to "Feed", root_path  
+  %li= link_to "Feed", root_path  
   - if signed_in?
-    %button= link_to "Users", users_path
-    %button= link_to "Posts", current_user
+    %li= link_to "Users", users_path
+    %li= link_to "Posts", current_user

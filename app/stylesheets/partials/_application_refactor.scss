@@ -60,7 +60,7 @@ a{@include unstyled-link;}
 }
 
 .fancy-button-base{
-  $fb-font-size: 14px;
+  $fb-font-size: 15px;
   $fb-radius: 3px;
   @include fancy-button;
   vertical-align: middle;
@@ -138,7 +138,7 @@ a{@include unstyled-link;}
     @include clearfix;
   }
   
-  nav button {
+  nav li {
     @extend .fancy-button-base;
   }
   
@@ -313,6 +313,11 @@ a{@include unstyled-link;}
     margin-right: 0px;
     @extend .fancy-button-base;
     @include float-right;
+  }
+    
+  button{
+    @extend .fancy-button-base;
+    margin-left: -3px;
   }
 }
 

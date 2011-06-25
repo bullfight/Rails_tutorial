@@ -5,15 +5,13 @@
       .item-row= render 'follow_form' if signed_in?
     .right
       .item-row
-        %h2= link_to @user.name, @user
-  
+        %h2= link_to @user.name, @user  
       .item-row 
-        Microposts:
-        = @user.microposts.count
-      = render 'shared/stats'
+        = render 'shared/stats'
       
         
 - unless @user.microposts.empty?
   #microposts= render @microposts
-  #paginate= paginate @microposts      
+  -unless @microposts.last_page? and @microposts.first_page?
+    #paginate= paginate @microposts
   
