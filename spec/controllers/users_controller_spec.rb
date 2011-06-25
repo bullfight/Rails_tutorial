@@ -37,7 +37,7 @@ describe UsersController do
       it "should have an element for each user" do
         get :index
         @users[0..2].each do |user|
-          response.should have_selector("li", :content => user.name)
+          response.should have_selector("div", :content => user.name)
         end
       end
       
@@ -53,8 +53,8 @@ describe UsersController do
       it "should paginate users" do
         get :index
         response.should have_selector("div.pagination")
-        response.should have_selector("span.disabled", :content => "Previous")
-        response.should have_selector("a", :href => "/users?page=2", :content => "Next")      
+        response.should have_selector("span.disabled", :content => "Newer")
+        response.should have_selector("a", :href => "/users?page=2", :content => "Older")      
       end
     end #signed in users 
     
@@ -104,20 +104,20 @@ describe UsersController do
     
     it "should include the user's name"do
        get :show, :id => @user
-       response.should have_selector("h1", :content => @user.name)
+       response.should have_selector("h2", :content => @user.name)
      end
     
     it "should have a profile image" do
       get :show, :id => @user
-      response.should have_selector("h1>img", :class => "gravatar")
+      response.should have_selector("img", :class => "gravatar")
     end
     
     it "should show the user's microposts" do
       mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
       mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
       get :show, :id => @user
-      response.should have_selector("span.content", :content => mp1.content)
-      response.should have_selector("span.content", :content => mp2.content)
+      response.should have_selector("div.feed-item", :content => mp1.content)
+      response.should have_selector("div.feed-item", :content => mp2.content)
     end
       
   end # get 'show'
@@ -141,7 +141,7 @@ describe UsersController do
 
     it "should have an email field" do
       get :new
-      response.should have_selector("input[name='user[email]'][type='email']")
+      response.should have_selector("input[name='user[email]'][type='text']")
     end
     it "should have a password field" do
       get :new
@@ -263,7 +263,7 @@ describe UsersController do
     it "should have a link to change the Gravitar" do
       get :edit, :id => @user
       gravitar_url = "http://gravatar.com/emails"
-      response.should have_selector("a", :href => gravitar_url, :content => "change")
+      response.should have_selector("button", :href => gravitar_url, :content => "change")
     end
   
   end

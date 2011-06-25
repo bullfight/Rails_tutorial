@@ -1,7 +1,8 @@
-= form_for @micropost do |f|
-  = render 'shared/error_messages', :object => f.object
+= form_for @micropost, :html => {:class => "bp"} do |f|
+  = render 'shared/error_messages', :object => f.object  
   %div.field
-    = f.text_area :content
-  %span.count [140] characters
-  %div.actions
-    = f.submit "Submit"
+    = f.text_area :content  
+  %div.actions.light
+    = f.submit "Post"
+    .count
+      140 characters remain

@@ -27,17 +27,15 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Help")
     click_link "Contact"
     response.should have_selector('title', :content => "Contact")
-    click_link "Home"
-    response.should have_selector('title', :content => "Home")
-    click_link "Sign up now!"
-    response.should have_selector('title', :content => "Sign up")
+    #click_link "Sign up now!"
+    #response.should have_selector('title', :content => "Sign up")
   end
   
   describe "when not signed in" do
-    it "should have a signin link" do
+    it "should have a signin panel" do
       visit root_path
-      response.should have_selector("a", :href => signin_path,
-                                         :content => "Sign in")
+      response.should have_selector("div#signin")
+      response.should have_selector("input", :value => "Sign in")
     end
   end
 
@@ -57,16 +55,20 @@ describe "LayoutLinks" do
                                          :content => "Sign out")
     end
 
-    it "should have a profile link" do
+    it "should have the right links" do
       visit root_path
+      response.should have_selector("a", :href => root_path,
+        :content => "Feed")
+      response.should have_selector("a", :href => users_path,
+        :content => "Users")
       response.should have_selector("a", :href => user_path(@user),
-        :content => "Profile")
+        :content => "Posts")
     end
     
     it "should have a settings link" do
       visit root_path
       response.should have_selector("a", :href => edit_user_path(@user),
-                                         :content => "Settings")
+                                         :content => "Account Settings")
     end
   end
   
