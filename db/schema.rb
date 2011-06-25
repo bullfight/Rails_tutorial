@@ -43,4 +43,6 @@ ActiveRecord::Schema.define(:version => 20110620091648) do
     t.boolean  "admin",              :default => false
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
 end

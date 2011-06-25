@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.8.rc2'
-gem 'sqlite3', '1.3.3', :group => :development
+#gem 'sqlite3', '1.3.3', :group => :development
+gem 'pg'
 gem 'haml', '3.1.1'
 gem 'haml-rails', '0.3.4'
 gem 'sass', '3.1.1'
@@ -11,6 +12,7 @@ gem 'kaminari', '0.12.4'
 gem 'jquery-rails', '1.0.11'
 gem "compass", ">= 0.11.3"
 gem "fancy-buttons"
+gem 'faker', '0.3.1'
 
 group :development do
   gem 'pry'

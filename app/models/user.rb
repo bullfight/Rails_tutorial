@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
   end
   
   def feed
-    Micropost.where(:user_id => id).order(:created_at => "DESC")
+    Micropost.where(:user_id => id)
   end
   
   private
