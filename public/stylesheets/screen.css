@@ -61,7 +61,7 @@ a img {
 /* line 177, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, .fancy-button-base, #content_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin button, #settings button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1308745275') repeat-x bottom left;
+  background: url('/images/button_bg.png?1308993854') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -573,16 +573,23 @@ p.incr,
 
 /* line 52, ../../app/stylesheets/partials/_application_refactor.scss */
 a {
-  color: inherit;
-  text-decoration: inherit;
-  cursor: inherit;
+  text-decoration: none;
+  color: #0066cc;
 }
-/* line 6, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/typography/links/_unstyled-link.scss */
-a:active, a:focus {
-  outline: none;
+/* line 4, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+a:hover {
+  text-decoration: underline;
+}
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #0066cc;
+}
+/* line 27, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+a:active {
+  color: #0066cc;
 }
 
-/* line 62, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 67, ../../app/stylesheets/partials/_application_refactor.scss */
 .fancy-button-base, #content_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin button, #settings button {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -716,7 +723,7 @@ a:active, a:focus {
   color: #222222;
 }
 
-/* line 71, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 76, ../../app/stylesheets/partials/_application_refactor.scss */
 .item, #microposts .feed-item, #users .user-item, #profile .user-item {
   display: inline;
   float: left;
@@ -743,7 +750,7 @@ a:active, a:focus {
 * html .item, * html #microposts .feed-item, #microposts * html .feed-item, * html #users .user-item, #users * html .user-item, * html #profile .user-item, #profile * html .user-item {
   overflow-x: hidden;
 }
-/* line 79, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 84, ../../app/stylesheets/partials/_application_refactor.scss */
 .item .full, #microposts .feed-item .full, #users .user-item .full, #profile .user-item .full {
   display: inline;
   float: left;
@@ -758,7 +765,7 @@ a:active, a:focus {
 * html .item .full, * html #microposts .feed-item .full, #microposts * html .feed-item .full, * html #users .user-item .full, #users * html .user-item .full, * html #profile .user-item .full, #profile * html .user-item .full {
   overflow-x: hidden;
 }
-/* line 84, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 89, ../../app/stylesheets/partials/_application_refactor.scss */
 .item .left, #microposts .feed-item .left, #users .user-item .left, #profile .user-item .left {
   display: inline;
   float: left;
@@ -773,7 +780,7 @@ a:active, a:focus {
 * html .item .left, * html #microposts .feed-item .left, #microposts * html .feed-item .left, * html #users .user-item .left, #users * html .user-item .left, * html #profile .user-item .left, #profile * html .user-item .left {
   overflow-x: hidden;
 }
-/* line 89, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 94, ../../app/stylesheets/partials/_application_refactor.scss */
 .item .right, #microposts .feed-item .right, #users .user-item .right, #profile .user-item .right {
   overflow: hidden;
   *zoom: 1;
@@ -786,21 +793,21 @@ a:active, a:focus {
 * html .item .right, * html #microposts .feed-item .right, #microposts * html .feed-item .right, * html #users .user-item .right, #users * html .user-item .right, * html #profile .user-item .right, #profile * html .user-item .right {
   overflow-x: hidden;
 }
-/* line 94, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 99, ../../app/stylesheets/partials/_application_refactor.scss */
 .item .item-user, #microposts .feed-item .item-user, #users .user-item .item-user, #profile .user-item .item-user {
   font-weight: bold;
 }
-/* line 101, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 106, ../../app/stylesheets/partials/_application_refactor.scss */
 .item .details, #microposts .feed-item .details, #users .user-item .details, #profile .user-item .details {
   color: #666666;
   font-size: 14px;
 }
-/* line 106, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 111, ../../app/stylesheets/partials/_application_refactor.scss */
 .item h2, #microposts .feed-item h2, #users .user-item h2, #profile .user-item h2 {
   margin-top: 5px;
 }
 
-/* line 114, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 119, ../../app/stylesheets/partials/_application_refactor.scss */
 #header #logo {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -808,7 +815,7 @@ a:active, a:focus {
   *zoom: 1;
   margin-bottom: -70px;
 }
-/* line 120, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 125, ../../app/stylesheets/partials/_application_refactor.scss */
 #header nav {
   display: inline;
   float: right;
@@ -839,7 +846,7 @@ a:active, a:focus {
   background-image: linear-gradient(top, #eeeeee, #dddddd);
   border: 1px solid #ccc;
 }
-/* line 127, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 132, ../../app/stylesheets/partials/_application_refactor.scss */
 #header nav ul li {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -865,7 +872,7 @@ a:active, a:focus {
   padding-right: 0;
 }
 
-/* line 135, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 140, ../../app/stylesheets/partials/_application_refactor.scss */
 #content_header nav, #footer nav {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -903,7 +910,7 @@ a:active, a:focus {
 #content_header nav hr.last, #footer nav hr.last {
   display: none;
 }
-/* line 145, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 150, ../../app/stylesheets/partials/_application_refactor.scss */
 #content_header nav a, #footer nav a {
   color: inherit;
   text-decoration: inherit;
@@ -914,7 +921,7 @@ a:active, a:focus {
   outline: none;
 }
 
-/* line 150, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 155, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -949,7 +956,7 @@ a:active, a:focus {
 #micropost_form hr.last {
   display: none;
 }
-/* line 153, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 158, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .field {
   display: inline;
   float: left;
@@ -984,7 +991,7 @@ a:active, a:focus {
   border-width: 1px;
   border-style: solid;
 }
-/* line 159, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 164, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .field textarea#micropost_content {
   -moz-box-shadow: inset 0px 0px 10px #505050;
   -webkit-box-shadow: inset 0px 0px 10px #505050;
@@ -1004,7 +1011,7 @@ a:active, a:focus {
   height: 110px;
   width: 481px;
 }
-/* line 171, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 176, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .actions {
   display: inline;
   float: left;
@@ -1019,24 +1026,24 @@ a:active, a:focus {
 * html #micropost_form .actions {
   overflow-x: hidden;
 }
-/* line 177, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 182, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .actions .count {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
   padding-left: 5px;
   font-size: 18px;
 }
-/* line 183, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 188, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form .actions .count.lengtherror {
   color: darkred;
 }
-/* line 187, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 192, ../../app/stylesheets/partials/_application_refactor.scss */
 #micropost_form input#micropost_submit {
   display: inline;
   float: right;
 }
 
-/* line 193, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 198, ../../app/stylesheets/partials/_application_refactor.scss */
 #paginate {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1114,7 +1121,7 @@ a:active, a:focus {
   display: none;
 }
 
-/* line 198, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 203, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1149,20 +1156,20 @@ a:active, a:focus {
 #microposts hr.last {
   display: none;
 }
-/* line 201, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 206, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .feed-item {
   margin-bottom: 0px;
 }
-/* line 209, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 214, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .left {
   height: 80px;
 }
-/* line 213, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 218, ../../app/stylesheets/partials/_application_refactor.scss */
 #microposts .highlight {
   background: #cccccc;
 }
 
-/* line 219, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 224, ../../app/stylesheets/partials/_application_refactor.scss */
 #users {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1239,20 +1246,20 @@ a:active, a:focus {
 #users .pagination span.disabled {
   display: none;
 }
-/* line 223, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 228, ../../app/stylesheets/partials/_application_refactor.scss */
 #users .user-item {
   height: 50px;
 }
-/* line 228, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 233, ../../app/stylesheets/partials/_application_refactor.scss */
 #users .left {
   height: 50px;
 }
-/* line 232, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 237, ../../app/stylesheets/partials/_application_refactor.scss */
 #users .highlight {
   background: #cccccc;
 }
 
-/* line 239, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 244, ../../app/stylesheets/partials/_application_refactor.scss */
 #profile {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1287,26 +1294,26 @@ a:active, a:focus {
 #profile hr.last {
   display: none;
 }
-/* line 242, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 247, ../../app/stylesheets/partials/_application_refactor.scss */
 #profile .user-item {
   background-image: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 251, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 256, ../../app/stylesheets/partials/_application_refactor.scss */
 #profile .user-item .left {
   height: 80px;
 }
-/* line 259, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 264, ../../app/stylesheets/partials/_application_refactor.scss */
 #profile .actions.follow {
   margin: -1px;
 }
-/* line 263, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 268, ../../app/stylesheets/partials/_application_refactor.scss */
 #profile .actions.unfollow {
   margin-left: -9px;
 }
 
-/* line 272, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 277, ../../app/stylesheets/partials/_application_refactor.scss */
 #main {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1342,7 +1349,7 @@ a:active, a:focus {
   display: none;
 }
 
-/* line 276, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 281, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin, #settings {
   display: inline;
   float: left;
@@ -1385,7 +1392,7 @@ a:active, a:focus {
 #signin hr.last, #settings hr.last {
   display: none;
 }
-/* line 281, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 286, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin form, #settings form {
   display: inline;
   float: left;
@@ -1401,7 +1408,7 @@ a:active, a:focus {
 * html #signin form, * html #settings form {
   overflow-x: hidden;
 }
-/* line 287, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 292, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin .field, #settings .field {
   display: inline;
   float: left;
@@ -1419,7 +1426,7 @@ a:active, a:focus {
 * html #signin .field, * html #settings .field {
   overflow-x: hidden;
 }
-/* line 294, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 299, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin .field label, #signin .field input, #settings .field label, #settings .field input {
   width: 489px;
   font-size: 22px;
@@ -1443,7 +1450,7 @@ a:active, a:focus {
   border-width: 1px;
   border-style: solid;
 }
-/* line 301, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 306, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin .field input, #settings .field input {
   -moz-box-shadow: inset 0px 0px 7px #505050;
   -webkit-box-shadow: inset 0px 0px 7px #505050;
@@ -1479,19 +1486,19 @@ a:active, a:focus {
   border-width: 1px;
   border-style: solid;
 }
-/* line 311, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 316, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
   margin-top: -15px;
   margin-right: 0px;
   display: inline;
   float: right;
 }
-/* line 318, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 323, ../../app/stylesheets/partials/_application_refactor.scss */
 #signin button, #settings button {
   margin-left: -3px;
 }
 
-/* line 324, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 329, ../../app/stylesheets/partials/_application_refactor.scss */
 #flash {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -1561,7 +1568,7 @@ a:active, a:focus {
   background: #990000;
   color: white;
 }
-/* line 329, ../../app/stylesheets/partials/_application_refactor.scss */
+/* line 334, ../../app/stylesheets/partials/_application_refactor.scss */
 #flash .success, #flash .notice, #flash .error, #flash .alert {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
