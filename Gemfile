@@ -11,6 +11,7 @@ gem 'kaminari', '0.12.4'
 gem 'jquery-rails', '1.0.11'
 gem "compass", ">= 0.11.3"
 gem "fancy-buttons"
+gem 'faker', '0.3.1'
 
 group :development do
   gem 'pry'
