@@ -1,23 +1,17 @@
-%table{:class => "profile", :summary => "Profile Information"}
-  %tr
-    %td.main
-      %h1
-        = gravatar_for @user
-        = @user.name
+#profile
+  .user-item
+    .left
+      .item-row= gravatar_for @user, :size => 80
+      .item-row= render 'follow_form' if signed_in?
+    .right
+      .item-row
+        %h2= link_to @user.name, @user  
+      .item-row 
+        = render 'shared/stats'
       
-      = render 'follow_form' if signed_in?
         
-      - unless @user.microposts.empty?
-        %table{ :class => "microposts", :summary => "User microposts"}
-          = render @microposts
-          = paginate @microposts
-        
-    %td{:class => "sidebar round"}
-      %strong Name
-      = @user.name
-      %strong URL
-      = link_to user_path(@user), @user
-      %strong Microposts
-      = @user.microposts.count
-      = render 'shared/stats'
+- unless @user.microposts.empty?
+  #microposts= render @microposts
+  -unless @microposts.last_page? and @microposts.first_page?
+    #paginate= paginate @microposts
   

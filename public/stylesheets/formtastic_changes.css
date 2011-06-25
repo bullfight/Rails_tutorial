@@ -1,14 +1,134 @@
-/* -------------------------------------------------------------------------------------------------
+/* incase an inverted custom gradient isn't specified */
+/* line 177, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class {
+  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+  background: url('/images/button_bg.png?1308745275') repeat-x bottom left;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-style: solid;
+  font-weight: bold;
+}
+/* line 165, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+/* line 168, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class:focus {
+  outline: none;
+}
 
-Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
-This will allow you to update formtastic.css with new releases without clobbering your own changes.
+/* line 6, ../../app/stylesheets/formtastic_changes.scss */
+form.formtastic {
+  padding-top: 20px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -40px 1.5em 40px;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 390px;
+}
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html form.formtastic {
+  overflow-x: hidden;
+}
+/* line 12, ../../app/stylesheets/formtastic_changes.scss */
+form.formtastic fieldset.inputs > ol > li > label {
+  text-align: right;
+}
+/* line 16, ../../app/stylesheets/formtastic_changes.scss */
+form.formtastic fieldset.inputs > ol > li > input {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -40px 1.5em 40px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  height: 24px;
+}
+/* line 55, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+form.formtastic fieldset.inputs > ol > li > input fieldset {
+  border: 1px solid #eeeeee;
+}
+/* line 58, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+form.formtastic fieldset.inputs > ol > li > input input.text, form.formtastic fieldset.inputs > ol > li > input input.title, form.formtastic fieldset.inputs > ol > li > input input[type=email], form.formtastic fieldset.inputs > ol > li > input input[type=text], form.formtastic fieldset.inputs > ol > li > input input[type=password],
+form.formtastic fieldset.inputs > ol > li > input textarea {
+  background-color: #fff;
+  border: 1px solid #dddddd;
+}
+/* line 61, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+form.formtastic fieldset.inputs > ol > li > input input.text:focus, form.formtastic fieldset.inputs > ol > li > input input.title:focus, form.formtastic fieldset.inputs > ol > li > input input[type=email]:focus, form.formtastic fieldset.inputs > ol > li > input input[type=text]:focus, form.formtastic fieldset.inputs > ol > li > input input[type=password]:focus,
+form.formtastic fieldset.inputs > ol > li > input textarea:focus {
+  border: 1px solid white;
+}
+/* line 65, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+form.formtastic fieldset.inputs > ol > li > input select {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
 
-For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+/* line 32, ../../app/stylesheets/formtastic_changes.scss */
+.field {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -40px 1.5em 40px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 870px;
+  margin-bottom: -0.5em;
+}
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .field {
+  overflow-x: hidden;
+}
+/* line 55, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.field fieldset {
+  border: 1px solid #eeeeee;
+}
+/* line 58, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.field input.text, .field input.title, .field input[type=email], .field input[type=text], .field input[type=password], .field textarea {
+  background-color: #fff;
+  border: 1px solid #dddddd;
+}
+/* line 61, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.field input.text:focus, .field input.title:focus, .field input[type=email]:focus, .field input[type=text]:focus, .field input[type=password]:focus, .field textarea:focus {
+  border: 1px solid white;
+}
+/* line 65, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.field select {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
 
-form.formtastic fieldset > ol > li p.inline-hints { color:#333; }
-
-HINT:
-The following style may be *conditionally* included for improved support on older versions of IE(<8)
-form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
-
---------------------------------------------------------------------------------------------------*/
+/* line 38, ../../app/stylesheets/formtastic_changes.scss */
+.field textarea#micropost_content {
+  -moz-box-shadow: 0px 0px 5px #333333;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -o-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  border-width: 4px;
+  background-color: #fff;
+  font-size: 22px;
+  height: 110px;
+  width: 481px;
+}

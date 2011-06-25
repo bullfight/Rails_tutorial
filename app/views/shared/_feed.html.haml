@@ -1,4 +1,6 @@
 -unless @feed_items.empty?
-  %table{ :class => "microposts", :summary => "User microposts"}
+  #microposts
     = render :partial => 'shared/feed_item', :collection => @feed_items
-  = paginate @feed_items
+  - unless @feed_items.last_page? and @feed_items.first_page?
+    #paginate
+      = paginate @feed_items

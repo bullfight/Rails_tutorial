@@ -9,6 +9,8 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'formtastic', '1.2.4'
 gem 'kaminari', '0.12.4'
 gem 'jquery-rails', '1.0.11'
+gem "compass", ">= 0.11.3"
+gem "fancy-buttons"
 
 group :development do
   gem 'pry'
