@@ -1,7 +1,7 @@
 module ApplicationHelper  
   # Return a title on a per-page basis.
     def titled
-      base_title = "Ruby on Rails Tutorial Sample App"
+      base_title = "Feed Me"
       if @title.nil?
         base_title
       else
