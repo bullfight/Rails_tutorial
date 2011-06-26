@@ -11,7 +11,7 @@ describe UsersController do
         response.should redirect_to(signin_path)
         flash[:notice].should =~ /sign in/i
       end
-    end 
+    end
     
     describe "for non-admin signed-in users" do
       
@@ -86,40 +86,54 @@ describe UsersController do
     before(:each) do
       @user = Factory(:user)
     end
-        
-    it "should be successful" do
-      get :show, :id => @user
-      response.should be_success
+    
+    describe "for non-signed-in users" do
+      it "should deny access" do
+        get :show, :id => @user
+        response.should redirect_to(signin_path)
+        flash[:notice].should =~ /sign in/i
+      end
     end
     
-    it "should find the right user" do
-      get :show, :id => @user
-      assigns(:user).should == @user
-    end
-    
-    it "should have the right title" do
-      get :show, :id => @user
-        response.should have_selector("title", :content => @user.name)
-    end
-    
-    it "should include the user's name"do
-       get :show, :id => @user
-       response.should have_selector("h2", :content => @user.name)
-     end
-    
-    it "should have a profile image" do
-      get :show, :id => @user
-      response.should have_selector("img", :class => "gravatar")
-    end
-    
-    it "should show the user's microposts" do
-      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
-      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
-      get :show, :id => @user
-      response.should have_selector("div.feed-item", :content => mp1.content)
-      response.should have_selector("div.feed-item", :content => mp2.content)
-    end
+    describe "for signed-in users" do
       
+      before(:each) do
+        @user = test_sign_in(@user)
+      end
+      
+      it "should be successful" do
+        get :show, :id => @user
+        response.should be_success
+      end
+    
+      it "should find the right user" do
+        get :show, :id => @user
+        assigns(:user).should == @user
+      end
+    
+      it "should have the right title" do
+        get :show, :id => @user
+          response.should have_selector("title", :content => @user.name)
+      end
+    
+      it "should include the user's name"do
+         get :show, :id => @user
+         response.should have_selector("h2", :content => @user.name)
+       end
+    
+      it "should have a profile image" do
+        get :show, :id => @user
+        response.should have_selector("img", :class => "gravatar")
+      end
+    
+      it "should show the user's microposts" do
+        mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+        mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+        get :show, :id => @user
+        response.should have_selector("div.feed-item", :content => mp1.content)
+        response.should have_selector("div.feed-item", :content => mp2.content)
+      end
+    end # signed in
   end # get 'show'
     
   describe "GET 'new'" do
@@ -221,7 +235,7 @@ describe UsersController do
 
       it "should have a welcome message" do
        post :create, :user => @attr
-       flash[:success].should =~ /welcome to the sample app/i
+       flash[:success].should =~ /feed me/i
       end
        
       it "should sign the user in" do
