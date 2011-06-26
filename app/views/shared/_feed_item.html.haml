@@ -12,8 +12,8 @@
       .details
         %span.item-timestamp
           = "Posted #{time_ago_in_words(feed_item.created_at)} ago."
-        |
-        %span.item-delete
-          -if current_user?(feed_item.user)
+        -if current_user?(feed_item.user)
+          |
+          %span.item-delete          
             = link_to "delete", feed_item, :method => :delete, :confirm => "You sure?", :title => feed_item.content, :remote => true
 %hr
