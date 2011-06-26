@@ -6,7 +6,9 @@
     .right
       .item-row
         %h2= link_to @user.name, @user  
-
+      .item-row
+        = @user.email
+        
 #profile_header
   %nav
     %li= link_to "Posts (#{current_user.following.count})", current_user
