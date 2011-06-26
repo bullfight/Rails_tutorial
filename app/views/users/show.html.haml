@@ -10,8 +10,7 @@
         = render 'shared/stats'
       
         
-- unless @user.microposts.empty?
+- unless @microposts.empty?
   #microposts= render @microposts
   -unless @microposts.last_page? and @microposts.first_page?
     #paginate= paginate @microposts
-  
