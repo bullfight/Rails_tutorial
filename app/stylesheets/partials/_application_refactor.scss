@@ -57,7 +57,12 @@ a{
   }
 
 #container {
-  //@include showgrid;  
+  padding: 0 40px 0 40px;
+  @include single-box-shadow(
+    $voff: -2px,
+    $spread: 1px,
+    $blur: 80px,
+    $inset: false);
 }
 
 #content {
@@ -171,7 +176,12 @@ a{
     @include blueprint-form-borders(#ddd, #fff, #eee);
   }
   .field textarea#micropost_content{
-    @include box-shadow;
+    @include single-box-shadow(
+      $inset: false, 
+      $blur: 20px, 
+      $voff: -2px, 
+      $hoff: -2px
+    );
     @include border-radius;
     @include normal-text;
     
@@ -315,7 +325,12 @@ a{
   .field input{    
     $default-box-shadow-blur: 7px;
     @include blueprint-form-borders(#ddd, #fff, #eee);
-    @include box-shadow;
+    @include single-box-shadow(
+      $inset: false, 
+      $blur: 5px, 
+      $voff: -1px, 
+      $hoff: -1px
+    );
     @include border-radius;
     @include normal-text;
     border-width:4px;
