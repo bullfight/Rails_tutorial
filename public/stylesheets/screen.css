@@ -1019,7 +1019,7 @@ a:active {
 #micropost_form hr.last {
   display: none;
 }
-/* line 168, ../../app/stylesheets/partials/_application.scss */
+/* line 167, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .field {
   display: inline;
   float: left;
@@ -1054,7 +1054,7 @@ a:active {
   border-width: 1px;
   border-style: solid;
 }
-/* line 174, ../../app/stylesheets/partials/_application.scss */
+/* line 173, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .field textarea#micropost_content {
   -moz-box-shadow: -2px -2px 20px #505050;
   -webkit-box-shadow: -2px -2px 20px #505050;
@@ -1074,7 +1074,7 @@ a:active {
   height: 110px;
   width: 481px;
 }
-/* line 191, ../../app/stylesheets/partials/_application.scss */
+/* line 190, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions {
   display: inline;
   float: left;
@@ -1089,23 +1089,23 @@ a:active {
 * html #micropost_form .actions {
   overflow-x: hidden;
 }
-/* line 197, ../../app/stylesheets/partials/_application.scss */
+/* line 196, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions .count {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
   padding-left: 5px;
   font-size: 18px;
 }
-/* line 203, ../../app/stylesheets/partials/_application.scss */
+/* line 202, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions .count.lengtherror {
   color: darkred;
 }
-/* line 207, ../../app/stylesheets/partials/_application.scss */
+/* line 206, ../../app/stylesheets/partials/_application.scss */
 #micropost_form input#micropost_submit {
   display: inline;
   float: right;
 }
-/* line 212, ../../app/stylesheets/partials/_application.scss */
+/* line 211, ../../app/stylesheets/partials/_application.scss */
 #micropost_form #error_explanation, #micropost_form #error_explanation {
   display: inline;
   float: left;
@@ -1118,7 +1118,7 @@ a:active {
   overflow-x: hidden;
 }
 
-/* line 219, ../../app/stylesheets/partials/_application.scss */
+/* line 218, ../../app/stylesheets/partials/_application.scss */
 #paginate {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1196,7 +1196,7 @@ a:active {
   display: none;
 }
 
-/* line 224, ../../app/stylesheets/partials/_application.scss */
+/* line 223, ../../app/stylesheets/partials/_application.scss */
 #microposts {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1231,20 +1231,20 @@ a:active {
 #microposts hr.last {
   display: none;
 }
-/* line 227, ../../app/stylesheets/partials/_application.scss */
+/* line 226, ../../app/stylesheets/partials/_application.scss */
 #microposts .feed-item {
   margin-bottom: 0px;
 }
-/* line 235, ../../app/stylesheets/partials/_application.scss */
+/* line 234, ../../app/stylesheets/partials/_application.scss */
 #microposts .left {
   height: 80px;
 }
-/* line 239, ../../app/stylesheets/partials/_application.scss */
+/* line 238, ../../app/stylesheets/partials/_application.scss */
 #microposts .highlight {
   background: #cccccc;
 }
 
-/* line 245, ../../app/stylesheets/partials/_application.scss */
+/* line 244, ../../app/stylesheets/partials/_application.scss */
 #users {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1321,20 +1321,20 @@ a:active {
 #users .pagination span.disabled {
   display: none;
 }
-/* line 249, ../../app/stylesheets/partials/_application.scss */
+/* line 248, ../../app/stylesheets/partials/_application.scss */
 #users .user-item {
   height: 50px;
 }
-/* line 254, ../../app/stylesheets/partials/_application.scss */
+/* line 253, ../../app/stylesheets/partials/_application.scss */
 #users .left {
   height: 50px;
 }
-/* line 258, ../../app/stylesheets/partials/_application.scss */
+/* line 257, ../../app/stylesheets/partials/_application.scss */
 #users .highlight {
   background: #cccccc;
 }
 
-/* line 265, ../../app/stylesheets/partials/_application.scss */
+/* line 264, ../../app/stylesheets/partials/_application.scss */
 #profile {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1369,26 +1369,26 @@ a:active {
 #profile hr.last {
   display: none;
 }
-/* line 268, ../../app/stylesheets/partials/_application.scss */
+/* line 267, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item {
   background-image: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 277, ../../app/stylesheets/partials/_application.scss */
+/* line 276, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item .left {
   height: 80px;
 }
-/* line 285, ../../app/stylesheets/partials/_application.scss */
+/* line 284, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.follow {
   margin: -1px;
 }
-/* line 289, ../../app/stylesheets/partials/_application.scss */
+/* line 288, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.unfollow {
   margin-left: -9px;
 }
 
-/* line 298, ../../app/stylesheets/partials/_application.scss */
+/* line 297, ../../app/stylesheets/partials/_application.scss */
 #main {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1424,7 +1424,7 @@ a:active {
   display: none;
 }
 
-/* line 302, ../../app/stylesheets/partials/_application.scss */
+/* line 301, ../../app/stylesheets/partials/_application.scss */
 #signin, #settings {
   display: inline;
   float: left;
@@ -1467,7 +1467,7 @@ a:active {
 #signin hr.last, #settings hr.last {
   display: none;
 }
-/* line 306, ../../app/stylesheets/partials/_application.scss */
+/* line 305, ../../app/stylesheets/partials/_application.scss */
 #signin form, #settings form {
   display: inline;
   float: left;
@@ -1479,7 +1479,7 @@ a:active {
 * html #signin form, * html #settings form {
   overflow-x: hidden;
 }
-/* line 311, ../../app/stylesheets/partials/_application.scss */
+/* line 310, ../../app/stylesheets/partials/_application.scss */
 #signin .field, #signin .actions, #settings .field, #settings .actions {
   display: inline;
   float: left;
@@ -1497,7 +1497,7 @@ a:active {
 * html #signin .field, * html #signin .actions, * html #settings .field, * html #settings .actions {
   overflow-x: hidden;
 }
-/* line 318, ../../app/stylesheets/partials/_application.scss */
+/* line 317, ../../app/stylesheets/partials/_application.scss */
 #signin .field label, #signin .field input, #settings .field label, #settings .field input {
   width: 489px;
   font-size: 22px;
@@ -1521,7 +1521,7 @@ a:active {
   border-width: 1px;
   border-style: solid;
 }
-/* line 325, ../../app/stylesheets/partials/_application.scss */
+/* line 324, ../../app/stylesheets/partials/_application.scss */
 #signin .field input, #settings .field input {
   -moz-box-shadow: -1px -1px 5px #505050;
   -webkit-box-shadow: -1px -1px 5px #505050;
@@ -1557,13 +1557,13 @@ a:active {
   border-width: 1px;
   border-style: solid;
 }
-/* line 340, ../../app/stylesheets/partials/_application.scss */
+/* line 339, ../../app/stylesheets/partials/_application.scss */
 #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
   display: inline;
   float: right;
 }
 
-/* line 346, ../../app/stylesheets/partials/_application.scss */
+/* line 345, ../../app/stylesheets/partials/_application.scss */
 #flash {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -1633,7 +1633,7 @@ a:active {
   background: #990000;
   color: white;
 }
-/* line 351, ../../app/stylesheets/partials/_application.scss */
+/* line 350, ../../app/stylesheets/partials/_application.scss */
 #flash .success, #flash .notice, #flash .error, #flash .alert {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1643,7 +1643,7 @@ a:active {
   border-radius: 3px;
 }
 
-/* line 357, ../../app/stylesheets/partials/_application.scss */
+/* line 356, ../../app/stylesheets/partials/_application.scss */
 #error_explanation, #micropost_form #error_explanation {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
