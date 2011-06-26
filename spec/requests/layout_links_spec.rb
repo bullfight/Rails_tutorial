@@ -62,7 +62,7 @@ describe "LayoutLinks" do
       response.should have_selector("a", :href => users_path,
         :content => "Users")
       response.should have_selector("a", :href => user_path(@user),
-        :content => "Posts")
+        :content => "Profile")
     end
     
     it "should have a settings link" do
