@@ -57,12 +57,7 @@ a{
   }
 
 #container {
-  padding: 0 40px 0 40px;
-  @include single-box-shadow(
-    $voff: -2px,
-    $spread: 1px,
-    $blur: 80px,
-    $inset: false);
+
 }
 
 #content {
@@ -212,6 +207,12 @@ a{
     @extend .fancy-button-base;
     @include float-right;
   }
+  
+  #error_explanation{
+    @extend #error_explanation;
+    @include column(19);
+    @include prepend-top(20px);
+  }
 }
 
 #paginate {
@@ -298,18 +299,16 @@ a{
 }
 
 #signin, #settings {
-
   @include column(22);
   @include base-style;
   
   form {
-    @include push(1);
     @include column(20,true);
     @include prepend-top(30px);
   }
   
-  .field{
-    @include push(0);
+  .field, .actions{
+    @include push(1);
     @include column(20);
     @include prepend-top(-15px);
     @include normal-text;
@@ -338,15 +337,8 @@ a{
   }
   
   input#session_submit, input#user_submit{
-    margin-top: -15px;
-    margin-right: 0px;
     @extend .fancy-button-base;
     @include float-right;
-  }
-    
-  button{
-    @extend .fancy-button-base;
-    margin-left: -3px;
   }
 }
 
@@ -358,4 +350,14 @@ a{
   .success, .notice, .error {
     @include border-radius(3px);
   }
+}
+
+
+#error_explanation{
+  @include border-radius;
+  @include append-bottom(20px);
+  @include clearfix;
+  @include push(1);
+  @include normal-text;
+  @include error;
 }

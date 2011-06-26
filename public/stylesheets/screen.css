@@ -59,7 +59,7 @@ a img {
 
 /* incase an inverted custom gradient isn't specified */
 /* line 177, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class, .fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin button, #settings button {
+.fancy-button-reset-base-class, .fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
   background: url('/images/button_bg.png?1308993854') repeat-x bottom left;
   margin: 0;
@@ -72,12 +72,12 @@ a img {
   font-weight: bold;
 }
 /* line 165, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class::-moz-focus-inner, .fancy-button-base::-moz-focus-inner, #content_header nav li::-moz-focus-inner, #profile_header nav li::-moz-focus-inner, #footer nav li::-moz-focus-inner, #micropost_form input#micropost_submit::-moz-focus-inner, #paginate .pagination .next::-moz-focus-inner, #paginate .pagination .prev::-moz-focus-inner, #users .pagination .next::-moz-focus-inner, #users .pagination .prev::-moz-focus-inner, #profile input#relationship_submit::-moz-focus-inner, #signin input#session_submit::-moz-focus-inner, #signin input#user_submit::-moz-focus-inner, #settings input#session_submit::-moz-focus-inner, #settings input#user_submit::-moz-focus-inner, #signin button::-moz-focus-inner, #settings button::-moz-focus-inner {
+.fancy-button-reset-base-class::-moz-focus-inner, .fancy-button-base::-moz-focus-inner, #content_header nav li::-moz-focus-inner, #profile_header nav li::-moz-focus-inner, #footer nav li::-moz-focus-inner, #micropost_form input#micropost_submit::-moz-focus-inner, #paginate .pagination .next::-moz-focus-inner, #paginate .pagination .prev::-moz-focus-inner, #users .pagination .next::-moz-focus-inner, #users .pagination .prev::-moz-focus-inner, #profile input#relationship_submit::-moz-focus-inner, #signin input#session_submit::-moz-focus-inner, #signin input#user_submit::-moz-focus-inner, #settings input#session_submit::-moz-focus-inner, #settings input#user_submit::-moz-focus-inner {
   border: none;
   padding: 0;
 }
 /* line 168, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class:focus, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, #signin button:focus, #settings button:focus {
+.fancy-button-reset-base-class:focus, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus {
   outline: none;
 }
 
@@ -589,17 +589,8 @@ a:active {
   color: #0066cc;
 }
 
-/* line 59, ../../app/stylesheets/partials/_application.scss */
-#container {
-  padding: 0 40px 0 40px;
-  -moz-box-shadow: 0px -2px 80px 1px #505050;
-  -webkit-box-shadow: 0px -2px 80px 1px #505050;
-  -o-box-shadow: 0px -2px 80px 1px #505050;
-  box-shadow: 0px -2px 80px 1px #505050;
-}
-
-/* line 72, ../../app/stylesheets/partials/_application.scss */
-.fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin button, #settings button {
+/* line 67, ../../app/stylesheets/partials/_application.scss */
+.fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -652,11 +643,11 @@ a:active {
   background-clip: padding-box;
 }
 /* line 116, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin button, #settings button, .fancy-button-base:visited, #content_header nav li:visited, #profile_header nav li:visited, #footer nav li:visited, #micropost_form input#micropost_submit:visited, #paginate .pagination .next:visited, #paginate .pagination .prev:visited, #users .pagination .next:visited, #users .pagination .prev:visited, #profile input#relationship_submit:visited, #signin input#session_submit:visited, #signin input#user_submit:visited, #settings input#session_submit:visited, #settings input#user_submit:visited, #signin button:visited, #settings button:visited {
+.fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, .fancy-button-base:visited, #content_header nav li:visited, #profile_header nav li:visited, #footer nav li:visited, #micropost_form input#micropost_submit:visited, #paginate .pagination .next:visited, #paginate .pagination .prev:visited, #users .pagination .next:visited, #users .pagination .prev:visited, #profile input#relationship_submit:visited, #signin input#session_submit:visited, #signin input#user_submit:visited, #settings input#session_submit:visited, #settings input#user_submit:visited {
   color: white;
 }
 /* line 31, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, #signin button:hover, #settings button:hover, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, #signin button:focus, #settings button:focus {
+.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus {
   background-color: #3c3c3c;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #919191), color-stop(10%, #636363), color-stop(50%, #353535), color-stop(50%, #2d2d2d), color-stop(100%, #474747));
   background-image: -webkit-linear-gradient(#919191, #636363 10%, #353535 50%, #2d2d2d 50%, #474747);
@@ -668,11 +659,11 @@ a:active {
   text-shadow: black 0px 1px 1px;
 }
 /* line 116, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, #signin button:hover, #settings button:hover, .fancy-button-base:hover:visited, #content_header nav li:hover:visited, #profile_header nav li:hover:visited, #footer nav li:hover:visited, #micropost_form input#micropost_submit:hover:visited, #paginate .pagination .next:hover:visited, #paginate .pagination .prev:hover:visited, #users .pagination .next:hover:visited, #users .pagination .prev:hover:visited, #profile input#relationship_submit:hover:visited, #signin input#session_submit:hover:visited, #signin input#user_submit:hover:visited, #settings input#session_submit:hover:visited, #settings input#user_submit:hover:visited, #signin button:hover:visited, #settings button:hover:visited, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, #signin button:focus, #settings button:focus, .fancy-button-base:focus:visited, #content_header nav li:focus:visited, #profile_header nav li:focus:visited, #footer nav li:focus:visited, #micropost_form input#micropost_submit:focus:visited, #paginate .pagination .next:focus:visited, #paginate .pagination .prev:focus:visited, #users .pagination .next:focus:visited, #users .pagination .prev:focus:visited, #profile input#relationship_submit:focus:visited, #signin input#session_submit:focus:visited, #signin input#user_submit:focus:visited, #settings input#session_submit:focus:visited, #settings input#user_submit:focus:visited, #signin button:focus:visited, #settings button:focus:visited {
+.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, .fancy-button-base:hover:visited, #content_header nav li:hover:visited, #profile_header nav li:hover:visited, #footer nav li:hover:visited, #micropost_form input#micropost_submit:hover:visited, #paginate .pagination .next:hover:visited, #paginate .pagination .prev:hover:visited, #users .pagination .next:hover:visited, #users .pagination .prev:hover:visited, #profile input#relationship_submit:hover:visited, #signin input#session_submit:hover:visited, #signin input#user_submit:hover:visited, #settings input#session_submit:hover:visited, #settings input#user_submit:hover:visited, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, .fancy-button-base:focus:visited, #content_header nav li:focus:visited, #profile_header nav li:focus:visited, #footer nav li:focus:visited, #micropost_form input#micropost_submit:focus:visited, #paginate .pagination .next:focus:visited, #paginate .pagination .prev:focus:visited, #users .pagination .next:focus:visited, #users .pagination .prev:focus:visited, #profile input#relationship_submit:focus:visited, #signin input#session_submit:focus:visited, #signin input#user_submit:focus:visited, #settings input#session_submit:focus:visited, #settings input#user_submit:focus:visited {
   color: white;
 }
 /* line 36, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active, #signin button:active, #settings button:active {
+.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active {
   background-color: #353535;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #353535), color-stop(30%, #3a3a3a), color-stop(50%, #303030), color-stop(50%, #282828), color-stop(100%, #494949));
   background-image: -webkit-linear-gradient(#353535, #3a3a3a 30%, #303030 50%, #282828 50%, #494949);
@@ -688,15 +679,15 @@ a:active {
   box-shadow: #1e1e1e 0 0.08em 0.2em 1px inset;
 }
 /* line 116, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active, #signin button:active, #settings button:active, .fancy-button-base:active:visited, #content_header nav li:active:visited, #profile_header nav li:active:visited, #footer nav li:active:visited, #micropost_form input#micropost_submit:active:visited, #paginate .pagination .next:active:visited, #paginate .pagination .prev:active:visited, #users .pagination .next:active:visited, #users .pagination .prev:active:visited, #profile input#relationship_submit:active:visited, #signin input#session_submit:active:visited, #signin input#user_submit:active:visited, #settings input#session_submit:active:visited, #settings input#user_submit:active:visited, #signin button:active:visited, #settings button:active:visited {
+.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active, .fancy-button-base:active:visited, #content_header nav li:active:visited, #profile_header nav li:active:visited, #footer nav li:active:visited, #micropost_form input#micropost_submit:active:visited, #paginate .pagination .next:active:visited, #paginate .pagination .prev:active:visited, #users .pagination .next:active:visited, #users .pagination .prev:active:visited, #profile input#relationship_submit:active:visited, #signin input#session_submit:active:visited, #signin input#user_submit:active:visited, #settings input#session_submit:active:visited, #settings input#user_submit:active:visited {
   color: white;
 }
 /* line 120, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin button, #settings button, .fancy-button-base:visited, #content_header nav li:visited, #profile_header nav li:visited, #footer nav li:visited, #micropost_form input#micropost_submit:visited, #paginate .pagination .next:visited, #paginate .pagination .prev:visited, #users .pagination .next:visited, #users .pagination .prev:visited, #profile input#relationship_submit:visited, #signin input#session_submit:visited, #signin input#user_submit:visited, #settings input#session_submit:visited, #settings input#user_submit:visited, #signin button:visited, #settings button:visited {
+.fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #users .pagination .next, #users .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, .fancy-button-base:visited, #content_header nav li:visited, #profile_header nav li:visited, #footer nav li:visited, #micropost_form input#micropost_submit:visited, #paginate .pagination .next:visited, #paginate .pagination .prev:visited, #users .pagination .next:visited, #users .pagination .prev:visited, #profile input#relationship_submit:visited, #signin input#session_submit:visited, #signin input#user_submit:visited, #settings input#session_submit:visited, #settings input#user_submit:visited {
   color: #222222;
 }
 /* line 31, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, #signin button:hover, #settings button:hover, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, #signin button:focus, #settings button:focus {
+.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus {
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcfcfc), color-stop(100%, #c6c6c6));
   background-image: -webkit-linear-gradient(#fcfcfc, #c6c6c6);
@@ -708,11 +699,11 @@ a:active {
   text-shadow: white 0px 1px 1px;
 }
 /* line 120, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, #signin button:hover, #settings button:hover, .fancy-button-base:hover:visited, #content_header nav li:hover:visited, #profile_header nav li:hover:visited, #footer nav li:hover:visited, #micropost_form input#micropost_submit:hover:visited, #paginate .pagination .next:hover:visited, #paginate .pagination .prev:hover:visited, #users .pagination .next:hover:visited, #users .pagination .prev:hover:visited, #profile input#relationship_submit:hover:visited, #signin input#session_submit:hover:visited, #signin input#user_submit:hover:visited, #settings input#session_submit:hover:visited, #settings input#user_submit:hover:visited, #signin button:hover:visited, #settings button:hover:visited, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, #signin button:focus, #settings button:focus, .fancy-button-base:focus:visited, #content_header nav li:focus:visited, #profile_header nav li:focus:visited, #footer nav li:focus:visited, #micropost_form input#micropost_submit:focus:visited, #paginate .pagination .next:focus:visited, #paginate .pagination .prev:focus:visited, #users .pagination .next:focus:visited, #users .pagination .prev:focus:visited, #profile input#relationship_submit:focus:visited, #signin input#session_submit:focus:visited, #signin input#user_submit:focus:visited, #settings input#session_submit:focus:visited, #settings input#user_submit:focus:visited, #signin button:focus:visited, #settings button:focus:visited {
+.fancy-button-base:hover, #content_header nav li:hover, #profile_header nav li:hover, #footer nav li:hover, #micropost_form input#micropost_submit:hover, #paginate .pagination .next:hover, #paginate .pagination .prev:hover, #users .pagination .next:hover, #users .pagination .prev:hover, #profile input#relationship_submit:hover, #signin input#session_submit:hover, #signin input#user_submit:hover, #settings input#session_submit:hover, #settings input#user_submit:hover, .fancy-button-base:hover:visited, #content_header nav li:hover:visited, #profile_header nav li:hover:visited, #footer nav li:hover:visited, #micropost_form input#micropost_submit:hover:visited, #paginate .pagination .next:hover:visited, #paginate .pagination .prev:hover:visited, #users .pagination .next:hover:visited, #users .pagination .prev:hover:visited, #profile input#relationship_submit:hover:visited, #signin input#session_submit:hover:visited, #signin input#user_submit:hover:visited, #settings input#session_submit:hover:visited, #settings input#user_submit:hover:visited, .fancy-button-base:focus, #content_header nav li:focus, #profile_header nav li:focus, #footer nav li:focus, #micropost_form input#micropost_submit:focus, #paginate .pagination .next:focus, #paginate .pagination .prev:focus, #users .pagination .next:focus, #users .pagination .prev:focus, #profile input#relationship_submit:focus, #signin input#session_submit:focus, #signin input#user_submit:focus, #settings input#session_submit:focus, #settings input#user_submit:focus, .fancy-button-base:focus:visited, #content_header nav li:focus:visited, #profile_header nav li:focus:visited, #footer nav li:focus:visited, #micropost_form input#micropost_submit:focus:visited, #paginate .pagination .next:focus:visited, #paginate .pagination .prev:focus:visited, #users .pagination .next:focus:visited, #users .pagination .prev:focus:visited, #profile input#relationship_submit:focus:visited, #signin input#session_submit:focus:visited, #signin input#user_submit:focus:visited, #settings input#session_submit:focus:visited, #settings input#user_submit:focus:visited {
   color: #222222;
 }
 /* line 36, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active, #signin button:active, #settings button:active {
+.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active {
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cbcbcb), color-stop(40%, #d3d3d3), color-stop(85%, #d3d3d3), color-stop(100%, #e5e5e5));
   background-image: -webkit-linear-gradient(#cbcbcb, #d3d3d3 40%, #d3d3d3 85%, #e5e5e5);
@@ -728,11 +719,11 @@ a:active {
   box-shadow: #b7b7b7 0 0.08em 0.2em 1px inset;
 }
 /* line 120, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active, #signin button:active, #settings button:active, .fancy-button-base:active:visited, #content_header nav li:active:visited, #profile_header nav li:active:visited, #footer nav li:active:visited, #micropost_form input#micropost_submit:active:visited, #paginate .pagination .next:active:visited, #paginate .pagination .prev:active:visited, #users .pagination .next:active:visited, #users .pagination .prev:active:visited, #profile input#relationship_submit:active:visited, #signin input#session_submit:active:visited, #signin input#user_submit:active:visited, #settings input#session_submit:active:visited, #settings input#user_submit:active:visited, #signin button:active:visited, #settings button:active:visited {
+.fancy-button-base:active, #content_header nav li:active, #profile_header nav li:active, #footer nav li:active, #micropost_form input#micropost_submit:active, #paginate .pagination .next:active, #paginate .pagination .prev:active, #users .pagination .next:active, #users .pagination .prev:active, #profile input#relationship_submit:active, #signin input#session_submit:active, #signin input#user_submit:active, #settings input#session_submit:active, #settings input#user_submit:active, .fancy-button-base:active:visited, #content_header nav li:active:visited, #profile_header nav li:active:visited, #footer nav li:active:visited, #micropost_form input#micropost_submit:active:visited, #paginate .pagination .next:active:visited, #paginate .pagination .prev:active:visited, #users .pagination .next:active:visited, #users .pagination .prev:active:visited, #profile input#relationship_submit:active:visited, #signin input#session_submit:active:visited, #signin input#user_submit:active:visited, #settings input#session_submit:active:visited, #settings input#user_submit:active:visited {
   color: #222222;
 }
 
-/* line 81, ../../app/stylesheets/partials/_application.scss */
+/* line 76, ../../app/stylesheets/partials/_application.scss */
 .item, #microposts .feed-item, #users .user-item, #profile .user-item {
   display: inline;
   float: left;
@@ -759,7 +750,7 @@ a:active {
 * html .item, * html #microposts .feed-item, #microposts * html .feed-item, * html #users .user-item, #users * html .user-item, * html #profile .user-item, #profile * html .user-item {
   overflow-x: hidden;
 }
-/* line 89, ../../app/stylesheets/partials/_application.scss */
+/* line 84, ../../app/stylesheets/partials/_application.scss */
 .item .full, #microposts .feed-item .full, #users .user-item .full, #profile .user-item .full {
   display: inline;
   float: left;
@@ -774,7 +765,7 @@ a:active {
 * html .item .full, * html #microposts .feed-item .full, #microposts * html .feed-item .full, * html #users .user-item .full, #users * html .user-item .full, * html #profile .user-item .full, #profile * html .user-item .full {
   overflow-x: hidden;
 }
-/* line 94, ../../app/stylesheets/partials/_application.scss */
+/* line 89, ../../app/stylesheets/partials/_application.scss */
 .item .left, #microposts .feed-item .left, #users .user-item .left, #profile .user-item .left {
   display: inline;
   float: left;
@@ -789,7 +780,7 @@ a:active {
 * html .item .left, * html #microposts .feed-item .left, #microposts * html .feed-item .left, * html #users .user-item .left, #users * html .user-item .left, * html #profile .user-item .left, #profile * html .user-item .left {
   overflow-x: hidden;
 }
-/* line 99, ../../app/stylesheets/partials/_application.scss */
+/* line 94, ../../app/stylesheets/partials/_application.scss */
 .item .right, #microposts .feed-item .right, #users .user-item .right, #profile .user-item .right {
   overflow: hidden;
   *zoom: 1;
@@ -802,21 +793,21 @@ a:active {
 * html .item .right, * html #microposts .feed-item .right, #microposts * html .feed-item .right, * html #users .user-item .right, #users * html .user-item .right, * html #profile .user-item .right, #profile * html .user-item .right {
   overflow-x: hidden;
 }
-/* line 104, ../../app/stylesheets/partials/_application.scss */
+/* line 99, ../../app/stylesheets/partials/_application.scss */
 .item .item-user, #microposts .feed-item .item-user, #users .user-item .item-user, #profile .user-item .item-user {
   font-weight: bold;
 }
-/* line 111, ../../app/stylesheets/partials/_application.scss */
+/* line 106, ../../app/stylesheets/partials/_application.scss */
 .item .details, #microposts .feed-item .details, #users .user-item .details, #profile .user-item .details {
   color: #666666;
   font-size: 14px;
 }
-/* line 116, ../../app/stylesheets/partials/_application.scss */
+/* line 111, ../../app/stylesheets/partials/_application.scss */
 .item h2, #microposts .feed-item h2, #users .user-item h2, #profile .user-item h2 {
   margin-top: 5px;
 }
 
-/* line 124, ../../app/stylesheets/partials/_application.scss */
+/* line 119, ../../app/stylesheets/partials/_application.scss */
 #header #logo {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -824,7 +815,7 @@ a:active {
   *zoom: 1;
   margin-bottom: -70px;
 }
-/* line 130, ../../app/stylesheets/partials/_application.scss */
+/* line 125, ../../app/stylesheets/partials/_application.scss */
 #header nav {
   display: inline;
   float: right;
@@ -855,7 +846,7 @@ a:active {
   background-image: linear-gradient(top, #eeeeee, #dddddd);
   border: 1px solid #ccc;
 }
-/* line 137, ../../app/stylesheets/partials/_application.scss */
+/* line 132, ../../app/stylesheets/partials/_application.scss */
 #header nav ul li {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -881,7 +872,7 @@ a:active {
   padding-right: 0;
 }
 
-/* line 145, ../../app/stylesheets/partials/_application.scss */
+/* line 140, ../../app/stylesheets/partials/_application.scss */
 #content_header nav, #profile_header nav, #footer nav {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -919,7 +910,7 @@ a:active {
 #content_header nav hr.last, #profile_header nav hr.last, #footer nav hr.last {
   display: none;
 }
-/* line 155, ../../app/stylesheets/partials/_application.scss */
+/* line 150, ../../app/stylesheets/partials/_application.scss */
 #content_header nav a, #profile_header nav a, #footer nav a {
   color: inherit;
   text-decoration: inherit;
@@ -930,7 +921,7 @@ a:active {
   outline: none;
 }
 
-/* line 162, ../../app/stylesheets/partials/_application.scss */
+/* line 157, ../../app/stylesheets/partials/_application.scss */
 #profile_header nav li {
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dfdfdf));
@@ -993,7 +984,7 @@ a:active {
   color: #222222;
 }
 
-/* line 169, ../../app/stylesheets/partials/_application.scss */
+/* line 164, ../../app/stylesheets/partials/_application.scss */
 #micropost_form {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1028,7 +1019,7 @@ a:active {
 #micropost_form hr.last {
   display: none;
 }
-/* line 172, ../../app/stylesheets/partials/_application.scss */
+/* line 168, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .field {
   display: inline;
   float: left;
@@ -1063,7 +1054,7 @@ a:active {
   border-width: 1px;
   border-style: solid;
 }
-/* line 178, ../../app/stylesheets/partials/_application.scss */
+/* line 174, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .field textarea#micropost_content {
   -moz-box-shadow: -2px -2px 20px #505050;
   -webkit-box-shadow: -2px -2px 20px #505050;
@@ -1083,7 +1074,7 @@ a:active {
   height: 110px;
   width: 481px;
 }
-/* line 195, ../../app/stylesheets/partials/_application.scss */
+/* line 191, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions {
   display: inline;
   float: left;
@@ -1098,24 +1089,36 @@ a:active {
 * html #micropost_form .actions {
   overflow-x: hidden;
 }
-/* line 201, ../../app/stylesheets/partials/_application.scss */
+/* line 197, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions .count {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
   padding-left: 5px;
   font-size: 18px;
 }
-/* line 207, ../../app/stylesheets/partials/_application.scss */
+/* line 203, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions .count.lengtherror {
   color: darkred;
 }
-/* line 211, ../../app/stylesheets/partials/_application.scss */
+/* line 207, ../../app/stylesheets/partials/_application.scss */
 #micropost_form input#micropost_submit {
   display: inline;
   float: right;
 }
+/* line 212, ../../app/stylesheets/partials/_application.scss */
+#micropost_form #error_explanation, #micropost_form #error_explanation {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 472.917px;
+  margin-top: 20px;
+}
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #micropost_form #error_explanation, * html #micropost_form #error_explanation {
+  overflow-x: hidden;
+}
 
-/* line 217, ../../app/stylesheets/partials/_application.scss */
+/* line 219, ../../app/stylesheets/partials/_application.scss */
 #paginate {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1193,7 +1196,7 @@ a:active {
   display: none;
 }
 
-/* line 222, ../../app/stylesheets/partials/_application.scss */
+/* line 224, ../../app/stylesheets/partials/_application.scss */
 #microposts {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1228,20 +1231,20 @@ a:active {
 #microposts hr.last {
   display: none;
 }
-/* line 225, ../../app/stylesheets/partials/_application.scss */
+/* line 227, ../../app/stylesheets/partials/_application.scss */
 #microposts .feed-item {
   margin-bottom: 0px;
 }
-/* line 233, ../../app/stylesheets/partials/_application.scss */
+/* line 235, ../../app/stylesheets/partials/_application.scss */
 #microposts .left {
   height: 80px;
 }
-/* line 237, ../../app/stylesheets/partials/_application.scss */
+/* line 239, ../../app/stylesheets/partials/_application.scss */
 #microposts .highlight {
   background: #cccccc;
 }
 
-/* line 243, ../../app/stylesheets/partials/_application.scss */
+/* line 245, ../../app/stylesheets/partials/_application.scss */
 #users {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1318,20 +1321,20 @@ a:active {
 #users .pagination span.disabled {
   display: none;
 }
-/* line 247, ../../app/stylesheets/partials/_application.scss */
+/* line 249, ../../app/stylesheets/partials/_application.scss */
 #users .user-item {
   height: 50px;
 }
-/* line 252, ../../app/stylesheets/partials/_application.scss */
+/* line 254, ../../app/stylesheets/partials/_application.scss */
 #users .left {
   height: 50px;
 }
-/* line 256, ../../app/stylesheets/partials/_application.scss */
+/* line 258, ../../app/stylesheets/partials/_application.scss */
 #users .highlight {
   background: #cccccc;
 }
 
-/* line 263, ../../app/stylesheets/partials/_application.scss */
+/* line 265, ../../app/stylesheets/partials/_application.scss */
 #profile {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1366,26 +1369,26 @@ a:active {
 #profile hr.last {
   display: none;
 }
-/* line 266, ../../app/stylesheets/partials/_application.scss */
+/* line 268, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item {
   background-image: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 275, ../../app/stylesheets/partials/_application.scss */
+/* line 277, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item .left {
   height: 80px;
 }
-/* line 283, ../../app/stylesheets/partials/_application.scss */
+/* line 285, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.follow {
   margin: -1px;
 }
-/* line 287, ../../app/stylesheets/partials/_application.scss */
+/* line 289, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.unfollow {
   margin-left: -9px;
 }
 
-/* line 296, ../../app/stylesheets/partials/_application.scss */
+/* line 298, ../../app/stylesheets/partials/_application.scss */
 #main {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1421,7 +1424,7 @@ a:active {
   display: none;
 }
 
-/* line 300, ../../app/stylesheets/partials/_application.scss */
+/* line 302, ../../app/stylesheets/partials/_application.scss */
 #signin, #settings {
   display: inline;
   float: left;
@@ -1464,12 +1467,8 @@ a:active {
 #signin hr.last, #settings hr.last {
   display: none;
 }
-/* line 305, ../../app/stylesheets/partials/_application.scss */
+/* line 306, ../../app/stylesheets/partials/_application.scss */
 #signin form, #settings form {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -25.417px 1.5em 25.417px;
   display: inline;
   float: left;
   margin-right: 0;
@@ -1481,11 +1480,11 @@ a:active {
   overflow-x: hidden;
 }
 /* line 311, ../../app/stylesheets/partials/_application.scss */
-#signin .field, #settings .field {
+#signin .field, #signin .actions, #settings .field, #settings .actions {
   display: inline;
   float: left;
   position: relative;
-  margin: 0 0px 1.5em 0px;
+  margin: 0 -25.417px 1.5em 25.417px;
   display: inline;
   float: left;
   margin-right: 10px;
@@ -1495,7 +1494,7 @@ a:active {
   color: #333333;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #signin .field, * html #settings .field {
+* html #signin .field, * html #signin .actions, * html #settings .field, * html #settings .actions {
   overflow-x: hidden;
 }
 /* line 318, ../../app/stylesheets/partials/_application.scss */
@@ -1560,17 +1559,11 @@ a:active {
 }
 /* line 340, ../../app/stylesheets/partials/_application.scss */
 #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
-  margin-top: -15px;
-  margin-right: 0px;
   display: inline;
   float: right;
 }
-/* line 347, ../../app/stylesheets/partials/_application.scss */
-#signin button, #settings button {
-  margin-left: -3px;
-}
 
-/* line 353, ../../app/stylesheets/partials/_application.scss */
+/* line 346, ../../app/stylesheets/partials/_application.scss */
 #flash {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
@@ -1640,7 +1633,7 @@ a:active {
   background: #990000;
   color: white;
 }
-/* line 358, ../../app/stylesheets/partials/_application.scss */
+/* line 351, ../../app/stylesheets/partials/_application.scss */
 #flash .success, #flash .notice, #flash .error, #flash .alert {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1648,4 +1641,33 @@ a:active {
   -ms-border-radius: 3px;
   -khtml-border-radius: 3px;
   border-radius: 3px;
+}
+
+/* line 357, ../../app/stylesheets/partials/_application.scss */
+#error_explanation, #micropost_form #error_explanation {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  *zoom: 1;
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -25.417px 1.5em 25.417px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+}
+/* line 27, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+#error_explanation a, #micropost_form #error_explanation a {
+  color: #8a1f11;
 }
