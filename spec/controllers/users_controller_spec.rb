@@ -99,6 +99,8 @@ describe UsersController do
       
       before(:each) do
         @user = test_sign_in(@user)
+        @mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+        @mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")        
       end
       
       it "should be successful" do
@@ -127,11 +129,17 @@ describe UsersController do
       end
     
       it "should show the user's microposts" do
-        mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
-        mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
         get :show, :id => @user
-        response.should have_selector("div.feed-item", :content => mp1.content)
-        response.should have_selector("div.feed-item", :content => mp2.content)
+        response.should have_selector("div.feed-item", :content => @mp1.content)
+        response.should have_selector("div.feed-item", :content => @mp2.content)
+      end
+      
+      it "should count the user's microposts in the profile nav" do
+        count = @user.microposts.count
+        
+        get :show, :id => @user
+        response.should have_selector("div#profile_header nav li",
+          :content => "Posts (#{count})")
       end
     end # signed in
   end # get 'show'
@@ -435,18 +443,41 @@ describe UsersController do
         @other_user = Factory(:user, :email => Factory.next(:email))
         @user.follow!(@other_user)
       end
+      
+      describe "users following show page" do
+        it "should show user following" do
+          get :following, :id => @user
+          response.should have_selector("a", :href => user_path(@other_user),
+                                             :content => @other_user.name)
+        end
 
-      it "should show user following" do
-        get :following, :id => @user
-        response.should have_selector("a", :href => user_path(@other_user),
-                                           :content => @other_user.name)
-      end
+      
+        it "should count the number of user following in the profile nav" do
+          count = @user.following.count
+                
+          get :show, :id => @user
+          response.should have_selector("div#profile_header nav li",
+            :content => "Following (#{count})")
+        end      
+      end #following
+      
+      describe "users follower show page" do
 
-      it "should show user followers" do
-        get :followers, :id => @other_user
-        response.should have_selector("a", :href => user_path(@user),
-                                           :content => @user.name)
-      end
+        it "followed user should show users following" do
+          get :followers, :id => @other_user
+          response.should have_selector("a", :href => user_path(@user),
+                                             :content => @user.name)
+        end
+      
+        it "should count the number of user followers in the profile nav" do
+          count = @other_user.followers.count
+        
+          get :show, :id => @other_user
+          response.should have_selector("div#profile_header nav li",
+            :content => "Followers (#{count})")
+        end
+      end #followers
+      
     end # signed in
   end # follow
 
