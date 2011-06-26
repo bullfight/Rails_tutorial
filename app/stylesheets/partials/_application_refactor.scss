@@ -136,7 +136,7 @@ a{
   }
 }
 
-#content_header, #footer { 
+#content_header, #profile_header, #footer { 
   nav {
     @include base-style;
     padding:.5em;
@@ -151,6 +151,15 @@ a{
     @include unstyled-link;
   }
 }
+
+#profile_header {
+  
+  nav li {
+    @include fancy-button-colors-matte(lighten(desaturate(#06c, 50), 50));
+  }
+  
+}
+
 
 #micropost_form {
   @include base-style;  

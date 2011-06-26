@@ -6,5 +6,10 @@
     .right
       .item-row
         %h2= link_to @user.name, @user  
-      .item-row 
-        = render 'shared/stats'
+
+#profile_header
+  %nav
+    %li= link_to "Posts (#{current_user.following.count})", current_user
+    %li= link_to "Following (#{current_user.following.count})", following_user_path(@user)
+    %li= link_to "Followers  (#{current_user.followers.count})", followers_user_path(@user)
+
