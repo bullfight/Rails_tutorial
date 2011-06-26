@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @title = "Edit user"
+    @title = "Edit Your Account Settings"
   end
   
   def update

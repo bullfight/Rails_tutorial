@@ -279,7 +279,7 @@ describe UsersController do
     
     it "should have the right title" do
       get :edit, :id => @user
-      response.should have_selector("title", :content => "Edit user")
+      response.should have_selector("title", :content => "Edit Your Account Settings")
     end
     
     it "should have a link to change the Gravitar" do
