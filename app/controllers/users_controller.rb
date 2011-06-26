@@ -24,12 +24,13 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome and please, FEED ME!"
       redirect_to @user
     else
       @title = "Sign up"
       @user.password = nil
       @user.password_confirmation = nil
+      flash[:error] = "Sorry about that, please try again."
       render 'new'      
     end
   end
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @title = "Edit user"
+      flash[:error] = "Sorry about that, please try again."
       render 'edit'
     end
   end
