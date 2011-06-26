@@ -1,278 +1,361 @@
+@mixin base-style{
+  @include border-radius(3px);
+  @include background-image(linear-gradient(top, #eee, #dddddd));
+  border: 1px solid #ccc;
+  @include prepend-top(20px);
+  @include clearfix;
+  
+  hr{
+     @include colruler(#fff);
+     margin:0px;
+   }
+   
+  hr.last{
+    display:none;
+  }
+}
 
-body {
-  background-color: #4b7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px; }
+@mixin content-position{
+  @include column(22, true);
+}
 
-a {
-  color: blue; }
-  a img {
-    border: none; }
+@mixin pagination{
+  .pagination{  
+    padding-top:20px;
+    @include content-position;
+    @include push(1);
+    @include column(20);
+  }
+  
+  .pagination .next{
+    @extend .fancy-button-base;
+    @include clearfix;
+    @include float-right;    
+  }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden; }
+  .pagination .prev{
+    @extend .fancy-button-base;
+    @include clearfix;
+    @include float-left;    
+  }
+  
+  .pagination span.disabled{
+    display:none;
+  }
+}
+
+@include establish-baseline;
+
+@include blueprint-typography-defaults;
+@include fancy-type;
+
+a{
+  @include hover-link;
+  $normal: #06c;
+  $visited: #06c;
+  @include link-colors(#06c, #06c, #06c);
+  }
 
 #container {
-  width: 75%;
-  margin: 20px auto;
-  background: white;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px; }
-  
-header {
-  padding-top: 20px;
+  padding: 0 40px 0 40px;
+  @include single-box-shadow(
+    $voff: -2px,
+    $spread: 1px,
+    $blur: 80px,
+    $inset: false);
 }
 
-header img {
-  padding: 1em;
-  background: #fff;
+#content {
+
 }
 
-footer {
-  text-align: center;
-  margin-top: 10px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+.fancy-button-base{
+  $fb-font-size: 15px;
+  $fb-radius: 3px;
+  @include fancy-button;
+  vertical-align: middle;
+  margin: 0 2px;
+  @include fancy-button-colors-matte(#ddd);
 }
 
-footer nav {
-  float: none;
-}
-  
-section {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
-  background: #fff;
-}
-
-section h1 {
-  font-size: 200%;
-}
-
-#flash_notice,
-#flash_error,
-#flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0; }
-
-#flash_notice {
-  background-color: #ccffcc;
-  border: solid 1px #66cc66; }
-
-#flash_error,
-#flash_alert {
-  background-color: #ffcccc;
-  border: solid 1px #cc6666; }
-
-.fieldWithErrors {
-  display: inline; }
-
-.error_messages {
-  width: 400px;
-  border: 2px solid #cf0000;
-  padding: 0;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  font-size: 12px; }
-  .error_messages h2 {
-    text-align: left;
-    padding: 5px 5px 5px 15px;
-    margin: 0;
-    font-weight: bold;
-    font-size: 12px;
-    background-color: #cc0000;
-    color: white; }
-  .error_messages p {
-    margin: 8px 10px; }
-  .error_messages ul {
-    margin: 0; }
+.item {  
+  @include content-position;
+  //@include background-image(linear-gradient(left top, #eee, #dddddd));
+  @include border-right-radius(3px);
+  @include normal-text;
+  padding-top:10px;
+  padding-bottom:10px;
     
-nav {
-  float: right;
+  .full {
+    @include push(1);
+    @include column(20, true);
+  }
+
+  .left {
+    @include push(1);
+    @include column(4);
+  }
+
+  .right {
+    @include clearfix;
+    @include column(16, true);   
+  }
+
+  .item-user {
+    font-weight:bold;
+  }
+  
+  .item-content {
+  }
+
+  .details {
+    @include quiet;
+    font-size:14px;
+  }
+  
+  h2 {
+    @include prepend-top(5px);
+  }
+  
 }
 
-nav {
-  background-color: white;
-  padding: 1em 0.7em;
-  white-space: nowrap;
+#header{  
+
+  #logo {
+    @include normal-text;
+    @include clearfix;
+    margin-bottom:-70px;
+  }
+  
+  nav {
+    @include float-right;
+    @include clearfix;
+    @include horizontal-list-container;        
+    @include border-bottom-radius(5px);    
+    @include background-image(linear-gradient(top, #eee, #dddddd));
+    border: 1px solid #ccc;
+    ul li {
+      @include normal-text;
+      @include horizontal-list-item;
+    }  
+  }
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
+#content_header, #profile_header, #footer { 
+  nav {
+    @include base-style;
+    padding:.5em;
+    @include clearfix;
+  }
+  
+  nav li {
+    @extend .fancy-button-base;
+  }
+  
+  nav a {
+    @include unstyled-link;
+  }
 }
 
-nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0.2em 0;
+#profile_header {
+  
+  nav li {
+    @include fancy-button-colors-matte(#eee);
+  }
+  
 }
 
-nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
+
+#micropost_form {
+  @include base-style;  
+  
+  .field{
+    @include push(1);
+    @include content-position;    
+    @include append-bottom(-.5em);
+    @include blueprint-form-borders(#ddd, #fff, #eee);
+  }
+  .field textarea#micropost_content{
+    @include single-box-shadow(
+      $inset: false, 
+      $blur: 20px, 
+      $voff: -2px, 
+      $hoff: -2px
+    );
+    @include border-radius;
+    @include normal-text;
+    
+    border-width:4px;
+    background-color:#fff;
+    font-size:22px;
+    height: 110px;
+    width: 481px;    
+  }
+  
+  .actions {
+    @include push(1);
+    @include column(20);
+
+  }
+  
+  .actions .count{    
+    @include normal-text;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+  
+  .actions .count.lengtherror{
+    color: darkred;
+  }
+  
+  input#micropost_submit{
+    @extend .fancy-button-base;
+    @include float-right;
+  }
 }
 
-nav ul li a:visited {
-  color: #09c;
+#paginate {
+  @include base-style;
+  @include pagination;  
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+#microposts {
+  @include base-style;
+  
+  .feed-item {    
+    @extend .item;
+    margin-bottom:0px;
+  }
+  
+  .first{
+    
+  }
+  .left{
+    height:80px;
+    
+  }
+  .highlight{
+    $highlight-color: #ccc;
+    @include highlight;
+  }
 }
 
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
+#users {
+  @include base-style;
+  @include pagination;
+  
+  .user-item {
+    @extend .item;
+    
+    height: 50px;  
+  }
+  .left{
+    height: 50px;
+  }
+  
+  .highlight{
+    $highlight-color: #ccc;
+    @include highlight;
+  }
+  
 }
 
-/* Round corners */
+#profile {
+  @include base-style;
+    
+  .user-item{
+   
+    @extend .item;
+    @include background-image(none);
+    @include prepend-top(10px);
+    @include append-bottom(10px);
+  }
+  
+    
+  .user-item .left{
+    height: 80px;
+  }
+  
+  .user-item .right{
 
-.round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
+  }
+  
+  .actions.follow{
+    margin:-1px;
+  }
+  
+  .actions.unfollow{
+    margin-left:-9px;
+  }
+  input#relationship_submit {
+    @extend .fancy-button-base;
+  }
+  
 }
 
-/* User show page */
-
-table.profile {
-  width: 100%;
-  margin-bottom: 0;
+#main{
+  @include base-style;
 }
 
-td.main {
-  width: 70%;
-  padding: 1em;
+#signin, #settings {
+
+  @include column(22);
+  @include base-style;
+  
+  form {
+    @include push(1);
+    @include column(20,true);
+    @include prepend-top(30px);
+  }
+  
+  .field{
+    @include push(0);
+    @include column(20);
+    @include prepend-top(-15px);
+    @include normal-text;
+  }
+
+  .field label, .field input{
+    width: 489px;
+    font-size: 22px;
+     @include blueprint-form-borders(#ddd, #fff, #eee);
+    
+  }
+  
+  .field input{    
+    $default-box-shadow-blur: 7px;
+    @include blueprint-form-borders(#ddd, #fff, #eee);
+    @include single-box-shadow(
+      $inset: false, 
+      $blur: 5px, 
+      $voff: -1px, 
+      $hoff: -1px
+    );
+    @include border-radius;
+    @include normal-text;
+    border-width:4px;
+    background-color:#fff;
+  }
+  
+  input#session_submit, input#user_submit{
+    margin-top: -15px;
+    margin-right: 0px;
+    @extend .fancy-button-base;
+    @include float-right;
+  }
+    
+  button{
+    @extend .fancy-button-base;
+    margin-left: -3px;
+  }
 }
 
-td.sidebar {
-  width: 30%;
-  padding: 1em;
-  vertical-align: top;
-  background: #ffc;
-}
-
-.profile img.gravatar {
-  border: 1px solid #999;
-  margin-bottom: -15px;
-}
-
-.field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-.field_with_errors label {
-  color: #fff;
-}
-
-#error_explanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-ul.users {
-  margin-top: 1em;
-}
-
-.users li {
-  list-style: none;
-}
-
-h1.micropost {
-  margin-bottom: 0.3em;
-}
-
-table.microposts {
-  margin-top: 1em;
-}
-
-table.microposts tr {
-  height: 70px;
-}
-
-table.microposts tr td.gravatar {
-  border-top: 1px solid #ccc;
-  vertical-align: top;
-  width: 50px;
-}
-
-table.microposts tr td.micropost {
-  border-top: 1px solid #ccc;
-  vertical-align: top;
-  padding-top: 10px;
-}
-
-table.microposts tr td.micropost span.timestamp {
-  display: block;
-  font-size: 85%;
-  color: #666;
-}
-
-div.user_info img {
-  padding-right: 0.1em;
-}
-
-div.user_info a {
-  text-decoration: none;
-}
-
-div.user_info span.user_name {
-  position: relative;
-}
-
-div.user_info span.microposts {
-  position: relative;
-  font-size: 80%;
-}
-
-form.new_micropost {
-  margin-bottom: 2em;
-}
-
-form.new_micropost textarea {
-  height: 4em;
-  margin-bottom: 0;
+#flash{  
+  @include normal-text;
+  @include prepend-top(20px);
+  @include blueprint-interaction;
+  
+  .success, .notice, .error {
+    @include border-radius(3px);
+  }
 }
