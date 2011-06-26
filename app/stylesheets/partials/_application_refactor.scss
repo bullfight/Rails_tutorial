@@ -155,7 +155,7 @@ a{
 #profile_header {
   
   nav li {
-    @include fancy-button-colors-matte(lighten(desaturate(#06c, 50), 50));
+    @include fancy-button-colors-matte(#eee);
   }
   
 }

@@ -923,19 +923,19 @@ a:active {
 
 /* line 157, ../../app/stylesheets/partials/_application_refactor.scss */
 #profile_header nav li {
-  background-color: #cfe5fc;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #c2d6eb));
-  background-image: -webkit-linear-gradient(#ffffff, #c2d6eb);
-  background-image: -moz-linear-gradient(#ffffff, #c2d6eb);
-  background-image: -o-linear-gradient(#ffffff, #c2d6eb);
-  background-image: -ms-linear-gradient(#ffffff, #c2d6eb);
-  background-image: linear-gradient(#ffffff, #c2d6eb);
-  border-color: #9fbfdf;
+  background-color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dfdfdf));
+  background-image: -webkit-linear-gradient(#ffffff, #dfdfdf);
+  background-image: -moz-linear-gradient(#ffffff, #dfdfdf);
+  background-image: -o-linear-gradient(#ffffff, #dfdfdf);
+  background-image: -ms-linear-gradient(#ffffff, #dfdfdf);
+  background-image: linear-gradient(#ffffff, #dfdfdf);
+  border-color: #c8c8c8;
   text-shadow: white 0px 1px 1px;
-  -moz-box-shadow: rgba(255, 255, 255, 0.9) 0 0 0.1em 1px inset;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.9) 0 0 0.1em 1px inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.9) 0 0 0.1em 1px inset;
-  box-shadow: rgba(255, 255, 255, 0.9) 0 0 0.1em 1px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.933) 0 0 0.1em 1px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.933) 0 0 0.1em 1px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.933) 0 0 0.1em 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.933) 0 0 0.1em 1px inset;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -949,14 +949,14 @@ a:active {
 }
 /* line 31, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
 #profile_header nav li:hover, #profile_header nav li:focus {
-  background-color: #c0defc;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #b6cfe7));
-  background-image: -webkit-linear-gradient(#ffffff, #b6cfe7);
-  background-image: -moz-linear-gradient(#ffffff, #b6cfe7);
-  background-image: -o-linear-gradient(#ffffff, #b6cfe7);
-  background-image: -ms-linear-gradient(#ffffff, #b6cfe7);
-  background-image: linear-gradient(#ffffff, #b6cfe7);
-  border-color: #94b8db;
+  background-color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #d7d7d7));
+  background-image: -webkit-linear-gradient(#ffffff, #d7d7d7);
+  background-image: -moz-linear-gradient(#ffffff, #d7d7d7);
+  background-image: -o-linear-gradient(#ffffff, #d7d7d7);
+  background-image: -ms-linear-gradient(#ffffff, #d7d7d7);
+  background-image: linear-gradient(#ffffff, #d7d7d7);
+  border-color: silver;
   text-shadow: white 0px 1px 1px;
 }
 /* line 120, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
@@ -965,19 +965,19 @@ a:active {
 }
 /* line 36, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
 #profile_header nav li:active {
-  background-color: #b1d6fb;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bed4e9), color-stop(40%, #c9dbed), color-stop(85%, #c9dbed), color-stop(100%, #e4edf6));
-  background-image: -webkit-linear-gradient(#bed4e9, #c9dbed 40%, #c9dbed 85%, #e4edf6);
-  background-image: -moz-linear-gradient(#bed4e9, #c9dbed 40%, #c9dbed 85%, #e4edf6);
-  background-image: -o-linear-gradient(#bed4e9, #c9dbed 40%, #c9dbed 85%, #e4edf6);
-  background-image: -ms-linear-gradient(#bed4e9, #c9dbed 40%, #c9dbed 85%, #e4edf6);
-  background-image: linear-gradient(#bed4e9, #c9dbed 40%, #c9dbed 85%, #e4edf6);
-  border-color: #88b0d7;
-  text-shadow: #fafcff 0px -1px -1px;
-  -moz-box-shadow: #9fbfdf 0 0.08em 0.2em 1px inset;
-  -webkit-box-shadow: #9fbfdf 0 0.08em 0.2em 1px inset;
-  -o-box-shadow: #9fbfdf 0 0.08em 0.2em 1px inset;
-  box-shadow: #9fbfdf 0 0.08em 0.2em 1px inset;
+  background-color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dcdcdc), color-stop(40%, #e4e4e4), color-stop(85%, #e4e4e4), color-stop(100%, #f6f6f6));
+  background-image: -webkit-linear-gradient(#dcdcdc, #e4e4e4 40%, #e4e4e4 85%, #f6f6f6);
+  background-image: -moz-linear-gradient(#dcdcdc, #e4e4e4 40%, #e4e4e4 85%, #f6f6f6);
+  background-image: -o-linear-gradient(#dcdcdc, #e4e4e4 40%, #e4e4e4 85%, #f6f6f6);
+  background-image: -ms-linear-gradient(#dcdcdc, #e4e4e4 40%, #e4e4e4 85%, #f6f6f6);
+  background-image: linear-gradient(#dcdcdc, #e4e4e4 40%, #e4e4e4 85%, #f6f6f6);
+  border-color: #b8b8b8;
+  text-shadow: white 0px -1px -1px;
+  -moz-box-shadow: #c8c8c8 0 0.08em 0.2em 1px inset;
+  -webkit-box-shadow: #c8c8c8 0 0.08em 0.2em 1px inset;
+  -o-box-shadow: #c8c8c8 0 0.08em 0.2em 1px inset;
+  box-shadow: #c8c8c8 0 0.08em 0.2em 1px inset;
 }
 /* line 120, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
 #profile_header nav li:active, #profile_header nav li:active:visited {
