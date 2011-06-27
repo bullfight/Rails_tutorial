@@ -149,21 +149,42 @@ describe User do
     
     describe "authenticate method" do
       
-      it "should return nil on email/password mismatch" do
-        wrong_password_user = User.authenticate(@attr[:email], "wrong_password")
-        wrong_password_user.should be_nil
-      end
+      describe "signin with username" do
+        it "should return nil on username/password mismatch" do
+          wrong_password_user = User.authenticate(@attr[:username], "wrong_password")
+          wrong_password_user.should be_nil
+        end
       
-      it "should return nil for an email address with no user" do
-        nonexistant_user = User.authenticate("bar@foo.org", @attr[:password])
-        nonexistant_user.should be_nil
-      end
+        it "should return nil for an username address with no user" do
+          nonexistant_user = User.authenticate("barfoo", @attr[:password])
+          nonexistant_user.should be_nil
+        end
+        
+        it "should return the user on username/password match" do
+          matching_user = User.authenticate(@attr[:username], @attr[:password])
+          matching_user.should == @user
+        end
+
+      end #username
       
-      it "should return the user on email/password match" do
-        matching_user = User.authenticate(@attr[:email], @attr[:password])
-        matching_user.should == @user
-      end
+      describe "signin with email" do
+        
+        it "should return nil on email/password mismatch" do
+          wrong_password_user = User.authenticate(@attr[:email], "wrong_password")
+          wrong_password_user.should be_nil
+        end
       
+        it "should return nil for an email address with no user" do
+          nonexistant_user = User.authenticate("bar@foo.org", @attr[:password])
+          nonexistant_user.should be_nil
+        end
+      
+        it "should return the user on email/password match" do
+          matching_user = User.authenticate(@attr[:email], @attr[:password])
+          matching_user.should == @user
+        end
+        
+      end #email
     end #authenticate 
   end # password encryption
   

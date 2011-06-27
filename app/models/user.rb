@@ -53,10 +53,14 @@ class User < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
     
-  def self.authenticate(email, submitted_password)
-   user = find_by_email(email)
-   return nil  if user.nil?
-   return user if user.has_password?(submitted_password)
+  def self.authenticate(login, submitted_password)
+    if login.match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
+      user = find_by_email(login)
+    else
+      user = find_by_username(login)
+    end
+    return nil  if user.nil?
+    return user if user.has_password?(submitted_password)
   end
 
   def self.authenticate_with_salt(id, cookie_salt)
