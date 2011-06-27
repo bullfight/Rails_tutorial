@@ -7,8 +7,8 @@
       .details
         %span.item-timestamp
           = "Posted #{time_ago_in_words(micropost.created_at)} ago."
-        |
-        %span.item-delete
-          -if current_user?(micropost.user)
+        -if current_user?(micropost.user)
+          |
+          %span.item-delete        
             = link_to "delete", micropost, :method => :delete, :confirm => "You sure?", :title => micropost.content, :remote => true
 %hr

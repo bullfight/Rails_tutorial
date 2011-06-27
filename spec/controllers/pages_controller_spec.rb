@@ -4,7 +4,7 @@ describe PagesController do
   render_views
   
   before (:each) do
-    @base_title = "Ruby on Rails Tutorial Sample App"
+    @base_title = "Feed Me"
   end
   
   ["contact", "about", "help"].each do |page|
@@ -37,7 +37,7 @@ describe PagesController do
 
         it "should have the right title" do
           response.should have_selector("title",
-                                        :content => "#{@base_title} | Home")
+                                        :content => "#{@base_title} | Sign in")
         end
       end # not signed in
 
@@ -47,6 +47,12 @@ describe PagesController do
           @user = test_sign_in(Factory(:user))
           other_user = Factory(:user, :email => Factory.next(:email))
           other_user.follow!(@user)
+        end
+        
+        it "should have the right title" do
+          get :home
+          response.should have_selector("title",
+                                        :content => "#{@base_title} | Feed")
         end
 
         it "should have the right follower/following counts" do

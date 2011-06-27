@@ -1,13 +1,6 @@
 #settings
   = form_for(@user) do |f|
-    = render 'shared/error_messages', :object => f.object
-    
-    .field
-      
-      - if signed_in?
-        .label= gravatar_for @user, :size => 80
-        %button{ :href => "http://gravatar.com/emails"} change
-      
+    = render 'shared/error_messages', :object => f.object      
     .field
       = f.label :name
       = f.text_field :name
@@ -25,3 +18,10 @@
         = f.submit "Update"
       -else 
         = f.submit "Sign Up"
+  - if signed_in?
+    #gravatar
+      .label Gravatar Profile Icon
+      = gravatar_for @user, :size => 80
+      %p
+        %a{ :href => "http://gravatar.com/emails"} change
+          

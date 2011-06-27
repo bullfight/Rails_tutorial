@@ -18,8 +18,9 @@
           %h1=link_to "Feed Me", root_path
       
       #content        
-        #content_header
-          = render :partial => 'layouts/content_header'
+        -if signed_in?
+          #content_header
+            = render :partial => 'layouts/content_header'
       
         #flash
           - flash.each do |name, msg|

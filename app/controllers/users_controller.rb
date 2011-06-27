@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :except => [:show, :new, :create]
+  before_filter :authenticate, :except => [:new, :create]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
   before_filter :sign_out_first,  :only => [:new, :create]
@@ -24,18 +24,19 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome and please, FEED ME!"
       redirect_to @user
     else
       @title = "Sign up"
       @user.password = nil
       @user.password_confirmation = nil
+      flash[:error] = "Sorry about that, please try again."
       render 'new'      
     end
   end
   
   def edit
-    @title = "Edit user"
+    @title = "Edit Your Account Settings"
   end
   
   def update
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @title = "Edit user"
+      flash[:error] = "Sorry about that, please try again."
       render 'edit'
     end
   end
