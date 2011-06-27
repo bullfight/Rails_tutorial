@@ -11,7 +11,7 @@ describe UsersController do
         response.should redirect_to(signin_path)
         flash[:notice].should =~ /sign in/i
       end
-    end 
+    end
     
     describe "for non-admin signed-in users" do
       
@@ -86,40 +86,62 @@ describe UsersController do
     before(:each) do
       @user = Factory(:user)
     end
-        
-    it "should be successful" do
-      get :show, :id => @user
-      response.should be_success
+    
+    describe "for non-signed-in users" do
+      it "should deny access" do
+        get :show, :id => @user
+        response.should redirect_to(signin_path)
+        flash[:notice].should =~ /sign in/i
+      end
     end
     
-    it "should find the right user" do
-      get :show, :id => @user
-      assigns(:user).should == @user
-    end
-    
-    it "should have the right title" do
-      get :show, :id => @user
-        response.should have_selector("title", :content => @user.name)
-    end
-    
-    it "should include the user's name"do
-       get :show, :id => @user
-       response.should have_selector("h2", :content => @user.name)
-     end
-    
-    it "should have a profile image" do
-      get :show, :id => @user
-      response.should have_selector("img", :class => "gravatar")
-    end
-    
-    it "should show the user's microposts" do
-      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
-      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
-      get :show, :id => @user
-      response.should have_selector("div.feed-item", :content => mp1.content)
-      response.should have_selector("div.feed-item", :content => mp2.content)
-    end
+    describe "for signed-in users" do
       
+      before(:each) do
+        @user = test_sign_in(@user)
+        @mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+        @mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")        
+      end
+      
+      it "should be successful" do
+        get :show, :id => @user
+        response.should be_success
+      end
+    
+      it "should find the right user" do
+        get :show, :id => @user
+        assigns(:user).should == @user
+      end
+    
+      it "should have the right title" do
+        get :show, :id => @user
+          response.should have_selector("title", :content => @user.name)
+      end
+    
+      it "should include the user's name"do
+         get :show, :id => @user
+         response.should have_selector("h2", :content => @user.name)
+       end
+    
+      it "should have a profile image" do
+        get :show, :id => @user
+        response.should have_selector("img", :class => "gravatar")
+      end
+    
+      it "should show the user's microposts" do
+        get :show, :id => @user
+        response.should have_selector("div.feed-item", :content => @mp1.content)
+        response.should have_selector("div.feed-item", :content => @mp2.content)
+      end
+      
+      it "should count the user's microposts in the profile nav" do
+        count = @user.microposts.count
+        
+        get :show, :id => @user
+        response.should have_selector("div#profile_header nav li",
+          :content => "Posts (#{count})")
+      end
+    end # signed in
   end # get 'show'
     
   describe "GET 'new'" do
@@ -221,7 +243,7 @@ describe UsersController do
 
       it "should have a welcome message" do
        post :create, :user => @attr
-       flash[:success].should =~ /welcome to the sample app/i
+       flash[:success].should =~ /feed me/i
       end
        
       it "should sign the user in" do
@@ -257,13 +279,13 @@ describe UsersController do
     
     it "should have the right title" do
       get :edit, :id => @user
-      response.should have_selector("title", :content => "Edit user")
+      response.should have_selector("title", :content => "Edit Your Account Settings")
     end
     
     it "should have a link to change the Gravitar" do
       get :edit, :id => @user
       gravitar_url = "http://gravatar.com/emails"
-      response.should have_selector("button", :href => gravitar_url, :content => "change")
+      response.should have_selector("a", :href => gravitar_url, :content => "change")
     end
   
   end
@@ -421,18 +443,41 @@ describe UsersController do
         @other_user = Factory(:user, :email => Factory.next(:email))
         @user.follow!(@other_user)
       end
+      
+      describe "users following show page" do
+        it "should show user following" do
+          get :following, :id => @user
+          response.should have_selector("a", :href => user_path(@other_user),
+                                             :content => @other_user.name)
+        end
 
-      it "should show user following" do
-        get :following, :id => @user
-        response.should have_selector("a", :href => user_path(@other_user),
-                                           :content => @other_user.name)
-      end
+      
+        it "should count the number of user following in the profile nav" do
+          count = @user.following.count
+                
+          get :show, :id => @user
+          response.should have_selector("div#profile_header nav li",
+            :content => "Following (#{count})")
+        end      
+      end #following
+      
+      describe "users follower show page" do
 
-      it "should show user followers" do
-        get :followers, :id => @other_user
-        response.should have_selector("a", :href => user_path(@user),
-                                           :content => @user.name)
-      end
+        it "followed user should show users following" do
+          get :followers, :id => @other_user
+          response.should have_selector("a", :href => user_path(@user),
+                                             :content => @user.name)
+        end
+      
+        it "should count the number of user followers in the profile nav" do
+          count = @other_user.followers.count
+        
+          get :show, :id => @other_user
+          response.should have_selector("div#profile_header nav li",
+            :content => "Followers (#{count})")
+        end
+      end #followers
+      
     end # signed in
   end # follow
 

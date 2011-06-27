@@ -1,17 +1,6 @@
-#profile
-  .user-item
-    .left
-      .item-row= gravatar_for @user, :size => 80
-      .item-row= render 'follow_form' if signed_in?
-    .right
-      .item-row
-        %h2= link_to @user.name, @user  
-      .item-row 
-        = render 'shared/stats'
-      
+= render 'shared/profile'
         
-- unless @user.microposts.empty?
+- unless @microposts.empty?
   #microposts= render @microposts
   -unless @microposts.last_page? and @microposts.first_page?
     #paginate= paginate @microposts
-  

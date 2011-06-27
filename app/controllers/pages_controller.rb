@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
   
   def home
-    @title = "Home"
+    @title = "Sign in"
     if signed_in?
+      @title = "Feed"
       @micropost = Micropost.new if signed_in?
       @feed_items = current_user.feed.page(params[:page]).per(5)
     end
