@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20110627130429
+#
+# Table name: microposts
+#
+#  id          :integer         not null, primary key
+#  content     :string(255)
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  in_reply_to :integer
+#
+
 class Micropost < ActiveRecord::Base  
   attr_accessible :content, :in_reply_to
   belongs_to :user
