@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe User do
   before(:each) do
-    @attr = { :name => "Example User", 
+    @attr = { :username => "Example_User",
+              :name => "Example User", 
               :email => "user@example.com",
               :password => "foobar",
               :password_confirmation => "foobar"}
@@ -10,6 +11,52 @@ describe User do
   
   it "should create a new instance given valid attributes" do
     User.create!(@attr)
+  end
+  
+  it "should require a username" do
+    no_name_name = User.new(@attr.merge(:username => ""))
+    no_name_name.should_not be_valid
+  end
+  
+  it "should accept a valid username" do
+    usernames = %w[username UsErNamE U_s_erNAME U.s.e.R _user_]
+    usernames.each do |name|
+      valid_username = User.new(@attr.merge(:username => name))
+      valid_username.should be_valid
+    end
+  end
+  
+  it "should reject a invalid username" do
+    usernames = ["usern,ame", "", "sd as www", "S#as", "@sdasd"  ]
+    usernames.each do |name|
+      valid_username = User.new(@attr.merge(:username => name))
+      valid_username.should_not be_valid
+    end
+  end
+  
+  it "should reject usernames that are too short" do
+    short_name = "a" * 3
+    short_name_user = User.new(@attr.merge(:username => short_name))
+    short_name_user.should_not be_valid
+  end
+  
+  it "should reject usernames that are too long" do
+    long_name = "a" * 51
+    long_name_user = User.new(@attr.merge(:username => long_name))
+    long_name_user.should_not be_valid
+  end
+  
+  it "should reject duplicate usernames" do
+    User.create!(@attr)
+    user_with_duplicate_email = User.new(@attr)
+    user_with_duplicate_email.should_not be_valid
+  end
+  
+  it "should reject usernames identical up to case" do
+    upcased_username = @attr[:username].upcase
+    User.create!(@attr.merge(:username => upcased_username))
+    user_with_duplicate_username = User.new(@attr)
+    user_with_duplicate_username.should_not be_valid
   end
   
   it "should require a name" do
@@ -175,12 +222,15 @@ describe User do
       
       it "should not include a different user's microposts" do
         mp3 = Factory(:micropost, 
-                      :user => Factory(:user, :email => Factory.next(:email)))
+                      :user => Factory(:user, 
+                                       :username => Factory.next(:username), 
+                                       :email => Factory.next(:email)))
         @user.feed.should_not include(mp3)
       end
       
       it "should include the microposts of followed users" do
-        followed = Factory(:user, :email => Factory.next(:email))
+        followed = Factory(:user, :username => Factory.next(:username), 
+                           :email => Factory.next(:email))
         mp3 = Factory(:micropost, :user => followed)
         @user.follow!(followed)
         @user.feed.should include(mp3)

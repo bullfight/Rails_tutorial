@@ -20,7 +20,9 @@ describe UsersController do
 
         @users = [@user]
         30.times do 
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user, 
+                            :username => Factory.next(:username), 
+                            :email => Factory.next(:email))
         end
       end
       
@@ -65,7 +67,9 @@ describe UsersController do
         
         @users = [admin]
         30.times do 
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user, 
+                            :username => Factory.next(:username), 
+                            :email => Factory.next(:email))
         end
       end
       
@@ -192,7 +196,7 @@ describe UsersController do
     describe "failure" do
 
       before(:each) do
-        @attr = { :name => "", :email => "", :password => "",
+        @attr = { :name => "", :username => "", :email => "", :password => "",
           :password_confirmation => "" }
       end
 
@@ -226,7 +230,7 @@ describe UsersController do
     describe "success" do
 
       before(:each) do
-       @attr = { :name => "New User", :email => "user@example.com",
+       @attr = { :username => "NewUser", :name => "New User", :email => "user@example.com",
                  :password => "foobar", :password_confirmation => "foobar" }
       end
 
@@ -297,7 +301,7 @@ describe UsersController do
     end
     
     describe "failure" do
-      @attr = { :email => "", :name => "", :password => "",
+      @attr = { :email => "", :name => "", :username => "", :password => "",
                 :password_confirmation => "" }
       
       it "should render the 'edit' page" do
@@ -313,13 +317,14 @@ describe UsersController do
     
     describe "success" do
       before(:each) do
-        @attr = { :name => "New Name", :email => "user@example.org",
+        @attr = { :username => "foolbarz", :name => "New Name", :email => "user@example.org",
                   :password => "barbaz", :password_confirmation => "barbaz" }
       end
       it "should change the user's attributes" do
         put :update, :id => @user, :user => @attr
         @user.reload
-        @user.name.should == @attr[:name] 
+        @user.name.should == @attr[:name]
+        @user.username.should == @attr[:username] 
         @user.email.should == @attr[:email]
       end
       it "should redirect to the user show page" do
@@ -357,7 +362,9 @@ describe UsersController do
     describe "for signed-in users" do
      
       before(:each) do
-        wrong_user = Factory(:user, :email => "user@example.net")
+        wrong_user = Factory(:user,
+                             :username => Factory.next(:username),
+                             :email => Factory.next(:email))
         test_sign_in(wrong_user)
       end
       
@@ -398,7 +405,10 @@ describe UsersController do
                 
     describe "as an admin user" do
       before(:each) do
-         @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+         @admin = Factory(:user, 
+                          :username => Factory.next(:username),
+                          :email => Factory.next(:email), 
+                          :admin => true)
          test_sign_in(@admin)
        end
        
@@ -440,7 +450,9 @@ describe UsersController do
 
       before(:each) do
         @user = test_sign_in(Factory(:user))
-        @other_user = Factory(:user, :email => Factory.next(:email))
+        @other_user = Factory(:user, 
+                              :username => Factory.next(:username),
+                              :email => Factory.next(:email))
         @user.follow!(@other_user)
       end
       
