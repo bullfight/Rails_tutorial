@@ -285,7 +285,7 @@ describe UsersController do
     it "should have a link to change the Gravitar" do
       get :edit, :id => @user
       gravitar_url = "http://gravatar.com/emails"
-      response.should have_selector("button", :href => gravitar_url, :content => "change")
+      response.should have_selector("a", :href => gravitar_url, :content => "change")
     end
   
   end
