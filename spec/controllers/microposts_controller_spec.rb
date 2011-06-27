@@ -20,6 +20,9 @@ describe MicropostsController do
 
     before(:each) do
       @user = test_sign_in(Factory(:user))
+      @other_user = Factory(:user, 
+                            :username => "Bill",
+                            :email => Factory.next(:email))
     end
 
     describe "failure" do
@@ -42,6 +45,28 @@ describe MicropostsController do
     describe "success" do
       before(:each) do
         @attr = { :content => "Lorem ipsum" }
+      end
+
+      it "should create a micropost" do
+        lambda do
+          post :create, :micropost => @attr
+        end.should change(Micropost, :count).by(1)
+      end
+
+      it "should redirect to the home page" do
+        post :create, :micropost => @attr
+        response.should redirect_to(root_path)
+      end
+
+      it "should have a flash message" do
+        post :create, :micropost => @attr
+        flash[:success].should =~ /post created/i
+      end
+    end # success
+    
+    describe "successful reply" do
+      before(:each) do
+        @attr = { :content => "@Bill Lorem ipsum" }
       end
 
       it "should create a micropost" do

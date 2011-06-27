@@ -1,5 +1,5 @@
 class Micropost < ActiveRecord::Base  
-  attr_accessible :content
+  attr_accessible :content, :in_reply_to
   belongs_to :user
   
   validates :content, :presence => true, :length => { :maximum => 140 }
@@ -9,6 +9,12 @@ class Micropost < ActiveRecord::Base
   
   # Return microposts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
+  
+  # Return microposts that are replies from other users
+  scope :from_replies, lambda { |user| replies_to(user) }
+  
+  # Return Followed Users and replies
+  scope :from_followed_and_replies, lambda { |user| replies_to(user) and followed_by(user) }
   
   private
     
@@ -20,5 +26,9 @@ class Micropost < ActiveRecord::Base
       where("user_id IN (#{following_ids}) OR user_id = :user_id",
         { :user_id => user }
       )
+    end
+    
+    def self.replies_to(user)
+      where("in_reply_to = ? ", user)
     end
 end
