@@ -309,7 +309,7 @@ a{
   
   .field, .actions{
     @include push(1);
-    @include column(20);
+    @include column(20,true);
     @include prepend-top(-15px);
     @include normal-text;
   }
@@ -339,6 +339,39 @@ a{
   input#session_submit, input#user_submit{
     @extend .fancy-button-base;
     @include float-right;
+  }
+  
+  #gravatar{
+    @include push(1);
+    @include column(20, true);
+    @include clearfix;
+
+  }
+  
+  #gravatar img.gravatar{
+    @include float-right;
+    @include prepend-top(8px);
+    @include clearfix;
+    margin-right: 6px;
+
+  }
+  
+  #gravatar p{
+    @include float-right;
+    clear:both;
+  }
+  
+  #gravatar a{
+    @include float-right;
+    @include prepend-top(8px);
+    @extend .fancy-button-base;
+  }
+  
+  
+  #gravatar .label{
+    @include normal-text;
+    font-size:22px;
+    text-align: right;
   }
 }
 
