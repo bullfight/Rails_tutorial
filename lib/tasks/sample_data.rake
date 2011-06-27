@@ -37,6 +37,10 @@ def make_microposts
         content = Faker::Lorem.sentence(5)
         user.microposts.create!(:content => content)
       end
+      1.times do
+        content = "@ExampleUser #{Faker::Lorem.sentence(5)}"
+        user.microposts.create!(:content => content, :in_reply_to => 1)
+      end
     end
   end
 end
