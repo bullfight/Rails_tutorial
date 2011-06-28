@@ -5,13 +5,15 @@
       .item-row= render 'follow_form'
     .right
       .item-row
-        %h2= link_to @user.name, @user  
+        %h2= link_to @user.username, @user
+        %span=@user.name
       .item-row
         = @user.email
         
 #profile_header
   %nav
     %li= link_to "Posts (#{@user.microposts.count})", user_path(@user)
+    %li= link_to "Replies (#{@user.replies.count})", replies_user_path(@user)
     %li= link_to "Following (#{@user.following.count})", following_user_path(@user)
     %li= link_to "Followers (#{@user.followers.count})", followers_user_path(@user)
 

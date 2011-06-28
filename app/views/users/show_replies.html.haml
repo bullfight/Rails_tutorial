@@ -1,0 +1,8 @@
+= render 'shared/profile'
+        
+-unless @feed_items.empty?
+  #microposts
+    = render :partial => 'shared/feed_item', :collection => @feed_items
+  - unless @feed_items.last_page? and @feed_items.first_page?
+    #paginate
+      = paginate @feed_items

@@ -1,8 +1,8 @@
 #signin
   = form_for(:session, :url => sessions_path) do |f|
     %div{ :class => "field"}
-      = f.label :email
-      = f.text_field :email
+      = f.label :login, "Username or Email"
+      = f.text_field :login
 
     %div{ :class => "field"}
       = f.label :password

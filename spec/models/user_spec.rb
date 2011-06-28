@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe User do
   before(:each) do
-    @attr = { :name => "Example User", 
+    @attr = { :username => "Example_User",
+              :name => "Example User", 
               :email => "user@example.com",
               :password => "foobar",
               :password_confirmation => "foobar"}
@@ -10,6 +11,52 @@ describe User do
   
   it "should create a new instance given valid attributes" do
     User.create!(@attr)
+  end
+  
+  it "should require a username" do
+    no_name_name = User.new(@attr.merge(:username => ""))
+    no_name_name.should_not be_valid
+  end
+  
+  it "should accept a valid username" do
+    usernames = %w[username UsErNamE U_s_erNAME U.s.e.R _user_]
+    usernames.each do |name|
+      valid_username = User.new(@attr.merge(:username => name))
+      valid_username.should be_valid
+    end
+  end
+  
+  it "should reject a invalid username" do
+    usernames = ["usern,ame", "", "sd as www", "S#as", "@sdasd"  ]
+    usernames.each do |name|
+      valid_username = User.new(@attr.merge(:username => name))
+      valid_username.should_not be_valid
+    end
+  end
+  
+  it "should reject usernames that are too short" do
+    short_name = "a" * 3
+    short_name_user = User.new(@attr.merge(:username => short_name))
+    short_name_user.should_not be_valid
+  end
+  
+  it "should reject usernames that are too long" do
+    long_name = "a" * 51
+    long_name_user = User.new(@attr.merge(:username => long_name))
+    long_name_user.should_not be_valid
+  end
+  
+  it "should reject duplicate usernames" do
+    User.create!(@attr)
+    user_with_duplicate_email = User.new(@attr)
+    user_with_duplicate_email.should_not be_valid
+  end
+  
+  it "should reject usernames identical up to case" do
+    upcased_username = @attr[:username].upcase
+    User.create!(@attr.merge(:username => upcased_username))
+    user_with_duplicate_username = User.new(@attr)
+    user_with_duplicate_username.should_not be_valid
   end
   
   it "should require a name" do
@@ -102,21 +149,42 @@ describe User do
     
     describe "authenticate method" do
       
-      it "should return nil on email/password mismatch" do
-        wrong_password_user = User.authenticate(@attr[:email], "wrong_password")
-        wrong_password_user.should be_nil
-      end
+      describe "signin with username" do
+        it "should return nil on username/password mismatch" do
+          wrong_password_user = User.authenticate(@attr[:username], "wrong_password")
+          wrong_password_user.should be_nil
+        end
       
-      it "should return nil for an email address with no user" do
-        nonexistant_user = User.authenticate("bar@foo.org", @attr[:password])
-        nonexistant_user.should be_nil
-      end
+        it "should return nil for an username address with no user" do
+          nonexistant_user = User.authenticate("barfoo", @attr[:password])
+          nonexistant_user.should be_nil
+        end
+        
+        it "should return the user on username/password match" do
+          matching_user = User.authenticate(@attr[:username], @attr[:password])
+          matching_user.should == @user
+        end
+
+      end #username
       
-      it "should return the user on email/password match" do
-        matching_user = User.authenticate(@attr[:email], @attr[:password])
-        matching_user.should == @user
-      end
+      describe "signin with email" do
+        
+        it "should return nil on email/password mismatch" do
+          wrong_password_user = User.authenticate(@attr[:email], "wrong_password")
+          wrong_password_user.should be_nil
+        end
       
+        it "should return nil for an email address with no user" do
+          nonexistant_user = User.authenticate("bar@foo.org", @attr[:password])
+          nonexistant_user.should be_nil
+        end
+      
+        it "should return the user on email/password match" do
+          matching_user = User.authenticate(@attr[:email], @attr[:password])
+          matching_user.should == @user
+        end
+        
+      end #email
     end #authenticate 
   end # password encryption
   
@@ -124,7 +192,7 @@ describe User do
    describe "admin attribute" do
 
       before(:each) do
-        @user = User.create!(@attr)
+        @user = Factory(:user)
       end
 
       it "should respond to admin" do
@@ -143,7 +211,7 @@ describe User do
     
   describe "micropost associations" do
     before(:each) do
-      @user = User.create(@attr)
+      @user = Factory(:user)
       @mp1 = Factory(:micropost, :user => @user, :created_at => 1.day.ago)
       @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)
     end
@@ -174,26 +242,46 @@ describe User do
       end
       
       it "should not include a different user's microposts" do
-        mp3 = Factory(:micropost, 
-                      :user => Factory(:user, :email => Factory.next(:email)))
+        mp3 = Factory(:micropost, :user => Factory(:user))
         @user.feed.should_not include(mp3)
       end
       
       it "should include the microposts of followed users" do
-        followed = Factory(:user, :email => Factory.next(:email))
+        followed = Factory(:user)
         mp3 = Factory(:micropost, :user => followed)
         @user.follow!(followed)
         @user.feed.should include(mp3)
+      end      
+    end #feed
+    
+    describe "replies" do
+      
+      before(:each) do
+        @reply_user = Factory(:user)
+        @reply = @reply_user.microposts.create!(:content => "foobar",
+                                                :in_reply_to => @user.id)
       end
       
+      it "should have replies" do
+        @user.should respond_to(:replies)
+      end
       
-    end
+      it "should include replies to the user" do
+        @user.replies.should include(@reply)
+      end
+            
+      it "should non include the user's micropost" do
+        @user.replies.should_not include(@mp1)
+      end
+      
+    end #replies
+    
   end # micropost assoc
   
   describe "relationships" do
     
     before(:each) do
-      @user = User.create!(@attr)
+      @user = Factory(:user)
       @followed = Factory(:user)
     end
     
@@ -216,6 +304,11 @@ describe User do
     it "should follow another user" do
       @user.follow!(@followed)
       @user.should be_following(@followed)
+    end
+    
+    it "should not follow self" do
+      @user.follow!(@user)
+      @user.should_not be_following(@user)
     end
       
       

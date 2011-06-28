@@ -4,9 +4,9 @@
   .right
     .item-row
       .item-user
-        = link_to user.name, user
-    .item-row
-      .item-details
+        = link_to user.username, user
+      %span.details= user.name
+      %span.details
         - if current_user.admin?
           = link_to "delete", user, :method => :delete, :confirm => "Are you sure?", :title => "Delete #{user.name}"
 %hr          
