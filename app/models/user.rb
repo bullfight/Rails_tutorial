@@ -85,7 +85,7 @@ class User < ActiveRecord::Base
   end
   
   def feed
-    Micropost.from_followed_and_replies(self)
+    Micropost.from_followed_or_replies(self)
   end
   
   private

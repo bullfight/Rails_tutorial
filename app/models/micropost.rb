@@ -27,7 +27,7 @@ class Micropost < ActiveRecord::Base
   scope :from_replies, lambda { |user| replies_to(user) }
   
   # Return Followed Users and replies
-  scope :from_followed_and_replies, lambda { |user| replies_to(user) and followed_by(user) }
+  scope :from_followed_or_replies, lambda { |user| followed_by_or_replies_to(user) }
   
   private
     
@@ -42,6 +42,14 @@ class Micropost < ActiveRecord::Base
     end
     
     def self.replies_to(user)
-      where("in_reply_to = ? ", user)
+      where("in_reply_to = ?", user)
+    end
+    
+    def self.followed_by_or_replies_to(user)
+      following_ids = %(SELECT followed_id FROM relationships
+                        WHERE follower_id = :user_id)
+      where("user_id IN (#{following_ids}) OR 
+             user_id = :user_id OR
+             in_reply_to = :user_id", { :user_id => user })      
     end
 end
