@@ -88,6 +88,10 @@ class User < ActiveRecord::Base
     Micropost.from_followed_or_replies(self)
   end
   
+  def replies
+    Micropost.from_replies(self)
+  end
+  
   private
   
     def encrypt_password

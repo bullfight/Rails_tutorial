@@ -1,17 +1,18 @@
-Factory.define :user do |user|
-  user.username "FooBar"
-  user.name "Patrick Schmitz"
-  user.email "ps@example.com"
-  user.password "foobar"
-  user.password_confirmation "foobar"
-end
-
 Factory.sequence :email do |n|
-  "person-#{n}@example.com"
+  "email#{n}@factory.com"
 end
 
 Factory.sequence :username do |n|
-  "FooBar-#{n}"
+  "username#{n}"
+end
+
+Factory.define :user do |user|
+  user.username { Factory.next(:username) }
+  user.name "Patrick Schmitz"
+  user.email { Factory.next(:email) }
+  user.password "foobar"
+  user.password_confirmation "foobar"
+  user.admin false
 end
 
 Factory.define :micropost do |micropost|

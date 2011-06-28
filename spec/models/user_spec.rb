@@ -192,7 +192,7 @@ describe User do
    describe "admin attribute" do
 
       before(:each) do
-        @user = User.create!(@attr)
+        @user = Factory(:user)
       end
 
       it "should respond to admin" do
@@ -211,7 +211,7 @@ describe User do
     
   describe "micropost associations" do
     before(:each) do
-      @user = User.create(@attr)
+      @user = Factory(:user)
       @mp1 = Factory(:micropost, :user => @user, :created_at => 1.day.ago)
       @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)
     end
@@ -242,29 +242,46 @@ describe User do
       end
       
       it "should not include a different user's microposts" do
-        mp3 = Factory(:micropost, 
-                      :user => Factory(:user, 
-                                       :username => Factory.next(:username), 
-                                       :email => Factory.next(:email)))
+        mp3 = Factory(:micropost, :user => Factory(:user))
         @user.feed.should_not include(mp3)
       end
       
       it "should include the microposts of followed users" do
-        followed = Factory(:user, :username => Factory.next(:username), 
-                           :email => Factory.next(:email))
+        followed = Factory(:user)
         mp3 = Factory(:micropost, :user => followed)
         @user.follow!(followed)
         @user.feed.should include(mp3)
+      end      
+    end #feed
+    
+    describe "replies" do
+      
+      before(:each) do
+        @reply_user = Factory(:user)
+        @reply = @reply_user.microposts.create!(:content => "foobar",
+                                                :in_reply_to => @user.id)
       end
       
+      it "should have replies" do
+        @user.should respond_to(:replies)
+      end
       
-    end
+      it "should include replies to the user" do
+        @user.replies.should include(@reply)
+      end
+            
+      it "should non include the user's micropost" do
+        @user.replies.should_not include(@mp1)
+      end
+      
+    end #replies
+    
   end # micropost assoc
   
   describe "relationships" do
     
     before(:each) do
-      @user = User.create!(@attr)
+      @user = Factory(:user)
       @followed = Factory(:user)
     end
     
