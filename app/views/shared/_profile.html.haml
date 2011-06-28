@@ -5,7 +5,8 @@
       .item-row= render 'follow_form'
     .right
       .item-row
-        %h2= link_to @user.name, @user  
+        %h2= link_to @user.username, @user
+        %span=@user.name
       .item-row
         = @user.email
         

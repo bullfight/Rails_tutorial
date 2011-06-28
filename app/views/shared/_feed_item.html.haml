@@ -4,7 +4,8 @@
   .right  
     .item-row    
       .item-user
-        = link_to feed_item.user.name, feed_item.user
+        = link_to feed_item.user.username, feed_item.user
+        %span.details= "#{feed_item.user.name}"
     .item-row
       .item-content
         = wrap(feed_item.content)

@@ -97,15 +97,16 @@ a{
   }
 
   .item-user {
-    font-weight:bold;
+    font-weight:500;
   }
-  
+    
   .item-content {
   }
 
   .details {
     @include quiet;
     font-size:14px;
+    vertical-align:top;
   }
   
   h2 {
