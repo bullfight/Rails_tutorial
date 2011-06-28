@@ -122,10 +122,16 @@ describe UsersController do
           response.should have_selector("title", :content => @user.name)
       end
     
-      it "should include the user's name"do
-         get :show, :id => @user
-         response.should have_selector("h2", :content => @user.name)
-       end
+      it "should include the user's username"do
+        get :show, :id => @user
+        response.should have_selector("h2", :content => @user.username)
+      end
+
+      it "should include the user's username"do
+        get :show, :id => @user
+        response.should have_selector(".item-row span", :content => @user.name)
+      end
+       
     
       it "should have a profile image" do
         get :show, :id => @user
@@ -460,7 +466,7 @@ describe UsersController do
         it "should show user following" do
           get :following, :id => @user
           response.should have_selector("a", :href => user_path(@other_user),
-                                             :content => @other_user.name)
+                                             :content => @other_user.username)
         end
 
       
@@ -475,10 +481,10 @@ describe UsersController do
       
       describe "users follower show page" do
 
-        it "followed user should show users following" do
+        it "should show users following" do
           get :followers, :id => @other_user
           response.should have_selector("a", :href => user_path(@user),
-                                             :content => @user.name)
+                                             :content => @user.username)
         end
       
         it "should count the number of user followers in the profile nav" do
