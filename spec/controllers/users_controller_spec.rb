@@ -20,7 +20,7 @@ describe UsersController do
 
         @users = [@user]
         30.times do 
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user)
         end
       end
       
@@ -65,7 +65,7 @@ describe UsersController do
         
         @users = [admin]
         30.times do 
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user)
         end
       end
       
@@ -118,10 +118,16 @@ describe UsersController do
           response.should have_selector("title", :content => @user.name)
       end
     
-      it "should include the user's name"do
-         get :show, :id => @user
-         response.should have_selector("h2", :content => @user.name)
-       end
+      it "should include the user's username"do
+        get :show, :id => @user
+        response.should have_selector("h2", :content => @user.username)
+      end
+
+      it "should include the user's username"do
+        get :show, :id => @user
+        response.should have_selector(".item-row span", :content => @user.name)
+      end
+       
     
       it "should have a profile image" do
         get :show, :id => @user
@@ -192,7 +198,7 @@ describe UsersController do
     describe "failure" do
 
       before(:each) do
-        @attr = { :name => "", :email => "", :password => "",
+        @attr = { :name => "", :username => "", :email => "", :password => "",
           :password_confirmation => "" }
       end
 
@@ -226,7 +232,7 @@ describe UsersController do
     describe "success" do
 
       before(:each) do
-       @attr = { :name => "New User", :email => "user@example.com",
+       @attr = { :username => "NewUser", :name => "New User", :email => "user@example.com",
                  :password => "foobar", :password_confirmation => "foobar" }
       end
 
@@ -297,7 +303,7 @@ describe UsersController do
     end
     
     describe "failure" do
-      @attr = { :email => "", :name => "", :password => "",
+      @attr = { :email => "", :name => "", :username => "", :password => "",
                 :password_confirmation => "" }
       
       it "should render the 'edit' page" do
@@ -313,13 +319,14 @@ describe UsersController do
     
     describe "success" do
       before(:each) do
-        @attr = { :name => "New Name", :email => "user@example.org",
+        @attr = { :username => "foolbarz", :name => "New Name", :email => "user@example.org",
                   :password => "barbaz", :password_confirmation => "barbaz" }
       end
       it "should change the user's attributes" do
         put :update, :id => @user, :user => @attr
         @user.reload
-        @user.name.should == @attr[:name] 
+        @user.name.should == @attr[:name]
+        @user.username.should == @attr[:username] 
         @user.email.should == @attr[:email]
       end
       it "should redirect to the user show page" do
@@ -357,7 +364,7 @@ describe UsersController do
     describe "for signed-in users" do
      
       before(:each) do
-        wrong_user = Factory(:user, :email => "user@example.net")
+        wrong_user = Factory(:user)
         test_sign_in(wrong_user)
       end
       
@@ -398,7 +405,8 @@ describe UsersController do
                 
     describe "as an admin user" do
       before(:each) do
-         @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+         @admin = Factory(:user)
+         @admin.toggle!(:admin)
          test_sign_in(@admin)
        end
        
@@ -440,7 +448,7 @@ describe UsersController do
 
       before(:each) do
         @user = test_sign_in(Factory(:user))
-        @other_user = Factory(:user, :email => Factory.next(:email))
+        @other_user = Factory(:user)
         @user.follow!(@other_user)
       end
       
@@ -448,7 +456,7 @@ describe UsersController do
         it "should show user following" do
           get :following, :id => @user
           response.should have_selector("a", :href => user_path(@other_user),
-                                             :content => @other_user.name)
+                                             :content => @other_user.username)
         end
 
       
@@ -463,10 +471,10 @@ describe UsersController do
       
       describe "users follower show page" do
 
-        it "followed user should show users following" do
+        it "should show users following" do
           get :followers, :id => @other_user
           response.should have_selector("a", :href => user_path(@user),
-                                             :content => @user.name)
+                                             :content => @user.username)
         end
       
         it "should count the number of user followers in the profile nav" do
@@ -481,4 +489,51 @@ describe UsersController do
     end # signed in
   end # follow
 
+  
+  describe "replies page" do
+
+    describe "when not signed in" do
+
+      it "should protect 'replies'" do
+        get :replies, :id => 1
+        response.should redirect_to(signin_path)
+      end
+
+    end # not signed in
+
+    describe "when signed in" do
+
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        @other_user = Factory(:user)
+        @reply = @other_user.microposts.create!(:content => "foobar",
+                                                :in_reply_to => @user.id)
+      end
+      
+      describe "users replies show page" do
+        it "should show replies details from other users" do
+          get :replies, :id => @user
+          response.should have_selector("div.item-row a", 
+                                        :href => user_path(@other_user),
+                                        :content => @other_user.username)
+        end
+        
+        it "should show replies content from other users" do
+          get :replies, :id => @user
+          response.should have_selector("div.item-content", 
+                                        :content => @reply.content)
+        end
+        
+      
+        it "should count the number of replies in the profile nav" do
+          count = @user.replies.count
+                
+          get :show, :id => @user
+          response.should have_selector("div#profile_header nav li",
+            :content => "Replies (#{count})")
+        end      
+      end #replies
+      
+    end # signed in
+  end # follow
 end

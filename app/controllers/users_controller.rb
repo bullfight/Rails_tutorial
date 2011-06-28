@@ -72,6 +72,13 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
+  def replies
+    @title = "Replies"
+    @user = User.find(params[:id])
+    @feed_items = @user.replies.page(params[:page])
+    render 'show_replies'
+  end
+  
   private
     
     def correct_user

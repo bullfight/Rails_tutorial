@@ -1,7 +1,26 @@
-@mixin base-style{
-  @include border-radius(3px);
+@include establish-baseline;
+@include blueprint-typography-defaults;
+@include fancy-type;
+
+@mixin element-style{
   @include background-image(linear-gradient(top, #eee, #dddddd));
   border: 1px solid #ccc;
+  @include border-radius(3px);
+}
+
+
+@mixin element-position {
+  @include push(1);
+  @include column(20, true);
+}
+
+@mixin base-position {
+  @include column(22, true);
+  
+}
+
+@mixin base-style{
+  @include element-style;
   @include prepend-top(20px);
   @include clearfix;
   
@@ -15,16 +34,11 @@
   }
 }
 
-@mixin content-position{
-  @include column(22, true);
-}
 
 @mixin pagination{
   .pagination{  
     padding-top:20px;
-    @include content-position;
-    @include push(1);
-    @include column(20);
+    @include element-position;
   }
   
   .pagination .next{
@@ -44,10 +58,6 @@
   }
 }
 
-@include establish-baseline;
-
-@include blueprint-typography-defaults;
-@include fancy-type;
 
 a{
   @include hover-link;
@@ -55,14 +65,6 @@ a{
   $visited: #06c;
   @include link-colors(#06c, #06c, #06c);
   }
-
-#container {
-
-}
-
-#content {
-
-}
 
 .fancy-button-base{
   $fb-font-size: 15px;
@@ -73,13 +75,15 @@ a{
   @include fancy-button-colors-matte(#ddd);
 }
 
-.item {  
-  @include content-position;
-  //@include background-image(linear-gradient(left top, #eee, #dddddd));
+.alt {
+  @include normal-text;
+}
+
+.item { 
+  @include base-position;
   @include border-right-radius(3px);
   @include normal-text;
-  padding-top:10px;
-  padding-bottom:10px;
+  padding: 10px 0 10px 0;
     
   .full {
     @include push(1);
@@ -97,15 +101,16 @@ a{
   }
 
   .item-user {
-    font-weight:bold;
+    font-weight:500;
   }
-  
+    
   .item-content {
   }
 
   .details {
     @include quiet;
     font-size:14px;
+    vertical-align:top;
   }
   
   h2 {
@@ -114,23 +119,28 @@ a{
   
 }
 
+.highlight{
+  $highlight-color: #ccc;
+  @include highlight;
+}
+
 #header{  
 
   #logo {
-    @include normal-text;
     @include clearfix;
     margin-bottom:-70px;
   }
   
   nav {
+    @include horizontal-list-container;
     @include float-right;
     @include clearfix;
-    @include horizontal-list-container;        
+    
     @include border-bottom-radius(5px);    
     @include background-image(linear-gradient(top, #eee, #dddddd));
     border: 1px solid #ccc;
+    
     ul li {
-      @include normal-text;
       @include horizontal-list-item;
     }  
   }
@@ -153,6 +163,7 @@ a{
 }
 
 #profile_header {
+  @include base-position;
   
   nav li {
     @include fancy-button-colors-matte(#eee);
@@ -163,10 +174,11 @@ a{
 
 #micropost_form {
   @include base-style;  
+  @include base-position;
   
   .field{
-    @include push(1);
-    @include content-position;    
+    @include element-position;
+    
     @include append-bottom(-.5em);
     @include blueprint-form-borders(#ddd, #fff, #eee);
   }
@@ -177,9 +189,7 @@ a{
       $voff: -2px, 
       $hoff: -2px
     );
-    @include border-radius;
-    @include normal-text;
-    
+    @include border-radius;  
     border-width:4px;
     background-color:#fff;
     font-size:22px;
@@ -188,13 +198,10 @@ a{
   }
   
   .actions {
-    @include push(1);
-    @include column(20);
-
+    @include element-position;
   }
   
-  .actions .count{    
-    @include normal-text;
+  .actions .count{
     padding-left: 5px;
     font-size: 18px;
   }
@@ -217,11 +224,13 @@ a{
 
 #paginate {
   @include base-style;
-  @include pagination;  
+  @include base-position;
+  @include pagination;
 }
 
 #microposts {
   @include base-style;
+  @include base-position;
   
   .feed-item {    
     @extend .item;
@@ -232,53 +241,38 @@ a{
     
   }
   .left{
-    height:80px;
-    
-  }
-  .highlight{
-    $highlight-color: #ccc;
-    @include highlight;
+    height:80px;    
   }
 }
 
 #users {
   @include base-style;
-  @include pagination;
+  @include base-position;
   
   .user-item {
     @extend .item;
-    
     height: 50px;  
   }
   .left{
     height: 50px;
-  }
-  
-  .highlight{
-    $highlight-color: #ccc;
-    @include highlight;
-  }
-  
+  }  
 }
 
 #profile {
   @include base-style;
-    
-  .user-item{
-   
+  @include base-position;
+  
+  .user-item{ 
     @extend .item;
-    @include background-image(none);
-    @include prepend-top(10px);
     @include append-bottom(10px);
   }
-  
-    
+      
   .user-item .left{
     height: 80px;
   }
   
   .user-item .right{
-
+    
   }
   
   .actions.follow{
@@ -286,7 +280,7 @@ a{
   }
   
   .actions.unfollow{
-    margin-left:-9px;
+    margin-left:-12px;
   }
   input#relationship_submit {
     @extend .fancy-button-base;
@@ -294,31 +288,26 @@ a{
   
 }
 
-#main{
-  @include base-style;
-}
 
 #signin, #settings {
-  @include column(22);
+  @include base-position;
   @include base-style;
   
   form {
     @include column(20,true);
-    @include prepend-top(30px);
+    @include prepend-top(30px);    
   }
   
   .field, .actions{
-    @include push(1);
-    @include column(20,true);
+    @include element-position;
     @include prepend-top(-15px);
-    @include normal-text;
+    
   }
 
   .field label, .field input{
     width: 489px;
     font-size: 22px;
-     @include blueprint-form-borders(#ddd, #fff, #eee);
-    
+     @include blueprint-form-borders(#ddd, #fff, #eee);    
   }
   
   .field input{    
@@ -331,7 +320,7 @@ a{
       $hoff: -1px
     );
     @include border-radius;
-    @include normal-text;
+    
     border-width:4px;
     background-color:#fff;
   }
@@ -342,18 +331,13 @@ a{
   }
   
   #gravatar{
-    @include push(1);
-    @include column(20, true);
-    @include clearfix;
-
+    @include element-position;
   }
   
   #gravatar img.gravatar{
     @include float-right;
     @include prepend-top(8px);
-    @include clearfix;
     margin-right: 6px;
-
   }
   
   #gravatar p{
@@ -366,19 +350,16 @@ a{
     @include prepend-top(8px);
     @extend .fancy-button-base;
   }
-  
-  
-  #gravatar .label{
-    @include normal-text;
+    
+  #gravatar .label{    
     font-size:22px;
     text-align: right;
   }
 }
 
 #flash{  
-  @include normal-text;
-  @include prepend-top(20px);
   @include blueprint-interaction;
+  @include prepend-top(20px);
   
   .success, .notice, .error {
     @include border-radius(3px);
@@ -390,7 +371,6 @@ a{
   @include border-radius;
   @include append-bottom(20px);
   @include clearfix;
-  @include push(1);
-  @include normal-text;
+  @include push(1);  
   @include error;
 }

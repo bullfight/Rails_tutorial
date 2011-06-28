@@ -1,5 +1,18 @@
+# == Schema Information
+# Schema version: 20110627130429
+#
+# Table name: microposts
+#
+#  id          :integer         not null, primary key
+#  content     :string(255)
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  in_reply_to :integer
+#
+
 class Micropost < ActiveRecord::Base  
-  attr_accessible :content
+  attr_accessible :content, :in_reply_to
   belongs_to :user
   
   validates :content, :presence => true, :length => { :maximum => 140 }
@@ -9,6 +22,12 @@ class Micropost < ActiveRecord::Base
   
   # Return microposts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
+  
+  # Return microposts that are replies from other users
+  scope :from_replies, lambda { |user| replies_to(user) }
+  
+  # Return Followed Users and replies
+  scope :from_followed_or_replies, lambda { |user| followed_by_or_replies_to(user) }
   
   private
     
@@ -20,5 +39,17 @@ class Micropost < ActiveRecord::Base
       where("user_id IN (#{following_ids}) OR user_id = :user_id",
         { :user_id => user }
       )
+    end
+    
+    def self.replies_to(user)
+      where("in_reply_to = ?", user)
+    end
+    
+    def self.followed_by_or_replies_to(user)
+      following_ids = %(SELECT followed_id FROM relationships
+                        WHERE follower_id = :user_id)
+      where("user_id IN (#{following_ids}) OR 
+             user_id = :user_id OR
+             in_reply_to = :user_id", { :user_id => user })      
     end
 end

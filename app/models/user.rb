@@ -1,18 +1,22 @@
 # == Schema Information
-# Schema version: 20110607190349
+# Schema version: 20110627130429
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean
+#  username           :string(255)
 #
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :username, :name, :email, :password, :password_confirmation
   has_many :microposts, :dependent => :destroy
   
   has_many :relationships, :foreign_key => "follower_id",
@@ -26,9 +30,16 @@ class User < ActiveRecord::Base
                                    :source => :follower                           
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  username_regex = /\A[\w+\-.]+$/i
   
+  validates :username, :presence => true,
+                    :format => { :with => username_regex},
+                    :length => { :within => 4..50 },
+                    :uniqueness => { :case_sensitive => false }
+                    
   validates :name, :presence => true,
                    :length => { :maximum => 50 }
+                   
   validates :email, :presence => true,
                     :format => { :with => email_regex} ,
                     :uniqueness => { :case_sensitive => false }
@@ -46,10 +57,14 @@ class User < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
     
-  def self.authenticate(email, submitted_password)
-   user = find_by_email(email)
-   return nil  if user.nil?
-   return user if user.has_password?(submitted_password)
+  def self.authenticate(login, submitted_password)
+    if login.match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
+      user = find_by_email(login)
+    else
+      user = find_by_username(login)
+    end
+    return nil  if user.nil?
+    return user if user.has_password?(submitted_password)
   end
 
   def self.authenticate_with_salt(id, cookie_salt)
@@ -62,7 +77,7 @@ class User < ActiveRecord::Base
   end
   
   def follow!(followed)
-    relationships.create!(:followed_id => followed.id)
+    relationships.create!(:followed_id => followed.id) unless self == followed
   end
   
   def unfollow!(followed)
@@ -70,7 +85,11 @@ class User < ActiveRecord::Base
   end
   
   def feed
-    Micropost.from_users_followed_by(self)
+    Micropost.from_followed_or_replies(self)
+  end
+  
+  def replies
+    Micropost.from_replies(self)
   end
   
   private
