@@ -288,6 +288,11 @@ describe User do
       @user.follow!(@followed)
       @user.should be_following(@followed)
     end
+    
+    it "should not follow self" do
+      @user.follow!(@user)
+      @user.should_not be_following(@user)
+    end
       
       
     it "should include the followed user in the following array" do      
