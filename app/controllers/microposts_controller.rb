@@ -4,11 +4,13 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost  = current_user.microposts.build(params[:micropost])
-    @micropost.in_reply_to = reply(params[:micropost])
-
+    reply_user = reply(params[:micropost])    
+    @micropost.in_reply_to = reply_user.id unless reply_user.nil?
+    
     if @micropost.save
       flash[:success] = "Post created!"
       redirect_to root_path
+      
     else
       @feed_items = []
       render 'pages/home'
@@ -31,6 +33,7 @@ class MicropostsController < ApplicationController
       User.find_by_username(reply_to_user(micropost))
     end
     
+    # Gets username string from @username
     def reply_to_user(micropost)
       reply_regex = /^@([\w+\-.]+)/i
       user_name = micropost["content"].match(reply_regex)
