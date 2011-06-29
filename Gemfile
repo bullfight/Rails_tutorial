@@ -13,6 +13,7 @@ gem 'jquery-rails', '1.0.11'
 gem "compass", ">= 0.11.3"
 gem "fancy-buttons"
 gem 'faker', '0.3.1'
+gem 'redcarpet', '1.17.2'
 
 group :development do
   gem 'pry'

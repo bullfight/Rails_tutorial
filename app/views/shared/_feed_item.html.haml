@@ -8,7 +8,7 @@
         %span.details= "#{feed_item.user.name}"
     .item-row
       .item-content
-        = wrap(feed_item.content)
+        = markdown(feed_item.content, max_width = 44)
     .item-row
       .details
         %span.item-timestamp

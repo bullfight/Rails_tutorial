@@ -1,6 +1,6 @@
 @include establish-baseline;
 @include blueprint-typography-defaults;
-@include fancy-type;
+//@include fancy-type;
 
 @mixin element-style{
   @include background-image(linear-gradient(top, #eee, #dddddd));
@@ -64,7 +64,24 @@ a{
   $normal: #06c;
   $visited: #06c;
   @include link-colors(#06c, #06c, #06c);
-  }
+}
+
+pre {
+  @include border-radius(3px);
+  margin: 0;
+  background-color: #F3F3F3;
+  padding: 5px 10px;
+  border: 1px solid #ccc;   
+  font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
+}
+
+blockquote {
+  @include border-radius(3px);
+  margin: 0;
+  background-color: #F3F3F3;
+  padding: 5px 10px;
+  border: 1px solid #ccc;   
+}
 
 .fancy-button-base{
   $fb-font-size: 15px;
