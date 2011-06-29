@@ -24,7 +24,7 @@ $(document).ready(function() {
   $("div.feed-item:first, div.user-item:first").addClass("first");
   $("hr:last").addClass("last");
   
-  $("div.user-item, div.feed-item").hover(function(){
+  $("div#users div.user-item, div#microposts div.feed-item").hover(function(){
     $(this).toggleClass("highlight");
   });
 });
