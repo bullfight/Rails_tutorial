@@ -83,6 +83,17 @@ blockquote {
   border: 1px solid #ccc;   
 }
 
+table {
+  $table-color: #fff;
+  @include table-scaffolding;
+  @include inner-table-borders(1px, #000);
+  @include alternating-rows-and-columns(#ccc, #eee, #000);
+  @include border-radius(3px);
+  @include outer-table-borders($width: 1px, $color: #ccc);
+  background-color: #F3F3F3;
+}
+
+
 .fancy-button-base{
   $fb-font-size: 15px;
   $fb-radius: 3px;
@@ -105,6 +116,7 @@ blockquote {
   .full {
     @include push(1);
     @include column(20, true);
+    margin-bottom: -5px;
   }
 
   .left {
@@ -218,9 +230,14 @@ blockquote {
     @include element-position;
   }
   
-  .actions .count{
+  .actions .count {
     padding-left: 5px;
     font-size: 18px;
+  }
+
+  .actions span.formatting {
+    padding-left: 5px;
+    font-size: 15px;
   }
   
   .actions .count.lengtherror{
@@ -245,7 +262,9 @@ blockquote {
   @include pagination;
 }
 
-#microposts {
+#microposts, 
+#micropost_preview,
+#micropost_formatting {
   @include base-style;
   @include base-position;
   
@@ -260,6 +279,10 @@ blockquote {
   .left{
     height:80px;    
   }
+}
+
+#micropost_preview {
+  @include background-image(linear-gradient(top, #fff, #fff));
 }
 
 #users {
@@ -293,14 +316,14 @@ blockquote {
   }
   
   .actions.follow{
-    margin:-1px;
+    margin:-4px;
   }
   
   .actions.unfollow{
     margin-left:-12px;
   }
   input#relationship_submit {
-    @extend .fancy-button-base;
+    @extend .fancy-button-base;    
   }
   
 }

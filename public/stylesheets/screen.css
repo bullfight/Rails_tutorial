@@ -581,6 +581,96 @@ blockquote {
 }
 
 /* line 86, ../../app/stylesheets/partials/_application.scss */
+table {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  background-color: #F3F3F3;
+}
+/* line 2, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_scaffolding.scss */
+table th {
+  text-align: center;
+  font-weight: bold;
+}
+/* line 6, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_scaffolding.scss */
+table td,
+table th {
+  padding: 2px;
+}
+/* line 8, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_scaffolding.scss */
+table td.numeric,
+table th.numeric {
+  text-align: right;
+}
+/* line 14, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table th, table td {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left-width: 0px;
+  border-top-width: 0px;
+}
+/* line 21, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table th:last-child, table th.last, table td:last-child, table td.last {
+  border-right-width: 0px;
+}
+/* line 29, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table tbody tr:last-child th, table tbody tr:last-child td, table tfoot tr:last-child th, table tfoot tr:last-child td {
+  border-bottom-width: 0px;
+}
+/* line 32, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table tbody tr.last th, table tbody tr.last td, table tfoot tr.last th, table tfoot tr.last td {
+  border-bottom-width: 0px;
+}
+/* line 2, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table th {
+  background-color: white;
+}
+/* line 4, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table th.even, table th:nth-child(2n) {
+  background-color: white;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.odd td {
+  background-color: #eeeeee;
+}
+/* line 9, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.odd td.even, table tr.odd td:nth-child(2n) {
+  background-color: #eeeeee;
+}
+/* line 12, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.even td {
+  background-color: #cccccc;
+}
+/* line 14, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.even td.even, table tr.even td:nth-child(2n) {
+  background-color: #cccccc;
+}
+/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tfoot th, table tfoot td {
+  background-color: white;
+}
+/* line 19, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tfoot th.even, table tfoot th:nth-child(2n), table tfoot td.even, table tfoot td:nth-child(2n) {
+  background-color: white;
+}
+/* line 4, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table thead th {
+  border-bottom: 1px solid #cccccc;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table tfoot th, table tfoot td {
+  border-top: 1px solid #cccccc;
+}
+/* line 10, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/utilities/tables/_borders.scss */
+table th:first-child {
+  border-right: 1px solid #cccccc;
+}
+
+/* line 97, ../../app/stylesheets/partials/_application.scss */
 .fancy-button-base, #content_header nav li, #profile_header nav li, #footer nav li, #micropost_form input#micropost_submit, #paginate .pagination .next, #paginate .pagination .prev, #profile input#relationship_submit, #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit, #signin #gravatar a, #settings #gravatar a {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -714,14 +804,16 @@ blockquote {
   color: #222222;
 }
 
-/* line 95, ../../app/stylesheets/partials/_application.scss */
+/* line 106, ../../app/stylesheets/partials/_application.scss */
 .alt {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
 }
 
-/* line 99, ../../app/stylesheets/partials/_application.scss */
-.item, #microposts .feed-item, #users .user-item, #profile .user-item {
+/* line 110, ../../app/stylesheets/partials/_application.scss */
+.item, #microposts .feed-item,
+#micropost_preview .feed-item,
+#micropost_formatting .feed-item, #users .user-item, #profile .user-item {
   display: inline;
   float: left;
   margin-right: 0;
@@ -743,11 +835,17 @@ blockquote {
   padding: 10px 0 10px 0;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .item, * html #microposts .feed-item, #microposts * html .feed-item, * html #users .user-item, #users * html .user-item, * html #profile .user-item, #profile * html .user-item {
+* html .item, * html #microposts .feed-item, #microposts * html .feed-item, * html
+#micropost_preview .feed-item,
+#micropost_preview * html .feed-item, * html
+#micropost_formatting .feed-item,
+#micropost_formatting * html .feed-item, * html #users .user-item, #users * html .user-item, * html #profile .user-item, #profile * html .user-item {
   overflow-x: hidden;
 }
-/* line 105, ../../app/stylesheets/partials/_application.scss */
-.item .full, #microposts .feed-item .full, #users .user-item .full, #profile .user-item .full {
+/* line 116, ../../app/stylesheets/partials/_application.scss */
+.item .full, #microposts .feed-item .full,
+#micropost_preview .feed-item .full,
+#micropost_formatting .feed-item .full, #users .user-item .full, #profile .user-item .full {
   display: inline;
   float: left;
   position: relative;
@@ -756,13 +854,20 @@ blockquote {
   float: left;
   margin-right: 0;
   width: 498.333px;
+  margin-bottom: -5px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .item .full, * html #microposts .feed-item .full, #microposts * html .feed-item .full, * html #users .user-item .full, #users * html .user-item .full, * html #profile .user-item .full, #profile * html .user-item .full {
+* html .item .full, * html #microposts .feed-item .full, #microposts * html .feed-item .full, * html
+#micropost_preview .feed-item .full,
+#micropost_preview * html .feed-item .full, * html
+#micropost_formatting .feed-item .full,
+#micropost_formatting * html .feed-item .full, * html #users .user-item .full, #users * html .user-item .full, * html #profile .user-item .full, #profile * html .user-item .full {
   overflow-x: hidden;
 }
-/* line 110, ../../app/stylesheets/partials/_application.scss */
-.item .left, #microposts .feed-item .left, #users .user-item .left, #profile .user-item .left {
+/* line 122, ../../app/stylesheets/partials/_application.scss */
+.item .left, #microposts .feed-item .left,
+#micropost_preview .feed-item .left,
+#micropost_formatting .feed-item .left, #users .user-item .left, #profile .user-item .left {
   display: inline;
   float: left;
   position: relative;
@@ -773,11 +878,17 @@ blockquote {
   width: 91.667px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .item .left, * html #microposts .feed-item .left, #microposts * html .feed-item .left, * html #users .user-item .left, #users * html .user-item .left, * html #profile .user-item .left, #profile * html .user-item .left {
+* html .item .left, * html #microposts .feed-item .left, #microposts * html .feed-item .left, * html
+#micropost_preview .feed-item .left,
+#micropost_preview * html .feed-item .left, * html
+#micropost_formatting .feed-item .left,
+#micropost_formatting * html .feed-item .left, * html #users .user-item .left, #users * html .user-item .left, * html #profile .user-item .left, #profile * html .user-item .left {
   overflow-x: hidden;
 }
-/* line 115, ../../app/stylesheets/partials/_application.scss */
-.item .right, #microposts .feed-item .right, #users .user-item .right, #profile .user-item .right {
+/* line 127, ../../app/stylesheets/partials/_application.scss */
+.item .right, #microposts .feed-item .right,
+#micropost_preview .feed-item .right,
+#micropost_formatting .feed-item .right, #users .user-item .right, #profile .user-item .right {
   overflow: hidden;
   *zoom: 1;
   display: inline;
@@ -786,36 +897,46 @@ blockquote {
   width: 396.667px;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .item .right, * html #microposts .feed-item .right, #microposts * html .feed-item .right, * html #users .user-item .right, #users * html .user-item .right, * html #profile .user-item .right, #profile * html .user-item .right {
+* html .item .right, * html #microposts .feed-item .right, #microposts * html .feed-item .right, * html
+#micropost_preview .feed-item .right,
+#micropost_preview * html .feed-item .right, * html
+#micropost_formatting .feed-item .right,
+#micropost_formatting * html .feed-item .right, * html #users .user-item .right, #users * html .user-item .right, * html #profile .user-item .right, #profile * html .user-item .right {
   overflow-x: hidden;
 }
-/* line 120, ../../app/stylesheets/partials/_application.scss */
-.item .item-user, #microposts .feed-item .item-user, #users .user-item .item-user, #profile .user-item .item-user {
+/* line 132, ../../app/stylesheets/partials/_application.scss */
+.item .item-user, #microposts .feed-item .item-user,
+#micropost_preview .feed-item .item-user,
+#micropost_formatting .feed-item .item-user, #users .user-item .item-user, #profile .user-item .item-user {
   font-weight: 500;
 }
-/* line 127, ../../app/stylesheets/partials/_application.scss */
-.item .details, #microposts .feed-item .details, #users .user-item .details, #profile .user-item .details {
+/* line 139, ../../app/stylesheets/partials/_application.scss */
+.item .details, #microposts .feed-item .details,
+#micropost_preview .feed-item .details,
+#micropost_formatting .feed-item .details, #users .user-item .details, #profile .user-item .details {
   color: #666666;
   font-size: 14px;
   vertical-align: top;
 }
-/* line 133, ../../app/stylesheets/partials/_application.scss */
-.item h2, #microposts .feed-item h2, #users .user-item h2, #profile .user-item h2 {
+/* line 145, ../../app/stylesheets/partials/_application.scss */
+.item h2, #microposts .feed-item h2,
+#micropost_preview .feed-item h2,
+#micropost_formatting .feed-item h2, #users .user-item h2, #profile .user-item h2 {
   margin-top: 5px;
 }
 
-/* line 139, ../../app/stylesheets/partials/_application.scss */
+/* line 151, ../../app/stylesheets/partials/_application.scss */
 .highlight {
   background: #cccccc;
 }
 
-/* line 146, ../../app/stylesheets/partials/_application.scss */
+/* line 158, ../../app/stylesheets/partials/_application.scss */
 #header #logo {
   overflow: hidden;
   *zoom: 1;
   margin-bottom: -70px;
 }
-/* line 151, ../../app/stylesheets/partials/_application.scss */
+/* line 163, ../../app/stylesheets/partials/_application.scss */
 #header nav {
   margin: 0;
   padding: 0;
@@ -846,7 +967,7 @@ blockquote {
   background-image: linear-gradient(top, #eeeeee, #dddddd);
   border: 1px solid #ccc;
 }
-/* line 160, ../../app/stylesheets/partials/_application.scss */
+/* line 172, ../../app/stylesheets/partials/_application.scss */
 #header nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -870,7 +991,7 @@ blockquote {
   padding-right: 0;
 }
 
-/* line 167, ../../app/stylesheets/partials/_application.scss */
+/* line 179, ../../app/stylesheets/partials/_application.scss */
 #content_header nav, #profile_header nav, #footer nav {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -908,7 +1029,7 @@ blockquote {
 #content_header nav hr.last, #profile_header nav hr.last, #footer nav hr.last {
   display: none;
 }
-/* line 177, ../../app/stylesheets/partials/_application.scss */
+/* line 189, ../../app/stylesheets/partials/_application.scss */
 #content_header nav a, #profile_header nav a, #footer nav a {
   color: inherit;
   text-decoration: inherit;
@@ -919,7 +1040,7 @@ blockquote {
   outline: none;
 }
 
-/* line 182, ../../app/stylesheets/partials/_application.scss */
+/* line 194, ../../app/stylesheets/partials/_application.scss */
 #profile_header {
   display: inline;
   float: left;
@@ -930,7 +1051,7 @@ blockquote {
 * html #profile_header {
   overflow-x: hidden;
 }
-/* line 185, ../../app/stylesheets/partials/_application.scss */
+/* line 197, ../../app/stylesheets/partials/_application.scss */
 #profile_header nav li {
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dfdfdf));
@@ -993,7 +1114,7 @@ blockquote {
   color: #222222;
 }
 
-/* line 192, ../../app/stylesheets/partials/_application.scss */
+/* line 204, ../../app/stylesheets/partials/_application.scss */
 #micropost_form {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1036,7 +1157,7 @@ blockquote {
 * html #micropost_form {
   overflow-x: hidden;
 }
-/* line 196, ../../app/stylesheets/partials/_application.scss */
+/* line 208, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .field {
   display: inline;
   float: left;
@@ -1071,7 +1192,7 @@ blockquote {
   border-width: 1px;
   border-style: solid;
 }
-/* line 202, ../../app/stylesheets/partials/_application.scss */
+/* line 214, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .field textarea#micropost_content {
   -moz-box-shadow: -2px -2px 20px #505050;
   -webkit-box-shadow: -2px -2px 20px #505050;
@@ -1089,7 +1210,7 @@ blockquote {
   height: 110px;
   width: 481px;
 }
-/* line 217, ../../app/stylesheets/partials/_application.scss */
+/* line 229, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions {
   display: inline;
   float: left;
@@ -1104,21 +1225,26 @@ blockquote {
 * html #micropost_form .actions {
   overflow-x: hidden;
 }
-/* line 221, ../../app/stylesheets/partials/_application.scss */
+/* line 233, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions .count {
   padding-left: 5px;
   font-size: 18px;
 }
-/* line 226, ../../app/stylesheets/partials/_application.scss */
+/* line 238, ../../app/stylesheets/partials/_application.scss */
+#micropost_form .actions span.formatting {
+  padding-left: 5px;
+  font-size: 15px;
+}
+/* line 243, ../../app/stylesheets/partials/_application.scss */
 #micropost_form .actions .count.lengtherror {
   color: darkred;
 }
-/* line 230, ../../app/stylesheets/partials/_application.scss */
+/* line 247, ../../app/stylesheets/partials/_application.scss */
 #micropost_form input#micropost_submit {
   display: inline;
   float: right;
 }
-/* line 235, ../../app/stylesheets/partials/_application.scss */
+/* line 252, ../../app/stylesheets/partials/_application.scss */
 #micropost_form #error_explanation, #micropost_form #error_explanation {
   display: inline;
   float: left;
@@ -1131,7 +1257,7 @@ blockquote {
   overflow-x: hidden;
 }
 
-/* line 242, ../../app/stylesheets/partials/_application.scss */
+/* line 259, ../../app/stylesheets/partials/_application.scss */
 #paginate {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1209,8 +1335,10 @@ blockquote {
   display: none;
 }
 
-/* line 248, ../../app/stylesheets/partials/_application.scss */
-#microposts {
+/* line 267, ../../app/stylesheets/partials/_application.scss */
+#microposts,
+#micropost_preview,
+#micropost_formatting {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
   background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
@@ -1233,7 +1361,9 @@ blockquote {
   width: 549.167px;
 }
 /* line 27, ../../app/stylesheets/partials/_application.scss */
-#microposts hr {
+#microposts hr,
+#micropost_preview hr,
+#micropost_formatting hr {
   background: white;
   color: white;
   clear: both;
@@ -1245,23 +1375,41 @@ blockquote {
   margin: 0px;
 }
 /* line 32, ../../app/stylesheets/partials/_application.scss */
-#microposts hr.last {
+#microposts hr.last,
+#micropost_preview hr.last,
+#micropost_formatting hr.last {
   display: none;
 }
 /* line 147, ../../../../.rvm/gems/ruby-1.9.2-p180@r3may22/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #microposts {
+* html #microposts, * html
+#micropost_preview, * html
+#micropost_formatting {
   overflow-x: hidden;
 }
-/* line 252, ../../app/stylesheets/partials/_application.scss */
-#microposts .feed-item {
+/* line 271, ../../app/stylesheets/partials/_application.scss */
+#microposts .feed-item,
+#micropost_preview .feed-item,
+#micropost_formatting .feed-item {
   margin-bottom: 0px;
 }
-/* line 260, ../../app/stylesheets/partials/_application.scss */
-#microposts .left {
+/* line 279, ../../app/stylesheets/partials/_application.scss */
+#microposts .left,
+#micropost_preview .left,
+#micropost_formatting .left {
   height: 80px;
 }
 
-/* line 265, ../../app/stylesheets/partials/_application.scss */
+/* line 284, ../../app/stylesheets/partials/_application.scss */
+#micropost_preview {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
+  background-image: -o-linear-gradient(top, #ffffff, #ffffff);
+  background-image: -ms-linear-gradient(top, #ffffff, #ffffff);
+  background-image: linear-gradient(top, #ffffff, #ffffff);
+}
+
+/* line 288, ../../app/stylesheets/partials/_application.scss */
 #users {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1304,16 +1452,16 @@ blockquote {
 * html #users {
   overflow-x: hidden;
 }
-/* line 269, ../../app/stylesheets/partials/_application.scss */
+/* line 292, ../../app/stylesheets/partials/_application.scss */
 #users .user-item {
   height: 50px;
 }
-/* line 273, ../../app/stylesheets/partials/_application.scss */
+/* line 296, ../../app/stylesheets/partials/_application.scss */
 #users .left {
   height: 50px;
 }
 
-/* line 278, ../../app/stylesheets/partials/_application.scss */
+/* line 301, ../../app/stylesheets/partials/_application.scss */
 #profile {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1356,24 +1504,24 @@ blockquote {
 * html #profile {
   overflow-x: hidden;
 }
-/* line 282, ../../app/stylesheets/partials/_application.scss */
+/* line 305, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item {
   margin-bottom: 10px;
 }
-/* line 287, ../../app/stylesheets/partials/_application.scss */
+/* line 310, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item .left {
   height: 80px;
 }
-/* line 295, ../../app/stylesheets/partials/_application.scss */
+/* line 318, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.follow {
-  margin: -1px;
+  margin: -4px;
 }
-/* line 299, ../../app/stylesheets/partials/_application.scss */
+/* line 322, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.unfollow {
   margin-left: -12px;
 }
 
-/* line 309, ../../app/stylesheets/partials/_application.scss */
+/* line 332, ../../app/stylesheets/partials/_application.scss */
 #signin, #settings {
   display: inline;
   float: left;
@@ -1416,7 +1564,7 @@ blockquote {
 #signin hr.last, #settings hr.last {
   display: none;
 }
-/* line 313, ../../app/stylesheets/partials/_application.scss */
+/* line 336, ../../app/stylesheets/partials/_application.scss */
 #signin form, #settings form {
   display: inline;
   float: left;
@@ -1428,7 +1576,7 @@ blockquote {
 * html #signin form, * html #settings form {
   overflow-x: hidden;
 }
-/* line 318, ../../app/stylesheets/partials/_application.scss */
+/* line 341, ../../app/stylesheets/partials/_application.scss */
 #signin .field, #signin .actions, #settings .field, #settings .actions {
   display: inline;
   float: left;
@@ -1444,7 +1592,7 @@ blockquote {
 * html #signin .field, * html #signin .actions, * html #settings .field, * html #settings .actions {
   overflow-x: hidden;
 }
-/* line 324, ../../app/stylesheets/partials/_application.scss */
+/* line 347, ../../app/stylesheets/partials/_application.scss */
 #signin .field label, #signin .field input, #settings .field label, #settings .field input {
   width: 489px;
   font-size: 22px;
@@ -1468,7 +1616,7 @@ blockquote {
   border-width: 1px;
   border-style: solid;
 }
-/* line 330, ../../app/stylesheets/partials/_application.scss */
+/* line 353, ../../app/stylesheets/partials/_application.scss */
 #signin .field input, #settings .field input {
   -moz-box-shadow: -1px -1px 5px #505050;
   -webkit-box-shadow: -1px -1px 5px #505050;
@@ -1502,12 +1650,12 @@ blockquote {
   border-width: 1px;
   border-style: solid;
 }
-/* line 345, ../../app/stylesheets/partials/_application.scss */
+/* line 368, ../../app/stylesheets/partials/_application.scss */
 #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
   display: inline;
   float: right;
 }
-/* line 350, ../../app/stylesheets/partials/_application.scss */
+/* line 373, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar, #settings #gravatar {
   display: inline;
   float: left;
@@ -1522,32 +1670,32 @@ blockquote {
 * html #signin #gravatar, * html #settings #gravatar {
   overflow-x: hidden;
 }
-/* line 354, ../../app/stylesheets/partials/_application.scss */
+/* line 377, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar img.gravatar, #settings #gravatar img.gravatar {
   display: inline;
   float: right;
   margin-top: 8px;
   margin-right: 6px;
 }
-/* line 360, ../../app/stylesheets/partials/_application.scss */
+/* line 383, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar p, #settings #gravatar p {
   display: inline;
   float: right;
   clear: both;
 }
-/* line 365, ../../app/stylesheets/partials/_application.scss */
+/* line 388, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar a, #settings #gravatar a {
   display: inline;
   float: right;
   margin-top: 8px;
 }
-/* line 371, ../../app/stylesheets/partials/_application.scss */
+/* line 394, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar .label, #settings #gravatar .label {
   font-size: 22px;
   text-align: right;
 }
 
-/* line 377, ../../app/stylesheets/partials/_application.scss */
+/* line 400, ../../app/stylesheets/partials/_application.scss */
 #flash {
   margin-top: 20px;
 }
@@ -1615,7 +1763,7 @@ blockquote {
   background: #990000;
   color: white;
 }
-/* line 381, ../../app/stylesheets/partials/_application.scss */
+/* line 404, ../../app/stylesheets/partials/_application.scss */
 #flash .success, #flash .notice, #flash .error, #flash .alert {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1625,7 +1773,7 @@ blockquote {
   border-radius: 3px;
 }
 
-/* line 387, ../../app/stylesheets/partials/_application.scss */
+/* line 410, ../../app/stylesheets/partials/_application.scss */
 #error_explanation, #micropost_form #error_explanation {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
