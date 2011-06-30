@@ -51,8 +51,6 @@ $(document).ready(function() {
   
   function preview(object){
     var content = object.value;
-    converter = new Showdown.converter();
-    mkd = converter.makeHtml(content);
     
     if( content.length > 0 ){
       $("div#micropost_preview").slideDown();
@@ -60,8 +58,8 @@ $(document).ready(function() {
       $("div#micropost_preview").slideUp();
     };
       
-    $("div#micropost_preview div.item-row div.item-content").html(
-      mkd
+    $("div#micropost_preview div.item-row div.item-content").text(
+      content
      );    
   };
   
