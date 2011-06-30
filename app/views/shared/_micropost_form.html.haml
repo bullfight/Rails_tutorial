@@ -1,10 +1,20 @@
 = form_for @micropost, :html => {:class => "bp"} do |f|
-  = render 'shared/error_messages', :object => f.object  
+  = render 'shared/error_messages', :object => f.object
   %div.field
     = f.text_area :content, :placeholder => "@Bill Hey what's up?"
   %div.actions.light
     = f.submit "Post"
-    .count
+    %span.count
       140 characters remain
+    %span.insert_syntax
+      %a{:href => "#bold"} 
+        %strong bold
+      %a{:href => "#italics"}
+        %em italics
+      %a{:href => "#link"} link
+      %a{:href => "#quote"} quote
+      %a{:href => "#list"} list 
+      %a{:href => "#code"} code
+    %br     
     %span.formatting 
       %a{:href => "#formatting"} (expand formatting help)
