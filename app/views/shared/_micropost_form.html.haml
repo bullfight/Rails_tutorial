@@ -1,8 +1,10 @@
 = form_for @micropost, :html => {:class => "bp"} do |f|
   = render 'shared/error_messages', :object => f.object  
   %div.field
-    = f.text_area :content  
+    = f.text_area :content, :placeholder => "@Bill Hey what's up?"
   %div.actions.light
     = f.submit "Post"
     .count
       140 characters remain
+    %span.formatting 
+      %a{:href => "#formatting"} (expand formatting help)

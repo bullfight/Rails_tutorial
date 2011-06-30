@@ -2,7 +2,7 @@
   .full
     .item-row
       .item-content
-        = wrap(micropost.content)
+        = markdown(micropost.content, max_width = 55)
     .item-row
       .details
         %span.item-timestamp

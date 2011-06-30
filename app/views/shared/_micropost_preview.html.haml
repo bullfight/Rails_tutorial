@@ -1,0 +1,14 @@
+.feed-item
+  .left
+    = gravatar_for current_user, :size => 80
+  .right
+    .item-row    
+      .item-user
+        = link_to current_user.username, current_user
+        %span.details= "#{current_user.name}"
+    .item-row
+      .item-content
+    .item-row
+      .details
+        %span.item-timestamp
+          = "Preview of your post"

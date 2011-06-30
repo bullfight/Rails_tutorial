@@ -1,6 +1,6 @@
 @include establish-baseline;
 @include blueprint-typography-defaults;
-@include fancy-type;
+//@include fancy-type;
 
 @mixin element-style{
   @include background-image(linear-gradient(top, #eee, #dddddd));
@@ -64,7 +64,35 @@ a{
   $normal: #06c;
   $visited: #06c;
   @include link-colors(#06c, #06c, #06c);
-  }
+}
+
+pre {
+  @include border-radius(3px);
+  margin: 0;
+  background-color: #F3F3F3;
+  padding: 5px 10px;
+  border: 1px solid #ccc;   
+  font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
+}
+
+blockquote {
+  @include border-radius(3px);
+  margin: 0;
+  background-color: #F3F3F3;
+  padding: 5px 10px;
+  border: 1px solid #ccc;   
+}
+
+table {
+  $table-color: #fff;
+  @include table-scaffolding;
+  @include inner-table-borders(1px, #000);
+  @include alternating-rows-and-columns(#ccc, #eee, #000);
+  @include border-radius(3px);
+  @include outer-table-borders($width: 1px, $color: #ccc);
+  background-color: #F3F3F3;
+}
+
 
 .fancy-button-base{
   $fb-font-size: 15px;
@@ -88,6 +116,7 @@ a{
   .full {
     @include push(1);
     @include column(20, true);
+    margin-bottom: -5px;
   }
 
   .left {
@@ -201,9 +230,14 @@ a{
     @include element-position;
   }
   
-  .actions .count{
+  .actions .count {
     padding-left: 5px;
     font-size: 18px;
+  }
+
+  .actions span.formatting {
+    padding-left: 5px;
+    font-size: 15px;
   }
   
   .actions .count.lengtherror{
@@ -228,7 +262,9 @@ a{
   @include pagination;
 }
 
-#microposts {
+#microposts, 
+#micropost_preview,
+#micropost_formatting {
   @include base-style;
   @include base-position;
   
@@ -243,6 +279,10 @@ a{
   .left{
     height:80px;    
   }
+}
+
+#micropost_preview {
+  @include background-image(linear-gradient(top, #fff, #fff));
 }
 
 #users {
@@ -276,14 +316,14 @@ a{
   }
   
   .actions.follow{
-    margin:-1px;
+    margin:-4px;
   }
   
   .actions.unfollow{
     margin-left:-12px;
   }
   input#relationship_submit {
-    @extend .fancy-button-base;
+    @extend .fancy-button-base;    
   }
   
 }
