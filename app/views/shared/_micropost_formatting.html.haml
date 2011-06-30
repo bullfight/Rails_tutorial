@@ -18,25 +18,35 @@
               %td **bold**
               %td= markdown("**bold**")
             %tr.odd
-              %td [nyt](www.nytimes.com)
+              %td [nyt](http://www.nytimes.com)
               %td= markdown("[nyt](http://www.nytimes.com)")            
-            %tr.even
+            %tr.odd
               %td > quoted text
               %td= markdown("> quoted text")               
-            %tr.odd
-              %td 
-                ```ruby
-                %br
-                puts 'hello world'
-                %br
-                ```
-              %td= markdown("```ruby\nputs 'hello world'\n```")
             %tr.even
-              %td 
-                * item 1
+              %td
+                | Header | Header
                 %br
-                * item 2
+                | ------ | ------
                 %br
-                * item 3
-              %td= markdown("* item 1\n* item 2\n* item 3")
-              
+                |  Cell  |  Cell
+                %br
+                |  Cell  |  Cell
+              %td
+                = markdown("| Header | Header\n| ------ | ------\n|  Cell  |  Cell\n|  Cell  |  Cell")                
+              %tr.odd
+                %td 
+                  * item 1
+                  %br
+                  * item 2
+                  %br
+                  * item 3
+                %td= markdown("* item 1\n* item 2\n* item 3")
+              %tr.even
+                %td 
+                  ```ruby
+                  %br
+                  puts 'hello world'
+                  %br
+                  ```
+                %td= markdown("```ruby\nputs 'hello world'\n```")
