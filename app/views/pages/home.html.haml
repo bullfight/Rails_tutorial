@@ -1,8 +1,15 @@
 - if signed_in?
   #micropost_form
-    = render 'shared/micropost_form'    
+    = render 'shared/micropost_form'
+    
+  #micropost_preview
+    = render 'shared/micropost_preview'
+
+  #micropost_formatting
+    = render 'shared/micropost_formatting'
   
   = render 'shared/feed'
-    
+  
 - else
   = render 'shared/signin'
+  
