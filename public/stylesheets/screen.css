@@ -1226,25 +1226,26 @@ table th:first-child {
   overflow-x: hidden;
 }
 /* line 233, ../../app/stylesheets/partials/_application.scss */
-#micropost_form .actions .count {
+#micropost_form .actions span.count {
   padding-left: 5px;
   font-size: 18px;
 }
-/* line 238, ../../app/stylesheets/partials/_application.scss */
+/* line 239, ../../app/stylesheets/partials/_application.scss */
+#micropost_form .actions span.insert_syntax,
 #micropost_form .actions span.formatting {
   padding-left: 5px;
   font-size: 15px;
 }
-/* line 243, ../../app/stylesheets/partials/_application.scss */
-#micropost_form .actions .count.lengtherror {
+/* line 244, ../../app/stylesheets/partials/_application.scss */
+#micropost_form .actions span.count.lengtherror {
   color: darkred;
 }
-/* line 247, ../../app/stylesheets/partials/_application.scss */
+/* line 248, ../../app/stylesheets/partials/_application.scss */
 #micropost_form input#micropost_submit {
   display: inline;
   float: right;
 }
-/* line 252, ../../app/stylesheets/partials/_application.scss */
+/* line 253, ../../app/stylesheets/partials/_application.scss */
 #micropost_form #error_explanation, #micropost_form #error_explanation {
   display: inline;
   float: left;
@@ -1257,7 +1258,7 @@ table th:first-child {
   overflow-x: hidden;
 }
 
-/* line 259, ../../app/stylesheets/partials/_application.scss */
+/* line 260, ../../app/stylesheets/partials/_application.scss */
 #paginate {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1335,7 +1336,7 @@ table th:first-child {
   display: none;
 }
 
-/* line 267, ../../app/stylesheets/partials/_application.scss */
+/* line 268, ../../app/stylesheets/partials/_application.scss */
 #microposts,
 #micropost_preview,
 #micropost_formatting {
@@ -1386,20 +1387,20 @@ table th:first-child {
 #micropost_formatting {
   overflow-x: hidden;
 }
-/* line 271, ../../app/stylesheets/partials/_application.scss */
+/* line 272, ../../app/stylesheets/partials/_application.scss */
 #microposts .feed-item,
 #micropost_preview .feed-item,
 #micropost_formatting .feed-item {
   margin-bottom: 0px;
 }
-/* line 279, ../../app/stylesheets/partials/_application.scss */
+/* line 280, ../../app/stylesheets/partials/_application.scss */
 #microposts .left,
 #micropost_preview .left,
 #micropost_formatting .left {
   height: 80px;
 }
 
-/* line 284, ../../app/stylesheets/partials/_application.scss */
+/* line 285, ../../app/stylesheets/partials/_application.scss */
 #micropost_preview {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
   background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
@@ -1409,7 +1410,7 @@ table th:first-child {
   background-image: linear-gradient(top, #ffffff, #ffffff);
 }
 
-/* line 288, ../../app/stylesheets/partials/_application.scss */
+/* line 289, ../../app/stylesheets/partials/_application.scss */
 #users {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1452,16 +1453,16 @@ table th:first-child {
 * html #users {
   overflow-x: hidden;
 }
-/* line 292, ../../app/stylesheets/partials/_application.scss */
+/* line 293, ../../app/stylesheets/partials/_application.scss */
 #users .user-item {
   height: 50px;
 }
-/* line 296, ../../app/stylesheets/partials/_application.scss */
+/* line 297, ../../app/stylesheets/partials/_application.scss */
 #users .left {
   height: 50px;
 }
 
-/* line 301, ../../app/stylesheets/partials/_application.scss */
+/* line 302, ../../app/stylesheets/partials/_application.scss */
 #profile {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
@@ -1504,24 +1505,24 @@ table th:first-child {
 * html #profile {
   overflow-x: hidden;
 }
-/* line 305, ../../app/stylesheets/partials/_application.scss */
+/* line 306, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item {
   margin-bottom: 10px;
 }
-/* line 310, ../../app/stylesheets/partials/_application.scss */
+/* line 311, ../../app/stylesheets/partials/_application.scss */
 #profile .user-item .left {
   height: 80px;
 }
-/* line 318, ../../app/stylesheets/partials/_application.scss */
+/* line 319, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.follow {
   margin: -4px;
 }
-/* line 322, ../../app/stylesheets/partials/_application.scss */
+/* line 323, ../../app/stylesheets/partials/_application.scss */
 #profile .actions.unfollow {
   margin-left: -12px;
 }
 
-/* line 332, ../../app/stylesheets/partials/_application.scss */
+/* line 333, ../../app/stylesheets/partials/_application.scss */
 #signin, #settings {
   display: inline;
   float: left;
@@ -1564,7 +1565,7 @@ table th:first-child {
 #signin hr.last, #settings hr.last {
   display: none;
 }
-/* line 336, ../../app/stylesheets/partials/_application.scss */
+/* line 337, ../../app/stylesheets/partials/_application.scss */
 #signin form, #settings form {
   display: inline;
   float: left;
@@ -1576,7 +1577,7 @@ table th:first-child {
 * html #signin form, * html #settings form {
   overflow-x: hidden;
 }
-/* line 341, ../../app/stylesheets/partials/_application.scss */
+/* line 342, ../../app/stylesheets/partials/_application.scss */
 #signin .field, #signin .actions, #settings .field, #settings .actions {
   display: inline;
   float: left;
@@ -1592,7 +1593,7 @@ table th:first-child {
 * html #signin .field, * html #signin .actions, * html #settings .field, * html #settings .actions {
   overflow-x: hidden;
 }
-/* line 347, ../../app/stylesheets/partials/_application.scss */
+/* line 348, ../../app/stylesheets/partials/_application.scss */
 #signin .field label, #signin .field input, #settings .field label, #settings .field input {
   width: 489px;
   font-size: 22px;
@@ -1616,7 +1617,7 @@ table th:first-child {
   border-width: 1px;
   border-style: solid;
 }
-/* line 353, ../../app/stylesheets/partials/_application.scss */
+/* line 354, ../../app/stylesheets/partials/_application.scss */
 #signin .field input, #settings .field input {
   -moz-box-shadow: -1px -1px 5px #505050;
   -webkit-box-shadow: -1px -1px 5px #505050;
@@ -1650,12 +1651,12 @@ table th:first-child {
   border-width: 1px;
   border-style: solid;
 }
-/* line 368, ../../app/stylesheets/partials/_application.scss */
+/* line 369, ../../app/stylesheets/partials/_application.scss */
 #signin input#session_submit, #signin input#user_submit, #settings input#session_submit, #settings input#user_submit {
   display: inline;
   float: right;
 }
-/* line 373, ../../app/stylesheets/partials/_application.scss */
+/* line 374, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar, #settings #gravatar {
   display: inline;
   float: left;
@@ -1670,32 +1671,32 @@ table th:first-child {
 * html #signin #gravatar, * html #settings #gravatar {
   overflow-x: hidden;
 }
-/* line 377, ../../app/stylesheets/partials/_application.scss */
+/* line 378, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar img.gravatar, #settings #gravatar img.gravatar {
   display: inline;
   float: right;
   margin-top: 8px;
   margin-right: 6px;
 }
-/* line 383, ../../app/stylesheets/partials/_application.scss */
+/* line 384, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar p, #settings #gravatar p {
   display: inline;
   float: right;
   clear: both;
 }
-/* line 388, ../../app/stylesheets/partials/_application.scss */
+/* line 389, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar a, #settings #gravatar a {
   display: inline;
   float: right;
   margin-top: 8px;
 }
-/* line 394, ../../app/stylesheets/partials/_application.scss */
+/* line 395, ../../app/stylesheets/partials/_application.scss */
 #signin #gravatar .label, #settings #gravatar .label {
   font-size: 22px;
   text-align: right;
 }
 
-/* line 400, ../../app/stylesheets/partials/_application.scss */
+/* line 401, ../../app/stylesheets/partials/_application.scss */
 #flash {
   margin-top: 20px;
 }
@@ -1763,7 +1764,7 @@ table th:first-child {
   background: #990000;
   color: white;
 }
-/* line 404, ../../app/stylesheets/partials/_application.scss */
+/* line 405, ../../app/stylesheets/partials/_application.scss */
 #flash .success, #flash .notice, #flash .error, #flash .alert {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1773,7 +1774,7 @@ table th:first-child {
   border-radius: 3px;
 }
 
-/* line 410, ../../app/stylesheets/partials/_application.scss */
+/* line 411, ../../app/stylesheets/partials/_application.scss */
 #error_explanation, #micropost_form #error_explanation {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;

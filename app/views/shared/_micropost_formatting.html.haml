@@ -2,9 +2,12 @@
   .full
     .item-row
       .item-content
-        =markdown"1. Write a post up to 140 characters\n2. Write a reply with the format: @username message"        
+        %ol
+          %li Write a post up to 140 characters
+          %li Write a reply with the format: @username message   
     .item-row
       .item-content
+        %h5 Formatting Table
         %table
           %thead
             %tr
@@ -18,35 +21,24 @@
               %td **bold**
               %td= markdown("**bold**")
             %tr.odd
-              %td [nyt](http://www.nytimes.com)
-              %td= markdown("[nyt](http://www.nytimes.com)")            
-            %tr.odd
+              %td [nyt](www.nytimes.com)
+              %td= markdown("[nyt](www.nytimes.com)")            
+            %tr.even
               %td > quoted text
               %td= markdown("> quoted text")               
+            %tr.odd
+              %td 
+                ```ruby
+                %br
+                puts 'hello world'
+                %br
+                ```
+              %td= markdown("```ruby\nputs 'hello world'\n```")
             %tr.even
-              %td
-                | Header | Header
+              %td 
+                * item 1
                 %br
-                | ------ | ------
+                * item 2
                 %br
-                |  Cell  |  Cell
-                %br
-                |  Cell  |  Cell
-              %td
-                = markdown("| Header | Header\n| ------ | ------\n|  Cell  |  Cell\n|  Cell  |  Cell")                
-              %tr.odd
-                %td 
-                  * item 1
-                  %br
-                  * item 2
-                  %br
-                  * item 3
-                %td= markdown("* item 1\n* item 2\n* item 3")
-              %tr.even
-                %td 
-                  ```ruby
-                  %br
-                  puts 'hello world'
-                  %br
-                  ```
-                %td= markdown("```ruby\nputs 'hello world'\n```")
+                * item 3
+              %td= markdown("* item 1\n* item 2\n* item 3")
