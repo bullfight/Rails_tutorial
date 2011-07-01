@@ -8,10 +8,16 @@ This is effectively a twitter clone.  Key tasks are  rolling authentication and 
 
 # Features Implemented #
 
-* User authentication/authorization* User authentication/authorization 
+* User authentication/authorization
+* User authentication/authorization 
 * Unique username/email/password
 * Microposts model
 * Following/Follower Relationships
 * Micropost Replies
 * Compass designed UI
-* Jquery interruptions
+* Jquery interactions
+* Markdown formatting - renders in view with redcarpet
+* Markdown formatting key
+* Markdown formatting syntax insertion
+* Post preview
+* Post preview - markdown preview using showdown
