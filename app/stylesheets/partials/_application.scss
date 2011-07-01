@@ -230,17 +230,18 @@ table {
     @include element-position;
   }
   
-  .actions .count {
+  .actions span.count {
     padding-left: 5px;
     font-size: 18px;
   }
 
+  .actions span.insert_syntax,
   .actions span.formatting {
     padding-left: 5px;
     font-size: 15px;
   }
   
-  .actions .count.lengtherror{
+  .actions span.count.lengtherror{
     color: darkred;
   }
   
